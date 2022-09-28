@@ -17,10 +17,10 @@ const deposit_request_Schema = mongoose.Schema({
     type: String,
     required: true,
   },
-  currency: {
-    type: String,
-    required: true,
-  },
+  // currency: {
+  //   type: String,
+  //   required: true,
+  // },
   transaction: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "transaction",

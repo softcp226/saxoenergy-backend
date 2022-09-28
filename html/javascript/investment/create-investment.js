@@ -1,6 +1,6 @@
 amount.onkeyup = () => handle_keychange();
 plan.onchange = () => handle_keychange();
-return_time.onchange = () => handle_keychange();
+// return_time.onchange = () => handle_keychange();
 
 const handle_submit_request = async (form) => {
   const token = getCookie("token");
@@ -15,7 +15,7 @@ const handle_submit_request = async (form) => {
         user,
         investment_plan: form.plan,
         investment_amount: form.amount,
-        return_time: return_time.value,
+        // return_time: return_time.value,
         profit: form.profit,
       }),
     });
@@ -38,15 +38,15 @@ const handle_button_request = () => {
   switch (plan.value) {
     case "Basic Plan":
       if (!amount.value) return;
-      if (!return_time.value) return;
-      if (parseInt(amount.value) < 100) return show_err();
+      // if (!return_time.value) return;
+      if (parseInt(amount.value) < 50) return show_err();
       disable_show_err();
-      if (return_time.value == "daily_return") {
-        var percentage = "daily Percentage: 15%";
+      // if (return_time.value == "daily_return") {
+        var percentage = "8%";
         var earning = `My Profit: $${Math.round(
-          (amount.value / 100) * 15
+          (amount.value / 100) * 8
         )}`;
-        profit = Math.round((amount.value / 100) * 15);
+        profit = Math.round((amount.value / 100) * 8);
         write_percentage(percentage, earning);
         handle_submit_request({
           profit,
@@ -54,65 +54,65 @@ const handle_button_request = () => {
           amount: amount.value,
         });
         break;
-      } else {
-        var percentage = "Weekly Percentage: 105%";
-        var earning = `My Profit: $${Math.round(
-          (amount.value / 100) * 15 * 7
-        )}`;
-        profit = Math.round((amount.value / 100) * 15 * 7);
-        write_percentage(percentage, earning);
-        handle_submit_request({
-          profit,
-          plan: plan.value,
-          amount: amount.value,
-        });
-        break;
-      }
+      // } else {
+      //   var percentage = "Weekly Percentage: 105%";
+      //   var earning = `My Profit: $${Math.round(
+      //     (amount.value / 100) * 15 * 7
+      //   )}`;
+      //   profit = Math.round((amount.value / 100) * 15 * 7);
+      //   write_percentage(percentage, earning);
+      //   handle_submit_request({
+      //     profit,
+      //     plan: plan.value,
+      //     amount: amount.value,
+      //   });
+      //   break;
+      // }
 
-    case "Premium Plan":
-      if (!amount.value) return;
-      if (!return_time.value) return;
-      if (parseInt(amount.value) < 1000) return show_err();
-      disable_show_err();
-      if (return_time.value == "daily_return") {
-        var percentage = "daily Percentage: 25%";
-        var earning = `My Profit: $${Math.round(
-          (amount.value / 100) * 25
-        )}`;
-        profit = Math.round((amount.value / 100) * 25);
-        write_percentage(percentage, earning);
-        handle_submit_request({
-          profit,
-          plan: plan.value,
-          amount: amount.value,
-        });
-        break;
-      } else {
-        var percentage = "Weekly Percentage: 175%";
-        var earning = `My Profit: $${Math.round(
-          (amount.value / 100) * 25 * 7
-        )}`;
-        profit = Math.round((amount.value / 100) * 25 * 7);
-        write_percentage(percentage, earning);
-        handle_submit_request({
-          profit,
-          plan: plan.value,
-          amount: amount.value,
-        });
-        break;
-      }
+    // case "Premium Plan":
+    //   if (!amount.value) return;
+      // if (!return_time.value) return;
+    //   if (parseInt(amount.value) < 1000) return show_err();
+    //   disable_show_err();
+    //   if (return_time.value == "daily_return") {
+    //     var percentage = "daily Percentage: 25%";
+    //     var earning = `My Profit: $${Math.round(
+    //       (amount.value / 100) * 25
+    //     )}`;
+    //     profit = Math.round((amount.value / 100) * 25);
+    //     write_percentage(percentage, earning);
+    //     handle_submit_request({
+    //       profit,
+    //       plan: plan.value,
+    //       amount: amount.value,
+    //     });
+    //     break;
+    //   } else {
+    //     var percentage = "Weekly Percentage: 175%";
+    //     var earning = `My Profit: $${Math.round(
+    //       (amount.value / 100) * 25 * 7
+    //     )}`;
+    //     profit = Math.round((amount.value / 100) * 25 * 7);
+    //     write_percentage(percentage, earning);
+    //     handle_submit_request({
+    //       profit,
+    //       plan: plan.value,
+    //       amount: amount.value,
+    //     });
+    //     break;
+    //   }
 
     case "Standard Plan":
       if (!amount.value) return;
-      if (!return_time.value) return;
-      if (parseInt(amount.value) < 3000) return show_err();
+      // if (!return_time.value) return;
+      if (parseInt(amount.value) < 500) return show_err();
       disable_show_err();
-      if (return_time.value == "daily_return") {
-        var percentage = "daily Percentage: 30%";
+      // if (return_time.value == "daily_return") {
+        var percentage = "16%";
         var earning = `My Profit: $${Math.round(
-          (amount.value / 100) * 30
+          (amount.value / 100) * 16
         )}`;
-        profit = Math.round((amount.value / 100) * 30);
+        profit = Math.round((amount.value / 100) * 16);
         write_percentage(percentage, earning);
         handle_submit_request({
           profit,
@@ -120,67 +120,67 @@ const handle_button_request = () => {
           amount: amount.value,
         });
         break;
-      } else {
-        var percentage = "Weekly Percentage: 210%";
-        var earning = `My Profit: $${Math.round(
-          (amount.value / 100) * 30 * 7
-        )}`;
-        profit = Math.round((amount.value / 100) * 30 * 7);
-        write_percentage(percentage, earning);
-        handle_submit_request({
-          profit,
-          plan: plan.value,
-          amount: amount.value,
-        });
-        break;
-      }
+      // } else {
+      //   var percentage = "Weekly Percentage: 210%";
+      //   var earning = `My Profit: $${Math.round(
+      //     (amount.value / 100) * 30 * 7
+      //   )}`;
+      //   profit = Math.round((amount.value / 100) * 30 * 7);
+      //   write_percentage(percentage, earning);
+      //   handle_submit_request({
+      //     profit,
+      //     plan: plan.value,
+      //     amount: amount.value,
+      //   });
+      //   break;
+      // }
 
-    case "Enterprise Plan":
-      if (!amount.value) return;
-      if (!return_time.value) return;
-      if (parseInt(amount.value) < 6000) return show_err();
+    // case "Enterprise Plan":
+    //   if (!amount.value) return;
+      // if (!return_time.value) return;
+    //   if (parseInt(amount.value) < 6000) return show_err();
 
-      disable_show_err();
-      if (return_time.value == "daily_return") {
-        var percentage = "daily Percentage: 35%";
-        var earning = `My Profit: $${Math.round(
-          (amount.value / 100) * 35
-        )}`;
-        profit = Math.round((amount.value / 100) * 35);
-        write_percentage(percentage, earning);
-        handle_submit_request({
-          profit,
-          plan: plan.value,
-          amount: amount.value,
-        });
-        break;
-      } else {
-        var percentage = "Weekly Percentage: 245%";
-        var earning = `My Profit: $${Math.round(
-          (amount.value / 100) * 35 * 7
-        )}`;
-        profit = Math.round((amount.value / 100) * 35 * 7);
-        write_percentage(percentage, earning);
-        handle_submit_request({
-          profit,
-          plan: plan.value,
-          amount: amount.value,
-        });
-        break;
-      }
+    //   disable_show_err();
+    //   if (return_time.value == "daily_return") {
+    //     var percentage = "daily Percentage: 35%";
+    //     var earning = `My Profit: $${Math.round(
+    //       (amount.value / 100) * 35
+    //     )}`;
+    //     profit = Math.round((amount.value / 100) * 35);
+    //     write_percentage(percentage, earning);
+    //     handle_submit_request({
+    //       profit,
+    //       plan: plan.value,
+    //       amount: amount.value,
+    //     });
+    //     break;
+    //   } else {
+    //     var percentage = "Weekly Percentage: 245%";
+    //     var earning = `My Profit: $${Math.round(
+    //       (amount.value / 100) * 35 * 7
+    //     )}`;
+    //     profit = Math.round((amount.value / 100) * 35 * 7);
+    //     write_percentage(percentage, earning);
+    //     handle_submit_request({
+    //       profit,
+    //       plan: plan.value,
+    //       amount: amount.value,
+    //     });
+    //     break;
+    //   }
 
     case "Ultimate Plan":
       if (!amount.value) return;
-      if (!return_time.value) return;
-      if (parseInt(amount.value) < 9000) return show_err();
+      // if (!return_time.value) return;
+      if (parseInt(amount.value) < 5000) return show_err();
 
       disable_show_err();
-      if (return_time.value == "daily_return") {
-        var percentage = "daily Percentage: 40%";
+      // if (return_time.value == "daily_return") {
+        var percentage = "33%";
         var earning = `My Profit: $${Math.round(
-          (amount.value / 100) * 40
+          (amount.value / 100) * 33
         )}`;
-        profit = Math.round((amount.value / 100) * 40);
+        profit = Math.round((amount.value / 100) * 33);
         write_percentage(percentage, earning);
         handle_submit_request({
           profit,
@@ -188,20 +188,20 @@ const handle_button_request = () => {
           amount: amount.value,
         });
         break;
-      } else {
-        var percentage = "Weekly Percentage: 280%";
-        var earning = `My Profit: $${Math.round(
-          (amount.value / 100) * 40 * 7
-        )}`;
-        profit = Math.round((amount.value / 100) * 40 * 7);
-        write_percentage(percentage, earning);
-        handle_submit_request({
-          profit,
-          plan: plan.value,
-          amount: amount.value,
-        });
-        break;
-      }
+      // } else {
+      //   var percentage = "Weekly Percentage: 280%";
+      //   var earning = `My Profit: $${Math.round(
+      //     (amount.value / 100) * 40 * 7
+      //   )}`;
+      //   profit = Math.round((amount.value / 100) * 40 * 7);
+      //   write_percentage(percentage, earning);
+      //   handle_submit_request({
+      //     profit,
+      //     plan: plan.value,
+      //     amount: amount.value,
+      //   });
+      //   break;
+      // }
 
     default:
       handle_keychange();
@@ -284,12 +284,12 @@ const handle_button_request = () => {
 // };
 
 document.querySelector("#submit").onclick = () => {
-  let investment_amount = document.querySelector("#amount");
   let plan = document.querySelector("#plan");
+  let investment_amount = document.querySelector("#amount");
+    if (!plan.value) return (plan.style.border = "2px solid red");
 
   if (!investment_amount.value)
     return (investment_amount.style.border = "2px solid red");
-  if (!plan.value) return (plan.style.border = "2px solid red");
   handle_button_request();
 };
 

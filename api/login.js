@@ -11,21 +11,21 @@ Router.post("/", async (req, res) => {
   if (isvalid != true)
     return res.status(400).json({ error: true, errMessage: isvalid });
   try {
-    const user = await User.findOne({ email: req.body.email });
+    const user = await User.findOne({ username: req.body.username });
     // console.log("use", user);
     if (!user)
       return res
         .status(400)
-        .json({ error: true, errMessage: "invalid Email or Password " });
+        .json({ error: true, errMessage: "invalid Username or Password " });
 
     // console.log("user", user);
 
-    if (!user.password)
-      return res.status(403).json({
-        error: true,
-        errMessage:
-          "Register again with these email, your previous registration was not complete",
-      });
+    // if (!user.password)
+    //   return res.status(403).json({
+    //     error: true,
+    //     errMessage:
+    //       "Register again with these email, your previous registration was not complete",
+    //   });
     const passwordIsverified = await verifyPassword(
       req.body.password,
       user.password

@@ -25,10 +25,10 @@ const investment_schema = mongoose.Schema({
     type: String,
     required: true,
   },
-  return_time: {
-    type: String,
-    required: true,
-  },
+  // return_time: {
+  //   type: String,
+  //   required: true,
+  // },
 
   profit: {
     type: Number,

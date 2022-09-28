@@ -22,7 +22,7 @@ const create_deposit = async (req) => {
     user: req.body.user,
     deposit_amount: req.body.deposit_amount,
     payment_method: req.body.payment_method,
-    currency: req.body.currency,
+    // currency: req.body.currency,
     transaction: transaction._id,
   });
 

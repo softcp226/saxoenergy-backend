@@ -29,8 +29,8 @@ const login = require("./api/login");
 app.use("/api/user/login", login);
 const register = require("./api/register");
 app.use("/api/newuser/register", register);
-const complete_registration = require("./api/complete-registration");
-app.use("/api/new_user/complete_registration", complete_registration);
+// const complete_registration = require("./api/complete-registration");
+// app.use("/api/new_user/complete_registration", complete_registration);
 
 const find_user = require("./api/find_user");
 app.use("/api/user/find", find_user);

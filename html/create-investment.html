@@ -6,7 +6,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>
-   create investment
+   Bristolenergy || create investment
   </title>
   <!-- Favicon -->
   <link href="assets/images/logo'.png" rel="icon" type="image/png">
@@ -17,9 +17,22 @@
   <link href="dashboard/assets/js/plugins/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link href="dashboard/assets/css/argon-dashboard.css?v=1.1.2" rel="stylesheet" />
-  <link rel="stylesheet" href="css/card.css">
+  <link rel="stylesheet" href="css/create-investment.css">
   <script src="javascript/check_login.js"></script>
 <!-- <script src="javascript/check_login.js"></script> -->
+
+<!-- Smartsupp Live Chat script -->
+<script type="text/javascript">
+  var _smartsupp = _smartsupp || {};
+  _smartsupp.key = '96eed5840076d356ad1e541efab1f5982df73cdb';
+  window.smartsupp || (function (d) {
+    var s, c, o = smartsupp = function () { o._.push(arguments) }; o._ = [];
+    s = d.getElementsByTagName('script')[0]; c = d.createElement('script');
+    c.type = 'text/javascript'; c.charset = 'utf-8'; c.async = true;
+    c.src = 'https://www.smartsuppchat.com/loader.js?'; s.parentNode.insertBefore(c, s);
+  })(document);
+</script>
+
 </head>
 
 <body class="">
@@ -51,8 +64,7 @@
           <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div class="media align-items-center">
               <span class="avatar avatar-sm rounded-circle">
-                <img alt="Image placeholder" id="user_passport" src="homeCss/images/user.png
-">
+                <img alt="Image placeholder" id="user_passport" src="css/images/user.png">
               </span>
             </div>
           </a>
@@ -92,7 +104,7 @@
           <div class="row">
             <div class="col-6 collapse-brand">
               <a href="./index.html">
-                Fleekinvest 
+               Bristolenergy
                 <!-- <img src="dashboard/assets/img/brand/blue.png"> -->
               </a>
             </div>
@@ -139,7 +151,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link " href="my-investment.html">
-              <i class="ni ni-bullet-list-67 text-red"></i>My Investment
+              <i class="ni ni-bullet-list-67 text-red"></i>Active Investment
             </a>
           </li>
           <li class="nav-item">
@@ -208,7 +220,7 @@
             <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <div class="media align-items-center">
                 <span class="avatar avatar-sm rounded-circle">
-                  <img alt="Image placeholder" src="homeCss/images/user.png" id="user_passport">
+                  <img alt="Image placeholder" src="css/images/user.png" id="user_passport">
                 </span>
                 <div class="media-body ml-2 d-none d-lg-block">
                   <span class="mb-0 text-sm  font-weight-bold" id="user_name"></span>
@@ -252,9 +264,9 @@
         <div class="header-body">
 
           <div class="head-text">
-       <h2 class="h4 mb-0 text-white text-uppercase ">Create an investment - start trading instantly</h2>
+       <h2 class="h4 mb-0 text-white text-uppercase ">Create new Investment - Create new Investment</h2>
       
-<h2 style="color: rgb(35, 29, 29); font-size: 14px;" >CHOOSE YOUR PREFERRED INVESTMENT PLAN/ <a  style="color: blue;">CREATE AN INVESTMENT - START TRADING INSTANTLY</a></h2>
+<h2 style="color: rgb(35, 29, 29); font-size: 14px;" >CHOOSE YOUR PREFERRED INVESTMENT PLAN/ <a  style="color: blue;">CREATE NEW INVESTMENT</a></h2>
           </div>
 
        </div>
@@ -263,40 +275,41 @@
 
    <figure class="card">
 <div class="container-bg">
-<h3 style="text-align: center;">Create an investment - start trading instantly</h3>
-<!-- <p>1ESNtvR4Psux3pNMMd85RWda4Sk6mP3FMD</p> -->
+<h3 style="text-align: center;">Create new Investment - Create new Investment</h3>
+
 
 
 
 
 <div class="v-wallet-container">
-  <input type="text" id="amount" name="" placeholder="INVESTMENT AMOUNT">
  
   <select name="investment plan" id="plan">
   <option value="">Select Plan-</option>
-  <option value="Basic Plan">Basic Plan ($100-$900)</option>
-  <option value="Premium Plan">Premium Plan ($1,000 - $2,900)</option>
-  <option value="Standard Plan">Standard Plan($3,000-$5,900)</option>
-  <option value="Enterprise Plan">Enterprise Plan($6,000-$8,900)</option>
-  <option value="Ultimate Plan">Ultimate Plan($9,000-$1,000,000)</option>
+  <option value="Basic Plan">Basic Plan ($50-$499)</option>
+  <!-- <option value="Premium Plan">Premium Plan ($1,000 - $2,900)</option> -->
+  <option value="Standard Plan">Standard Plan($500-$4,999)</option>
+  <!-- <option value="Enterprise Plan">Enterprise Plan($6,000-$8,900)</option> -->
+  <option value="Ultimate Plan">  Ultimate Plan($5,000-unlimited)</option>
 </select>
 
+<input type="text" id="amount" name="" placeholder="INVESTMENT AMOUNT">
+<!-- 
 <select name="return_time" id="return_time">
-  <option value="">Investment return time</option>
+  <option value="">Trading return time</option>
 <option value="daily_return">daily retun</option>
 <option value="weekly_return"> Weekly return</option>
-</select>
+</select> -->
+<!-- id="user_passport" -->
+
   <div class="wallet-address" id="percentage"> Percentage:</div>
 
-  <!-- <label for="Weekly Earning">Weekly Earning:</label><br> -->
 <div class="wallet-address" id="earning"> Earning Amount:</div>
-<!-- <div class="wallet-address">Monthly Percentage:</div>
-<div class="wallet-address">Monthly Earn:</div> -->
+
+
 </div>
 <p class=" m-2">Auto calculated</p>
-<!-- <label for="wallet-address" style="margin: 0px; padding: 0px; line-height: 0px;">wallet address:</label>
-<div class="wallet-address"></div> -->
-<!-- remember to show where to make payment -->
+
+
 <div class="errMessage" style="color: red; text-align: center"></div>
 <button class="btn btn-primary m-2" id="submit">Create Investment</button>
 </div>
@@ -334,4 +347,4 @@
 </html>
 
 
-<!-- dashboard/assets/img/brand/blue.png -->
+<!-- Tawk -->

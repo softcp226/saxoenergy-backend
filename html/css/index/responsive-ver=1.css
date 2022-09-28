@@ -324,6 +324,7 @@ section.small_pb {
 p,
 .footer_title {
 	margin-bottom: 15px;
+	font-size:16px;
 }
 .work_box {
 	float: none;

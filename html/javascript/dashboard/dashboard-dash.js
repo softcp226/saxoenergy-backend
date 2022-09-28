@@ -1,7 +1,7 @@
 const setText = (user) => {
-  document.querySelectorAll("#user_passport").forEach((passport) => {
-    passport.src = user.passport;
-  });
+  // document.querySelectorAll("#user_passport").forEach((passport) => {
+  //   passport.src = user.passport;
+  // });
   document.querySelector("#final_balance").innerHTML = `$${user.final_balance
     .toString()
     .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}.0`;

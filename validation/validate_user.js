@@ -2,16 +2,20 @@ const Joi = require("joi");
 
 const validate_user = (req) => {
   const schema = Joi.object({
-    user:Joi.string().required().max(1000),
-    first_name: Joi.string().required().max(1000),
-    last_name: Joi.string().required().max(1000),
-    password: Joi.string().required().max(1000),
+    full_name: Joi.string().required().max(1000),
+    username: Joi.string().required().max(1000),
+    Email: Joi.string().email().min(0).required(),
+    country: Joi.string().required(),
+    password: Joi.string().required().min(8).max(1000),
+    referral: Joi.string()
   });
   const result = schema.validate({
-    user:req.user,
-    first_name: req.first_name,
-    last_name: req.last_name,
+    full_name: req.full_name,
+    username: req.username,
+    Email: req.email,
+    country: req.country,
     password: req.password,
+    referral:req.referral
   });
   if (result.error) return result.error.message;
   return true;

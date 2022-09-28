@@ -1,10 +1,14 @@
 .video-container {
   margin: auto;
   text-align: center;
+   display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 video {
-  width: 50%;
-  height: 70vh;
+  width: 45%;
+  margin:4px;
+  /* height: 70vh; */
 }
 .review-container {
   display: flex;
@@ -68,8 +72,11 @@ video {
   color: #fff;
 }
 @media (max-width: 699px) {
+  .video-container{
+   flex-direction: column;
+  }
   video {
-    width: 80%;
+   width: 80%;
     height: 80%;
   }
   .review-container > div {

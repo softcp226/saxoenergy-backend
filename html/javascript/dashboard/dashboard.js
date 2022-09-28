@@ -1,8 +1,8 @@
 
 const setText=(user)=>{
-document.querySelectorAll("#user_passport").forEach(passport=>{
-passport.src= user.passport
-})
+// document.querySelectorAll("#user_passport").forEach(passport=>{
+// passport.src= user.passport
+// })
 }
 
 

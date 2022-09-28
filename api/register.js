@@ -1,46 +1,39 @@
 const express = require("express");
 const Router = express.Router();
-const validateUser = require("../validation/validate_user01");
-const genToken = require("../token/genToken_01");
+const validateUser = require("../validation/validate_user");
+const genToken = require("../token/genToken");
 const hashPassword = require("../hash/hashPassword");
 const User = require("../model/user");
 
 Router.post("/", async (req, res) => {
+  console.log(req.body);
   const isvalid = validateUser(req.body);
   if (isvalid != true)
     return res.status(400).json({ error: true, errMessage: isvalid });
 
   try {
     const user = await User.findOne({ email: req.body.email });
-    console.log(user);
-    if (user) {
-      // console.log("use", user);
-      if (!user.password) {
-        user.set({
-          email: req.body.email,
-          phone_number: req.body.phone_number,
-          country: req.body.country,
-          referral_link: `https://www.softjovial.com?${req.body.email}`,
-          referral: req.body.referral,
-        });
-        await user.save();
-        const token = genToken(user._id);
-        return res.status(200).json({
-          error: false,
-          message: { user: user._id },
-          token,
-        });
-      }
+    if (user)
       return res
         .status(400)
-        .json({ error: true, errMessage: "User already exist please login" });
-    }
+        .json({ error: true, errMessage: "user already exist, please login" });
 
+    const username = await User.findOne({ username: req.body.username });
+    console.log(username);
+    if (username)
+      return res.status(400).json({
+        error: true,
+        errMessage: "Username already exist, please try a diffrent one",
+      });
+
+    const password = await hashPassword(req.body.password);
     const newUser = await new User({
+      full_name: req.body.full_name,
+      username: req.body.username,
       email: req.body.email,
-      phone_number: req.body.phone_number,
       country: req.body.country,
-      referral_link: `https://www.panteramining.com?${req.body.email}`,
+      password,
+      referral_link: `https://www.bristolenergy.ltd?${req.body.username}`,
       referral: req.body.referral,
     });
 
