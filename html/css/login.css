@@ -55,6 +55,8 @@ width: 100%; */
 }
 .user-icon-container{
 text-align: center;
+margin-bottom: 30px;
+margin-top: 20px;
 }
 .txt-bg .user-icon{
     position: relative;
@@ -66,11 +68,12 @@ text-align: center;
 input{
     margin: auto;
     width: 90%;
-    padding: 15px;
+    padding: 20px;
     border-radius: 5px;
     border-color: #eee;
     border: 1px solid #eee;
     background-color: #eee;
+margin-bottom: 5px;
 }
 .login-btn{
         color: #fff;
