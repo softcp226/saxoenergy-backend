@@ -28,7 +28,7 @@ Router.post("/", async (req, res) => {
     //   });
     const passwordIsverified = await verifyPassword(
       req.body.password,
-      user.password
+      user.password,
     );
     console.log(passwordIsverified);
     if (passwordIsverified != true)
@@ -36,10 +36,18 @@ Router.post("/", async (req, res) => {
         .status(400)
         .json({ error: true, errMessage: "invalid Email or password " });
 
+    if (user.is_disabled)
+      return res
+        .status(403)
+        .json({
+          error: true,
+          errMessage:
+            "Your account has been disabled, you can't login at the moment and you cant earn from any investment if you created one earlier. Most common reasons are because you did not follow our community standard. For more information contact customer support now",
+        });
     const token = genToken(user._id);
 
     const check_inv_exp_result = await check_investment_expiration_on_login(
-      user._id
+      user._id,
     );
     console.log(await check_inv_exp_result);
 

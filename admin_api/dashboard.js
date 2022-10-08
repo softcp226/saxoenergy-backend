@@ -28,11 +28,15 @@ Router.post("/", verifyToken, async (req, res) => {
       });
     const users = await Users.find();
     const suspended_users = await Users.find({ is_suspended: true });
-    const disabled_users = await Users.find({ is_disabled: false });
-    const active_users = await Users.find({ is_suspended: false });
+    const disabled_users = await Users.find({ is_disabled:true });
+    const active_users = await Users.find({ is_suspended: false,is_disabled:false });
     const users_ever_madedeposit = await Users.find({
       made_first_deposit: true,
     });
+     const users_that_never_madedeposit = await Users.find({
+      made_first_deposit: false,
+    });
+    console.log(users_that_never_madedeposit);
     const investment_packages = await Investment_packages.find();
     const withdrawal_request = await Withdrawal_request.find().populate("user");
     const pending_deposit = await Deposit_request.find().populate("user");
@@ -48,30 +52,35 @@ Router.post("/", verifyToken, async (req, res) => {
         user_length: users.length,
         suspended_users: {
           length: suspended_users.length,
-          percentage: `${calculate_percentage(
-            users.length,
-            suspended_users.length,
+          percentage: `${Math.round(
+            calculate_percentage(users.length, suspended_users.length),
           )}%`,
         },
         disabled_users: {
           length: disabled_users.length,
-          percentage: `${calculate_percentage(
-            users.length,
-            disabled_users.length,
+          percentage: `${Math.round(
+            calculate_percentage(users.length, disabled_users.length),
           )}%`,
         },
         active_users: {
           length: active_users.length,
-          percentage: `${calculate_percentage(
-            users.length,
-            active_users.length,
+          percentage: `${Math.round(
+            calculate_percentage(users.length, active_users.length),
           )}%`,
         },
         users_ever_madedeposit: {
           length: users_ever_madedeposit.length,
-          percentage: `${calculate_percentage(
-            users.length,
-            users_ever_madedeposit.length,
+          percentage: `${Math.round(
+            calculate_percentage(users.length, users_ever_madedeposit.length),
+          )}%`,
+        },
+        users_that_never_madedeposit: {
+          length: users_that_never_madedeposit.length,
+          percentage: `${Math.round(
+            calculate_percentage(
+              users.length,
+              users_that_never_madedeposit.length,
+            ),
           )}%`,
         },
         investment_packages: {

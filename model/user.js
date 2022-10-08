@@ -78,7 +78,7 @@ const userSchema = mongoose.Schema({
   is_disabled: {
     type: Boolean,
     required: true,
-    default: false,
+    default:false,
   },
   status: {
     type: String,

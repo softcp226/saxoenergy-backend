@@ -32,6 +32,19 @@ select_element(
   "disabled_users_length",
   `${data.disabled_users.length} ${data.disabled_users.percentage}`,
 );
+
+select_element(
+  "users_that_ever_madedeposit",
+  `${data.users_ever_madedeposit.length} ${data.users_ever_madedeposit.percentage} `,
+);
+select_element(
+  "users_that_never_madedeposit",
+  `${data.users_that_never_madedeposit.length} 
+  ${data.users_that_never_madedeposit.percentage}`,
+);
+select_element("investment_package", `${data.investment_packages.length}`);
+select_element("withdrawal_request",`${data.withdrawal_request.length}`);
+select_element("pending_deposit", `${data.pending_deposit.length}`);
 };
 
 (async () => {
@@ -45,12 +58,13 @@ select_element(
       body: JSON.stringify({ admin, token }),
     });
     const result = await response.json();
+    console.log(result)
     if (result.error) {
       alert(error.message);
     }else{
         create_element(result.message);
     }
   } catch (error) {
-    alert(error.message);
+   console.log(error);
   }
 })();
