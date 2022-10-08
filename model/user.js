@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 const connect = require("./dbConnector");
 connect("connected to user database");
+const { datetime } = require("../shape-model/system-variables");
+
 
 const userSchema = mongoose.Schema({
   full_name: {
@@ -23,10 +25,21 @@ const userSchema = mongoose.Schema({
     required: true,
   },
 
-  password: {},
+  password: {
+    type: String,
+    required: true,
+  },
   final_balance: {
     type: Number,
     default: 5,
+  },
+  total_deposit: {
+    type: Number,
+    default: 0,
+  },
+  total_withdrawal: {
+    type: Number,
+    default: 0,
   },
   profit_loss: {
     type: Number,
@@ -36,17 +49,40 @@ const userSchema = mongoose.Schema({
     type: Number,
     default: 0,
   },
+  total_earning:{
+     type: Number,
+     required:true,
+    default: 0,
+  },
   referral_bonus: {
     type: Number,
     default: 0,
   },
   referral_link: String,
-  has_made_deposit: {
+  made_first_deposit: {
     type: Boolean,
     required: true,
     default: false,
   },
   referral: String,
+  registration_date: {
+    type: String,
+    required: true,
+    default: datetime,
+  },
+  is_suspended: {
+    type: Boolean,
+    required: true,
+    default: false,
+  },
+  is_disabled: {
+    type: Boolean,
+    required: true,
+    default: false,
+  },
+  status: {
+    type: String,
+  },
 });
 
 const User = mongoose.model("user", userSchema);

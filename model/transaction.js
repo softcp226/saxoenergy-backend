@@ -4,7 +4,7 @@ connect("connected to transaction database");
 require("./user");
 const transaction_Schema = mongoose.Schema({
   user: {
-    type: mongoose.Schema.Types.ObjectId,
+    type:mongoose.Schema.Types.ObjectId,
     ref: "user",
     required: true,
   },

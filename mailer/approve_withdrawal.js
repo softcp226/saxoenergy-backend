@@ -22,7 +22,7 @@ let create_mail_options = (userInfo) => {
     from: "support@panteramining.com",
     // from:"michelleannschlloser@outlook.com",
     to: userInfo.reciever,
-    subject: `Deposit Confirmation Notification`,
+    subject: `Withdrawal Confirmation Notification`,
     //   text:"just wanna know if this works",
     html: `
  <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -49,26 +49,27 @@ let create_mail_options = (userInfo) => {
   ">
     <div class="head-txt">
 
-      <h3 style="text-align: center; font-size: 16px; color: #825ee4">DEPOSIT CONFIRMATION NOTIFICATION</h3>
+      <h3 style="text-align: center; font-size: 16px; color: #825ee4">WITHDRAWAL CONFIRMATION NOTIFICATION</h3>
     </div>
 
     <p class="sm-p">
-      Dear ${userInfo.first_name} ${userInfo.last_name}, your deposit has been proccessed and approved 
+      Dear ${userInfo.full_name}, your withdrawal of ${userInfo.withdrawal_amount} has been proccessed and approved successfully
       on <b>${datetime}</b>.
-    your fund has been deposited into your account.
+    your fund has been released to the withdrawal details you specified during withdrawal
     </p>
-   
+    <p class="sm-p">
+    
 
     <p class="sm-p">
       incase you have any questions do not hesitate to contact us and we will
       reach out to you as soon as possible
     </p>
     <br />
-    <h1 style="  font-size: 17px; text-align: center;  background: linear-gradient(87deg, #5e72e4 0, #825ee4 100%); color: #fff;" >PANTERA MINING</h1>
+    <h1 style="  font-size: 17px; text-align: center;  background: linear-gradient(87deg, #5e72e4 0, #825ee4 100%); color: #fff;" >BRISTOLENERGY.LTD</h1>
    <p class="disclaimer" style="font-size: 12px; font-weight: bolder">
       Disclaimer: this message was automatically generated via bristolenergy
       secured channel,please do not reply to this message all correspondence
-      should be addressed to bristolenergy.ltd or your relationship officer
+      should be addressed to bristolenergyy.ltd or your relationship officer
     </p>
   </div>
 </main>

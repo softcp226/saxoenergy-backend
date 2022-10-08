@@ -6,7 +6,7 @@ const validate_withdrawal = require("../validation/validate_withdrawal");
 const Withdrawal_request = require("../model/withdrawal_request");
 const { create_mail_options, transporter } = require("../mailer/withdrawal");
 const create_withdrawal_transaction = require("../shape-model/create-withdrawal-transaction");
-
+const { datetime } = require("../shape-model/system-variables");
 Router.post("/", verifyToken, async (req, res) => {
   const request_isvalid = validate_withdrawal(req.body);
   if (request_isvalid != true)
@@ -25,31 +25,23 @@ Router.post("/", verifyToken, async (req, res) => {
         errMessage:
           "Insufficient fund, please deposit more fund or cancel investment if  it exist to be able to withdraw fund",
       });
-
-    if (user.has_made_deposit !== true)
+console.log(user.made_first_deposit);
+    if (user.made_first_deposit != true)
       return res.status(400).json({
         error: true,
         errMessage:
           "To make a withdrawal of your money or registration bonus , you need to atleast make a first deposit",
       });
-    user.set({
-      final_balance: user.final_balance - parseInt(req.body.withdrawal_amount),
-    });
-    let currentdate = new Date();
-    let datetime = `${currentdate.getFullYear()}-${
-      currentdate.getMonth() + 1
-    }-${currentdate.getDate()} -  ${currentdate.getHours()}: ${currentdate.getMinutes()} : ${currentdate.getSeconds()}`;
-
-    const withdrawal_request = await new Withdrawal_request({
-      user: req.body.user,
-      transaction_date: datetime,
-      withdrawal_amount: req.body.withdrawal_amount,
-      withdrawal_method: req.body.withdrawal_method,
-      wallet: req.body.wallet,
-    });
-    create_withdrawal_transaction(req);
-    await user.save();
-    await withdrawal_request.save();
+    // user.set({
+    //   final_balance: user.final_balance - parseInt(req.body.withdrawal_amount),
+    // });
+    // let currentdate = new Date();
+    // let datetime = `${currentdate.getFullYear()}-${
+    //   currentdate.getMonth() + 1
+    // }-${currentdate.getDate()} -  ${currentdate.getHours()}: ${currentdate.getMinutes()} : ${currentdate.getSeconds()}`;
+ create_withdrawal_transaction(req);
+    // await user.save();
+    // await withdrawal_request.save();
     transporter.sendMail(
       create_mail_options({
         first_name: user.first_name,
@@ -76,4 +68,8 @@ Router.post("/", verifyToken, async (req, res) => {
     res.status(200).json({ error: true, errMessage: error.message });
   }
 });
+
+
+
+
 module.exports = Router;

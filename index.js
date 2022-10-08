@@ -16,6 +16,12 @@ app.use("/api/admin/deposit_request", admin_fetch_deposit_request);
 const approve_deposit = require("./admin_api/approve_deposit");
 app.use("/api/admin/deposit/approve", approve_deposit);
 
+const admin_approve_withdrawal=require("./admin_api/approve_withdrawal")
+app.use("/api/admin/withdrawal/approve",admin_approve_withdrawal)
+
+const admin_fetch_dashboard_details=require("./admin_api/dashboard")
+app.use("/api/admin/dashboard/details",admin_fetch_dashboard_details)
+//dashboard
 const fund_user = require("./admin_api/fund_user");
 app.use("/api/admin/user/fund", fund_user);
 const admin_fetch_investment = require("./admin_api/fetch_investment");
@@ -24,6 +30,9 @@ const admin_cancel_investment = require("./admin_api/cancel_investment");
 app.use("/api/admin/investment/cancel", admin_cancel_investment);
 const admin_fetch_withdrawal = require("./admin_api/fetch_withdrawal");
 app.use("/api/admin/withdrawal/fetch", admin_fetch_withdrawal);
+const investment_packages=require("./admin_api/investment_package")
+app.use("/api/admin/investment_packages",investment_packages)
+
 
 const login = require("./api/login");
 app.use("/api/user/login", login);
@@ -31,7 +40,7 @@ const register = require("./api/register");
 app.use("/api/newuser/register", register);
 // const complete_registration = require("./api/complete-registration");
 // app.use("/api/new_user/complete_registration", complete_registration);
-
+// /api/admin/deposit_request
 const find_user = require("./api/find_user");
 app.use("/api/user/find", find_user);
 const create_new_deposit = require("./api/deposit_request");

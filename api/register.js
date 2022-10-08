@@ -28,7 +28,7 @@ Router.post("/", async (req, res) => {
 
     const password = await hashPassword(req.body.password);
     const newUser = await new User({
-      full_name: req.body.full_name,
+      full_name: req.body.full_name.toUpperCase(),
       username: req.body.username,
       email: req.body.email,
       country: req.body.country,

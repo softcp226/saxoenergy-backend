@@ -3,7 +3,7 @@ const Router = express.Router();
 const verifyToken = require("../secure-admin-api/verifyToken");
 const Users = require("../model/user");
 const Admin = require("../model/admin");
-const validate_admin_fetchuser = require("../validation/validate-admin-fetchuser");
+const validate_admin_fetchuser = require("../validation/validate_admin_fetch_user");
 Router.post("/", verifyToken, async (req, res) => {
   const request_isvalid = validate_admin_fetchuser(req.body);
   if (request_isvalid != true)
@@ -16,7 +16,9 @@ Router.post("/", verifyToken, async (req, res) => {
         error: true,
         errMessage: "Forbidden!, please login again to access this api",
       });
-    const users = await Users.find();
+    const users = await Users.find()
+      .skip(req.body.skip_count)
+      .limit(req.body.display_count);
     if (users.length < 1)
       return res
         .status(400)

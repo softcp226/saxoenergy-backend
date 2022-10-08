@@ -823,8 +823,8 @@
                                                                     <td width="100%" height="100%" valign="top">
                                                                         <h3>Deposit Details:</h3>
                                                                         <script> var percent = parseFloat(0.00); var add_amount = parseFloat(0.00); var fee_min = parseFloat(0.00); var fee_max = parseFloat(0.00); var ecpow = ("0.00".replace(/^\d+\./, "")).length;  function update_fee() { var to_deposit = ""; var amount = parseFloat(document.getElementById("debit_amount").value); if (!isNaN(amount)) { var fee = amount * (percent/100); if (Math.abs(fee) < Math.abs(fee_min)) fee = fee_min; if (Math.abs(fee_max) > 0 && Math.abs(fee) > Math.abs(fee_max)) fee = fee_max; to_deposit = amount - add_amount; to_deposit = (to_deposit - fee).toFixed(ecpow); } document.getElementById("credit_amount").innerHTML = to_deposit; } function check_pd(e) { if (this.value == "movetodeposit") { ret = confirm("Please, confirm deposit creation"); } if (this.value == "movetoaccount") { ret = confirm("Please, confirm add funds to balnce"); } if (this.value == "movetonew") { ret = confirm("Please, confirm deposit status change"); } if (this.value == "movetoproblem") { ret = confirm("Please, confirm deposit status change"); } if (this.value == "delete") { ret = confirm("Please, confirm deposit deelete"); } if (ret == false) { e.preventDefault(); e.stopPropagation(); } }  </script>
-                                                                        <form method="post" name="nform"
-                                                                            onsubmit="return "><input type="hidden"
+                                                                        <form  name="nform"
+                                                                           ><input type="hidden"
                                                                                 name="form_id"
                                                                                 value="16637624151881"><input
                                                                                 type="hidden" name="form_token"
@@ -839,16 +839,14 @@
                                                                                             Information:</th>
                                                                                     </tr>
                                                                                     <tr>
-                                                                                        <th>Debit Amount:</th>
-                                                                                        <td> $<input type="text"
+                                                                                        <th>Dposit Amount:</th>
+                                                                                        <td> $<input type="number"
                                                                                                 name="amount"
-                                                                                                value="50.00"
-                                                                                                id="debit_amount"
+                                                                                               
+                                                                                                id="deposit_amount"
                                                                                                 class="inpts nosize"
                                                                                                 size="15"
-                                                                                                onkeyup="update_fee()"
-                                                                                                onclick="update_fee()"
-                                                                                                onblur="update_fee()">
+                                                                                                  >
                                                                                         </td>
                                                                                     </tr>
                                                                                     <tr>
@@ -859,25 +857,25 @@
                                                                                     <tr>
                                                                                         <th>Credit Amount:</th>
                                                                                         <td>$<span
-                                                                                                id="credit_amount">50.00</span>
+                                                                                                id="credit_amount">loading..</span>
                                                                                         </td>
                                                                                     </tr>
                                                                                     <tr>
                                                                                         <th>Currency:</th>
-                                                                                        <td>Bitcoin</td>
+                                                                                        <td id="currency"></td>
                                                                                     </tr>
                                                                                     <tr>
                                                                                         <th>Plan:</th>
-                                                                                        <td>8% After 24 hours</td>
+                                                                                        <td>No Plan</td>
                                                                                     </tr>
                                                                                     <tr>
                                                                                         <th>Date:</th>
-                                                                                        <td>Sep-20-2022 09:10:06 PM
+                                                                                        <td id="date">loading...
                                                                                         </td>
                                                                                     </tr>
                                                                                     <tr>
                                                                                         <th>User:</th>
-                                                                                        <td>MAhu</td>
+                                                                                        <td id="user">loading...</td>
                                                                                     </tr>
                                                                                     <tr>
                                                                                         <th colspan="2">Transaction
@@ -885,33 +883,34 @@
                                                                                     </tr>
                                                                                     <tr>
                                                                                         <th>Transaction ID</th>
-                                                                                        <td></td>
+                                                                                        <td id="transaction_id"></td>
                                                                                     </tr>
                                                                                 </tbody>
-                                                                            </table> <br> <button name="do"
+                                                                            </table> <br> 
+                                                                            <!-- <button name="do"
                                                                                 value="movetodeposit"
                                                                                 id="movetodeposit_btn" type="submit"
                                                                                 class="sbmt btn btn-success">Create
-                                                                                Deposit</button> &nbsp;
-                                                                            <script>document.getElementById("movetodeposit_btn").addEventListener("click", check_pd);</script>
+                                                                                Deposit</button>  -->
+                                                                                &nbsp;
                                                                             <button name="do" value="movetoaccount"
-                                                                                id="movetoaccount_btn" type="submit"
+                                                                                id="add_fund" type="submit"
                                                                                 class="sbmt btn btn-success">Add Funds
                                                                                 to Balance</button> &nbsp;
-                                                                            <script>document.getElementById("movetoaccount_btn").addEventListener("click", check_pd);</script>
                                                                             <button name="do" value="movetoproblem"
-                                                                                id="movetoproblem_btn" type="submit"
+                                                                                id="add_to_problem" type="submit"
                                                                                 class="sbmt btn btn-info">Move to
                                                                                 Problem</button> &nbsp;
-                                                                            <script>document.getElementById("movetoproblem_btn").addEventListener("click", check_pd);</script>
                                                                             <button name="do" value="delete"
                                                                                 id="delete_btn" type="submit"
                                                                                 class="sbmt btn btn-danger">Delete</button>
                                                                             &nbsp;
-                                                                            <script>document.getElementById("delete_btn").addEventListener("click", check_pd);</script>
                                                                             <a class="sbmt btn btn-warning"
-                                                                                href="?a=pending_deposits&amp;type=new">Cancel</a>
-                                                                        </form> <br>
+                                                                                href="/admin/pending-deposit.html">Cancel</a>
+
+                                                                        </form>
+                                                                        <div class="errMessage" id="errMessage" style="color: red; text-align: center; font-size: 18px;"></div>
+                                                                         <br>
                                                                         <div class="alert alert-warning"> Move to
                                                                             deposit - you can move this deposit to
                                                                             'processed' and create a deposit for it if
@@ -942,5 +941,6 @@
             </tbody>
         </table>
     </center>
+    <script src="javascript/deposit-detail.js"></script>
 </body>
 </html>

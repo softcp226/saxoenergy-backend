@@ -165,3 +165,8 @@ console.log(end_date);
 // d2.setDate(currentdate.getDate() + 7);
 // var same = d1.getTime() === d2.getTime();
 // var notSame = d1.getTime() >= d2.getTime();
+
+
+let total=1000
+let suspended_users=237
+total/1000*10

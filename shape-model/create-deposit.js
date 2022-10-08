@@ -1,13 +1,13 @@
 const Deposit_request = require("../model/deposit_request");
 const Transaction = require("../model/transaction");
+const { datetime } = require("./system-variables");
 
 const create_deposit = async (req) => {
-  let currentdate = new Date();
-  let datetime = `${currentdate.getFullYear()}-${
-    currentdate.getMonth() + 1
-  }-${currentdate.getDate()} -  ${currentdate.getHours()}: ${currentdate.getMinutes()} : ${currentdate.getSeconds()}`;
+  // let currentdate = new Date();
+  // let datetime = `${currentdate.getFullYear()}-${
+  //   currentdate.getMonth() + 1
+  // }-${currentdate.getDate()} -  ${currentdate.getHours()}: ${currentdate.getMinutes()} : ${currentdate.getSeconds()}`;
   let ref = Math.floor(Math.random() * 100);
-
   const transaction = await new Transaction({
     user: req.body.user,
     refrence_number: `Ref#${++ref} `,
@@ -22,6 +22,7 @@ const create_deposit = async (req) => {
     user: req.body.user,
     deposit_amount: req.body.deposit_amount,
     payment_method: req.body.payment_method,
+    date: datetime,
     // currency: req.body.currency,
     transaction: transaction._id,
   });

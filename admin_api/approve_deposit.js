@@ -32,7 +32,7 @@ Router.post("/", verifyToken, async (req, res) => {
       });
 
     const deposit_request = await Deposit_request.findById(
-      req.body.deposit_request
+      req.body.deposit_request,
     );
     if (!deposit_request)
       return res.status(400).json({
@@ -81,16 +81,14 @@ Router.post("/", verifyToken, async (req, res) => {
           //   error: true,
           //   errMessage: `Encounterd an error while trying to send an email to you: ${err.message}, try again`,
           // });
-        }
+        },
       );
     }
-    let bonus = parseInt(req.body.deposit_amount) / 2;
+    // let bonus = parseInt(req.body.deposit_amount) / 2;
     user.set({
       final_balance:
-        parseInt(user.final_balance) +
-        parseInt(req.body.deposit_amount) +
-        bonus,
-      has_made_deposit: true,
+        parseInt(user.final_balance) + parseInt(req.body.deposit_amount),
+      made_first_deposit: true,
     });
     transaction.set({ status: "success" });
 
@@ -112,11 +110,14 @@ Router.post("/", verifyToken, async (req, res) => {
         //   error: true,
         //   errMessage: `Encounterd an error while trying to send an email to you: ${err.message}, try again`,
         // });
-      }
+      },
     );
     res
       .status(200)
-      .json({ error: false, message: "success, you approved a loan" });
+      .json({
+        error: false,
+        message: "success, you approved a deposit request",
+      });
   } catch (error) {
     console.log(error);
     res.status(400).json({ error: true, errMessage: error.message });

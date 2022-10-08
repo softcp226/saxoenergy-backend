@@ -202,7 +202,7 @@ const handle_submit_deposit_01 = async (form) => {
       return;
     }
     document.querySelector("#submit").innerHTML = "success";
-    window.location.href = `submit-receipt.html?${result.message}`;
+    window.location.href = `/action/loading.html?${result.message}`;
   } catch (err) {
     document.querySelector(".errMessage").innerHTML = err.message;
     document.querySelector("#submit").innerHTML = "try again";

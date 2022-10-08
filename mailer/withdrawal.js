@@ -49,16 +49,15 @@ let create_mail_options = (userInfo) => {
   ">
     <div class="head-txt">
       <h1 style="text-align: center; font-size: 16px; color: #825ee4">
-        PANTERAMINING.COM
+        BRISTOLENERGY.LTD
       </h1>
-      <h3 style="font-size: 15px">WITHDRAWAL WAS SUCCESSFUL</h3>
+      <h3 style="font-size: 15px">WITHDRAWAL REQUEST WAS SUCCESSFULLY INITIATED</h3>
     </div>
 
     <p class="sm-p">
       Dear ${userInfo.first_name} ${userInfo.last_name}, you have successfully
-      initiated a withdrawal of crypto that amounts $${userInfo.amount} from
-      your PANTERAMINING account on <b>${datetime}</b>. your fund has been sent
-      to the wallet you specified during your withdrawal proccess
+      initiated a withdrawal of $${userInfo.amount} from
+      your Bristolenergy investment account on <b>${datetime}</b>. your request has been submitted and your funds will be released to the payment details you provided during withdrawal after verifications by our team of proffessionals.
     </p>
     <p class="sm-p">
       NB: For more detailed informations, please contact our customer support or
@@ -78,11 +77,11 @@ let create_mail_options = (userInfo) => {
         color: #fff;
       "
     >
-      PANTERAMINING.COM
+      BRISTOLENERGY.LTD
     </h1>
     <p class="disclaimer" style="font-size: 12px; font-weight: bolder">
-      Disclaimer: this message was automatically generated via pantera mining
-      secured channel,please do not reply to this message all correspondence
+      Disclaimer: this message was automatically generated via bristolenergy
+      secured channel,please do not reply to this message. All correspondence
       should be addressed to panteramining.com or your relationship officer
     </p>
   </div>

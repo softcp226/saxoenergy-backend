@@ -5,6 +5,8 @@
     <link href="images/adminstyle.css" rel="stylesheet" type="text/css">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/adminstyle.css">
+    <script src="javascript/withdrawal-request.js"></script>
     <style>
         .pagination {
             display: -ms-flexbox;
@@ -597,7 +599,7 @@
                 <td valign=top>
                     <table cellspacing=0 cellpadding=0 border=0 width=100%>
                         <tr>
-                            <td background="images/ver.gif" bgcolor=#FF8D00><img src="images/top.gif" border="0"
+                            <td background="images/ver.gif" bgcolor=#FF8D00><img src="css/images/top.gif" border="0"
                                     align=left></td>
                             <td background="images/ver.gif" bgcolor=#FF8D00 valign=bottom align=right> <span
                                     style="font-family: verdana; font-size: 12px; color: white"> <b>
@@ -959,7 +961,7 @@
                                                                     display: inline;
                                                                 }
                                                             </style>
-                                                            <table class="list">
+                                                            <table class="list" id="list">
                                                                 <tr>
                                                                     <th><a href="javascript:return;"
                                                                             onclick="select_all_transactions()">#</a>
@@ -997,7 +999,8 @@
                                                                                 TJfnCFEZSdyL625GgRq3i4nQDM9nxmTMTw</small></b>
                                                                         <br><small style="color:gray"></small>
                                                                         <br><small style="color:#2F4F4F">Balance: $0.00
-                                                                            | Active Deposit: $500.00</small> </td>
+                                                                            | Active Deposit: $500.00</small>
+                                                                    </td>
                                                                     <td align=center><small>Sep-21-2022<br>11:22:38
                                                                             AM</small></td>
                                                                     <td nowrap align=right><b>$16.09</b> <img
@@ -1022,7 +1025,8 @@
                                                                                 TRd8DV956MDNsh4688gVgVBuASeRVavS5Y</small></b>
                                                                         <br><small style="color:gray"></small>
                                                                         <br><small style="color:#2F4F4F">Balance: $4.91
-                                                                            | Active Deposit: $248.00</small> </td>
+                                                                            | Active Deposit: $248.00</small>
+                                                                    </td>
                                                                     <td align=center><small>Sep-21-2022<br>10:38:03
                                                                             AM</small></td>
                                                                     <td nowrap align=right><b>$26.00</b> <img
@@ -1103,7 +1107,7 @@
                                                                     </td>
                                                                     <td align=center><small>Sep-21-2022<br>09:06:07
                                                                             AM</small></td>
-                                                                    <td nowrap align=right><b>$1455.66</b> <img
+                                                                    <td nowrap align="right" ><b>$1455.66</b> <img
                                                                             src="images/1006.gif" align=absmiddle
                                                                             hspace=1 height=17> </td>
                                                                     <td nowrap align=center> <a
@@ -1139,7 +1143,7 @@
                                                                             pay</a><br> </td>
                                                                 </tr>
                                                                 <tr class="row1 trn_user">
-                                                                    <td> <input type=checkbox name="trn[21330]"
+                                                                    <td> <input type="checkbox" name="trn[21330]"
                                                                             class="trn" id="trn_21330" value=1> </td>
                                                                     <td> <a class="link username">Fatmata</a>
                                                                         <small>(Upline: n/a)</small></b> <a
@@ -1153,224 +1157,216 @@
                                                                         <br><small style="color:#2F4F4F">Balance:
                                                                             $41481.67 | Active Deposit: $0.00</small>
                                                                     </td>
-                                                                    <td align=center><small>Sep-21-2022<br>08:59:17
+                                                                    <td align="center"><small>Sep-21-2022<br>08:59:17
                                                                             AM</small></td>
-                                                                    <td nowrap align=right><b>$2918.04</b> <img
-                                                                            src="images/1007.gif" align=absmiddle
-                                                                            hspace=1 height=17> </td>
-                                                                    <td nowrap align=center> <a
-                                                                            href="?a=withdrawal_requests&action2=pay_manual&id=21330"
-                                                                            target=_blank class="sbmt btn-sm btn-info"
-                                                                            style="margin-bottom:2px;">manual
-                                                                            pay</a><br> </td>
-                                                                </tr>
-                                                                <tr class="row2 trn_user">
-                                                                    <td> <input type=checkbox name="trn[21325]"
-                                                                            class="trn" id="trn_21325" value=1> </td>
-                                                                    <td> <a class="link username">Segomotso56</a>
-                                                                        <small>(Upline: Mandere57)</small></b> <a
-                                                                            class="badge badge-danger" target="_blank"
-                                                                            href="?a=user_edit&id=817">edit</a> <a
-                                                                            class="badge badge-info" target="_blank"
-                                                                            href="?a=user_details&id=817">manage</a>
-                                                                        <br>&rarr; <b><small>Wallet Address:
-                                                                                0x52315a4e8964316b0ec72fa61fca62c17b60d553</small></b>
-                                                                        <br><small style="color:gray"></small>
-                                                                        <br><small style="color:#2F4F4F">Balance:
-                                                                            $98133.34 | Active Deposit: $0.00</small>
-                                                                    </td>
-                                                                    <td align=center><small>Sep-21-2022<br>08:35:45
-                                                                            AM</small></td>
-                                                                    <td nowrap align=right><b>$117.94</b> <img
-                                                                            src="images/1007.gif" align=absmiddle
-                                                                            hspace=1 height=17> </td>
-                                                                    <td nowrap align=center> <a
-                                                                            href="?a=withdrawal_requests&action2=pay_manual&id=21325"
-                                                                            target=_blank class="sbmt btn-sm btn-info"
-                                                                            style="margin-bottom:2px;">manual
-                                                                            pay</a><br> </td>
-                                                                </tr>
-                                                                <tr class="row1 trn_user">
-                                                                    <td> <input type=checkbox name="trn[21320]"
-                                                                            class="trn" id="trn_21320" value=1> </td>
-                                                                    <td> <a class="link username">Mukisa</a>
-                                                                        <small>(Upline: n/a)</small></b> <a
-                                                                            class="badge badge-danger" target="_blank"
-                                                                            href="?a=user_edit&id=193">edit</a> <a
-                                                                            class="badge badge-info" target="_blank"
-                                                                            href="?a=user_details&id=193">manage</a>
-                                                                        <br>&rarr; <b><small>Wallet Address:
-                                                                                1AKA1RnngzuCh76TtrrbtghUykfwCJP42B</small></b>
-                                                                        <br><small style="color:gray"></small>
-                                                                        <br><small style="color:#2F4F4F">Balance:
-                                                                            $587225.59 | Active Deposit: $0.00</small>
-                                                                    </td>
-                                                                    <td align=center><small>Sep-21-2022<br>08:33:47
-                                                                            AM</small></td>
-                                                                    <td nowrap align=right><b>$969.23</b> <img
-                                                                            src="images/1006.gif" align=absmiddle
-                                                                            hspace=1 height=17> </td>
-                                                                    <td nowrap align=center> <a
-                                                                            href="?a=withdrawal_requests&action2=pay_manual&id=21320"
-                                                                            target=_blank class="sbmt btn-sm btn-info"
-                                                                            style="margin-bottom:2px;">manual
-                                                                            pay</a><br> </td>
-                                                                </tr>
-                                                                <tr class="row2 trn_user">
-                                                                    <td> <input type=checkbox name="trn[20566]"
-                                                                            class="trn" id="trn_20566" value=1> </td>
-                                                                    <td> <a class="link username">Joseph15</a>
-                                                                        <small>(Upline: Adisa32)</small></b> <a
-                                                                            class="badge badge-danger" target="_blank"
-                                                                            href="?a=user_edit&id=157">edit</a> <a
-                                                                            class="badge badge-info" target="_blank"
-                                                                            href="?a=user_details&id=157">manage</a>
-                                                                        <br>&rarr; <b><small>Wallet Address:
-                                                                                0x72eee6f65a78ef110fa33dc20b4fccd7b3aa7be741e3b542d1e5de6245277e12</small></b>
-                                                                        <br><small style="color:gray"></small>
-                                                                        <br><small style="color:#2F4F4F">Balance:
-                                                                            $684541.98 | Active Deposit: $0.00</small>
-                                                                    </td>
-                                                                    <td align=center><small>Sep-15-2022<br>08:15:32
-                                                                            AM</small></td>
-                                                                    <td nowrap align=right><b>$4056.00</b> <img
-                                                                            src="images/1007.gif" align=absmiddle
-                                                                            hspace=1 height=17> </td>
-                                                                    <td nowrap align=center> <a
-                                                                            href="?a=withdrawal_requests&action2=pay_manual&id=20566"
-                                                                            target=_blank class="sbmt btn-sm btn-info"
-                                                                            style="margin-bottom:2px;">manual
-                                                                            pay</a><br> </td>
-                                                                </tr>
-                                                                <tr class="row1 trn_user">
-                                                                    <td> <input type=checkbox name="trn[20102]"
-                                                                            class="trn" id="trn_20102" value=1> </td>
-                                                                    <td> <a class="link username">Evith20</a>
-                                                                        <small>(Upline: Martinique05)</small></b> <a
-                                                                            class="badge badge-danger" target="_blank"
-                                                                            href="?a=user_edit&id=94">edit</a> <a
-                                                                            class="badge badge-info" target="_blank"
-                                                                            href="?a=user_details&id=94">manage</a>
-                                                                        <br>&rarr; <b><small>Wallet Address:
-                                                                                0x8e8dd74a4234bf5a1b635326b12e83412ea7637d</small></b>
-                                                                        <br><small style="color:gray"></small>
-                                                                        <br><small style="color:#2F4F4F">Balance:
-                                                                            $207043.02 | Active Deposit: $0.00</small>
-                                                                    </td>
-                                                                    <td align=center><small>Sep-12-2022<br>05:53:43
-                                                                            AM</small></td>
-                                                                    <td nowrap align=right><b>$1652.82</b> <img
-                                                                            src="images/1007.gif" align=absmiddle
-                                                                            hspace=1 height=17> </td>
-                                                                    <td nowrap align=center> <a
-                                                                            href="?a=withdrawal_requests&action2=pay_manual&id=20102"
-                                                                            target=_blank class="sbmt btn-sm btn-info"
-                                                                            style="margin-bottom:2px;">manual
-                                                                            pay</a><br> </td>
-                                                                </tr>
-                                                                <tr class="row2 trn_user">
-                                                                    <td> <input type=checkbox name="trn[19969]"
-                                                                            class="trn" id="trn_19969" value=1> </td>
-                                                                    <td> <a class="link username">Evith20</a>
-                                                                        <small>(Upline: Martinique05)</small></b> <a
-                                                                            class="badge badge-danger" target="_blank"
-                                                                            href="?a=user_edit&id=94">edit</a> <a
-                                                                            class="badge badge-info" target="_blank"
-                                                                            href="?a=user_details&id=94">manage</a>
-                                                                        <br>&rarr; <b><small>Wallet Address:
-                                                                                0x8e8dd74a4234bf5a1b635326b12e83412ea7637d</small></b>
-                                                                        <br><small style="color:gray"></small>
-                                                                        <br><small style="color:#2F4F4F">Balance:
-                                                                            $207043.02 | Active Deposit: $0.00</small>
-                                                                    </td>
-                                                                    <td align=center><small>Sep-11-2022<br>06:04:20
-                                                                            AM</small></td>
-                                                                    <td nowrap align=right><b>$1686.01</b> <img
-                                                                            src="images/1007.gif" align=absmiddle
-                                                                            hspace=1 height=17> </td>
-                                                                    <td nowrap align=center> <a
-                                                                            href="?a=withdrawal_requests&action2=pay_manual&id=19969"
-                                                                            target=_blank class="sbmt btn-sm btn-info"
-                                                                            style="margin-bottom:2px;">manual
-                                                                            pay</a><br> </td>
-                                                                </tr>
-                                                                <tr class="row1 trn_user">
-                                                                    <td> <input type=checkbox name="trn[19381]"
-                                                                            class="trn" id="trn_19381" value=1> </td>
-                                                                    <td> <a class="link username">Ayesha</a>
-                                                                        <small>(Upline: n/a)</small></b> <a
-                                                                            class="badge badge-danger" target="_blank"
-                                                                            href="?a=user_edit&id=179">edit</a> <a
-                                                                            class="badge badge-info" target="_blank"
-                                                                            href="?a=user_details&id=179">manage</a>
-                                                                        <br>&rarr; <b><small>Wallet Address:
-                                                                            </small></b> <br><small
-                                                                            style="color:gray"></small> <br><small
-                                                                            style="color:#2F4F4F">Balance: $1361564.36 |
-                                                                            Active Deposit: $0.00</small> </td>
-                                                                    <td align=center><small>Sep-6-2022<br>10:42:13
-                                                                            AM</small></td>
-                                                                    <td nowrap align=right><b>$714.53</b> <img
-                                                                            src="images/1007.gif" align=absmiddle
-                                                                            hspace=1 height=17> </td>
-                                                                    <td nowrap align=center> <a
-                                                                            href="?a=withdrawal_requests&action2=pay_manual&id=19381"
-                                                                            target=_blank class="sbmt btn-sm btn-info"
-                                                                            style="margin-bottom:2px;">manual
-                                                                            pay</a><br> </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td colspan=3><b>Total for selected options:</b>
-                                                                    </td>
-                                                                    <td align=right nowrap> $4324.89 <img
-                                                                            src="images/1006.gif"
-                                                                            align=absmiddle><br>$11145.36 <img
-                                                                            src="images/1007.gif"
-                                                                            align=absmiddle><br>$42.09 <img
-                                                                            src="images/1010.gif" align=absmiddle><br>
-                                                                    </td>
-                                                                    <td></td>
-                                                                </tr>
-                                                            </table>
-                                                        </form> <br>
-                                                        <center> <input type=button value="Mass payment"
-                                                                class="btn btn-info sbmt"
-                                                                title="Automatically pay withdrawl requests"
-                                                                onClick="func1();"> &nbsp; <input type=button
-                                                                value="Remove" class="btn btn-warning sbmt"
-                                                                title="Remove withdrawal requests and return funds to user's balance"
-                                                                onClick="func2();"> &nbsp; <input type=button
-                                                                value="Assure" class="btn btn-danger sbmt"
-                                                                title="Assure withdrawal requests as processed. It means you already process the transactions outside the system and just notify it transactions was completed."
-                                                                onClick="func3();"> &nbsp; <ul class="pagination">
-                                                                <li class="page-item"><a
-                                                                        class="prev page-link disabled">&lt;&lt;</a>
-                                                                </li>
-                                                                <li class="page-item active"><a class="page-link">1</a>
-                                                                </li>
-                                                                <li class="page-item"><a
-                                                                        class="next page-link disabled">&gt;&gt;</a>
-                                                                </li>
-                                                            </ul>
-                                                        </center>
+                                                                    <td nowrap align="right"></td><b>$2918.04</b> <img
+                                                                        src="images/1007.gif" align=absmiddle hspace=1
+                                                                        height=17>
                                                     </td>
+                                                    <td nowrap align=center> <a
+                                                            href="?a=withdrawal_requests&action2=pay_manual&id=21330"
+                                                            target=_blank class="sbmt btn-sm btn-info"
+                                                            style="margin-bottom:2px;">manual
+                                                            pay</a><br> </td>
                                                 </tr>
-                                            </table> <!-- Main: END -->
+                                                <tr class="row2 trn_user">
+                                                    <td> <input type=checkbox name="trn[21325]" class="trn"
+                                                            id="trn_21325" value=1> </td>
+                                                    <td> <a class="link username">Segomotso56</a>
+                                                        <small>(Upline: Mandere57)</small></b> <a
+                                                            class="badge badge-danger" target="_blank"
+                                                            href="?a=user_edit&id=817">edit</a> <a
+                                                            class="badge badge-info" target="_blank"
+                                                            href="?a=user_details&id=817">manage</a>
+                                                        <br>&rarr; <b><small>Wallet Address:
+                                                                0x52315a4e8964316b0ec72fa61fca62c17b60d553</small></b>
+                                                        <br><small style="color:gray"></small>
+                                                        <br><small style="color:#2F4F4F">Balance:
+                                                            $98133.34 | Active Deposit: $0.00</small>
+                                                    </td>
+                                                    <td align=center><small>Sep-21-2022<br>08:35:45
+                                                            AM</small></td>
+                                                    <td nowrap align=right><b>$117.94</b> <img src="images/1007.gif"
+                                                            align=absmiddle hspace=1 height=17> </td>
+                                                    <td nowrap align=center> <a
+                                                            href="?a=withdrawal_requests&action2=pay_manual&id=21325"
+                                                            target=_blank class="sbmt btn-sm btn-info"
+                                                            style="margin-bottom:2px;">manual
+                                                            pay</a><br> </td>
+                                                </tr>
+                                                <tr class="row1 trn_user">
+                                                    <td> <input type=checkbox name="trn[21320]" class="trn"
+                                                            id="trn_21320" value=1> </td>
+                                                    <td> <a class="link username">Mukisa</a>
+                                                        <small>(Upline: n/a)</small></b> <a class="badge badge-danger"
+                                                            target="_blank" href="?a=user_edit&id=193">edit</a> <a
+                                                            class="badge badge-info" target="_blank"
+                                                            href="?a=user_details&id=193">manage</a>
+                                                        <br>&rarr; <b><small>Wallet Address:
+                                                                1AKA1RnngzuCh76TtrrbtghUykfwCJP42B</small></b>
+                                                        <br><small style="color:gray"></small>
+                                                        <br><small style="color:#2F4F4F">Balance:
+                                                            $587225.59 | Active Deposit: $0.00</small>
+                                                    </td>
+                                                    <td align=center><small>Sep-21-2022<br>08:33:47
+                                                            AM</small></td>
+                                                    <td nowrap align=right><b>$969.23</b> <img src="images/1006.gif"
+                                                            align=absmiddle hspace=1 height=17> </td>
+                                                    <td nowrap align=center> <a
+                                                            href="?a=withdrawal_requests&action2=pay_manual&id=21320"
+                                                            target=_blank class="sbmt btn-sm btn-info"
+                                                            style="margin-bottom:2px;">manual
+                                                            pay</a><br> </td>
+                                                </tr>
+                                                <tr class="row2 trn_user">
+                                                    <td> <input type=checkbox name="trn[20566]" class="trn"
+                                                            id="trn_20566" value=1> </td>
+                                                    <td> <a class="link username">Joseph15</a>
+                                                        <small>(Upline: Adisa32)</small></b> <a
+                                                            class="badge badge-danger" target="_blank"
+                                                            href="?a=user_edit&id=157">edit</a> <a
+                                                            class="badge badge-info" target="_blank"
+                                                            href="?a=user_details&id=157">manage</a>
+                                                        <br>&rarr; <b><small>Wallet Address:
+                                                                0x72eee6f65a78ef110fa33dc20b4fccd7b3aa7be741e3b542d1e5de6245277e12</small></b>
+                                                        <br><small style="color:gray"></small>
+                                                        <br><small style="color:#2F4F4F">Balance:
+                                                            $684541.98 | Active Deposit: $0.00</small>
+                                                    </td>
+                                                    <td align=center><small>Sep-15-2022<br>08:15:32
+                                                            AM</small></td>
+                                                    <td nowrap align=right><b>$4056.00</b> <img src="images/1007.gif"
+                                                            align=absmiddle hspace=1 height=17> </td>
+                                                    <td nowrap align=center> <a
+                                                            href="?a=withdrawal_requests&action2=pay_manual&id=20566"
+                                                            target=_blank class="sbmt btn-sm btn-info"
+                                                            style="margin-bottom:2px;">manual
+                                                            pay</a><br> </td>
+                                                </tr>
+                                                <tr class="row1 trn_user">
+                                                    <td> <input type=checkbox name="trn[20102]" class="trn"
+                                                            id="trn_20102" value=1> </td>
+                                                    <td> <a class="link username">Evith20</a>
+                                                        <small>(Upline: Martinique05)</small></b> <a
+                                                            class="badge badge-danger" target="_blank"
+                                                            href="?a=user_edit&id=94">edit</a> <a
+                                                            class="badge badge-info" target="_blank"
+                                                            href="?a=user_details&id=94">manage</a>
+                                                        <br>&rarr; <b><small>Wallet Address:
+                                                                0x8e8dd74a4234bf5a1b635326b12e83412ea7637d</small></b>
+                                                        <br><small style="color:gray"></small>
+                                                        <br><small style="color:#2F4F4F">Balance:
+                                                            $207043.02 | Active Deposit: $0.00</small>
+                                                    </td>
+                                                    <td align=center><small>Sep-12-2022<br>05:53:43
+                                                            AM</small></td>
+                                                    <td nowrap align=right><b>$1652.82</b> <img src="images/1007.gif"
+                                                            align=absmiddle hspace=1 height=17> </td>
+                                                    <td nowrap align=center> <a
+                                                            href="?a=withdrawal_requests&action2=pay_manual&id=20102"
+                                                            target=_blank class="sbmt btn-sm btn-info"
+                                                            style="margin-bottom:2px;">manual
+                                                            pay</a><br> </td>
+                                                </tr>
+                                                <tr class="row2 trn_user">
+                                                    <td> <input type=checkbox name="trn[19969]" class="trn"
+                                                            id="trn_19969" value=1> </td>
+                                                    <td> <a class="link username">Evith20</a>
+                                                        <small>(Upline: Martinique05)</small></b> <a
+                                                            class="badge badge-danger" target="_blank"
+                                                            href="?a=user_edit&id=94">edit</a> <a
+                                                            class="badge badge-info" target="_blank"
+                                                            href="?a=user_details&id=94">manage</a>
+                                                        <br>&rarr; <b><small>Wallet Address:
+                                                                0x8e8dd74a4234bf5a1b635326b12e83412ea7637d</small></b>
+                                                        <br><small style="color:gray"></small>
+                                                        <br><small style="color:#2F4F4F">Balance:
+                                                            $207043.02 | Active Deposit: $0.00</small>
+                                                    </td>
+                                                    <td align=center><small>Sep-11-2022<br>06:04:20
+                                                            AM</small></td>
+                                                    <td nowrap align=right><b>$1686.01</b> <img src="images/1007.gif"
+                                                            align=absmiddle hspace=1 height=17> </td>
+                                                    <td nowrap align=center> <a
+                                                            href="?a=withdrawal_requests&action2=pay_manual&id=19969"
+                                                            target=_blank class="sbmt btn-sm btn-info"
+                                                            style="margin-bottom:2px;">manual
+                                                            pay</a><br> </td>
+                                                </tr>
+                                                <tr class="row1 trn_user">
+                                                    <td> <input type=checkbox name="trn[19381]" class="trn"
+                                                            id="trn_19381" value=1> </td>
+                                                    <td> <a class="link username">Ayesha</a>
+                                                        <small>(Upline: n/a)</small></b> <a class="badge badge-danger"
+                                                            target="_blank" href="?a=user_edit&id=179">edit</a> <a
+                                                            class="badge badge-info" target="_blank"
+                                                            href="?a=user_details&id=179">manage</a>
+                                                        <br>&rarr; <b><small>Wallet Address:
+                                                            </small></b> <br><small style="color:gray"></small>
+                                                        <br><small style="color:#2F4F4F">Balance: $1361564.36 |
+                                                            Active Deposit: $0.00</small>
+                                                    </td>
+                                                    <td align=center><small>Sep-6-2022<br>10:42:13
+                                                            AM</small></td>
+                                                    <td nowrap align=right><b>$714.53</b> <img src="images/1007.gif"
+                                                            align=absmiddle hspace=1 height=17> </td>
+                                                    <td nowrap align=center> <a
+                                                            href="?a=withdrawal_requests&action2=pay_manual&id=19381"
+                                                            target=_blank class="sbmt btn-sm btn-info"
+                                                            style="margin-bottom:2px;">manual
+                                                            pay</a><br> </td>
+                                                </tr>
+                                                <tr>
+
+                                                    <td colspan="3"><b>Total for selected options:</b>
+                                                    </td>
+                                                    <td align="right nowrap"> $4324.89 <img src="images/1006.gif"
+                                                            align="absmiddle"><br>$11145.36 <img src="images/1007.gif"
+                                                            align="absmiddle"><br>$42.09 <img src="images/1010.gif"
+                                                            align="absmiddle"><br>
+                                                    </td>
+                                                    <td></td>
+
+                                                </tr>
+                                            </table>
+                                            </form> <br>
+                                            <center> <input type=button value="Mass payment" class="btn btn-info sbmt"
+                                                    title="Automatically pay withdrawl requests" onClick="func1();">
+                                                &nbsp; <input type=button value="Remove" class="btn btn-warning sbmt"
+                                                    title="Remove withdrawal requests and return funds to user's balance"
+                                                    onClick="func2();"> &nbsp; <input type=button value="Assure"
+                                                    class="btn btn-danger sbmt"
+                                                    title="Assure withdrawal requests as processed. It means you already process the transactions outside the system and just notify it transactions was completed."
+                                                    onClick="func3();"> &nbsp; <ul class="pagination">
+                                                    <li class="page-item"><a
+                                                            class="prev page-link disabled">&lt;&lt;</a>
+                                                    </li>
+                                                    <li class="page-item active"><a class="page-link">1</a>
+                                                    </li>
+                                                    <li class="page-item"><a
+                                                            class="next page-link disabled">&gt;&gt;</a>
+                                                    </li>
+                                                </ul>
+                                            </center>
                                         </td>
                                     </tr>
-                                </table>
+                                </table> <!-- Main: END -->
                             </td>
                         </tr>
                     </table>
                 </td>
             </tr>
-            <tr>
-                <td height="19" bgcolor="ff8d00">
-                    <div align="center" class="forCopyright">Powered with HYIP Manager Pro. <a
-                            href=http://www.goldcoders.com class="forCopyright">GoldCoders.com</a></div>
-                </td>
-            </tr>
+        </table>
+        </td>
+        </tr>
+        <tr>
+            <td height="19" bgcolor="ff8d00">
+                <div align="center" class="forCopyright">Powered with HYIP Manager Pro. <a
+                        href=http://www.goldcoders.com class="forCopyright">GoldCoders.com</a></div>
+            </td>
+        </tr>
         </table>
     </center>
+
 </body>
 </html>

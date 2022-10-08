@@ -21,16 +21,31 @@ const deposit_request_Schema = mongoose.Schema({
   //   type: String,
   //   required: true,
   // },
+  date: {
+    type: String,
+    required: true,
+  },
   transaction: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "transaction",
     required: true,
   },
   proof: String,
+
+  is_approved: {
+    type: Boolean,
+    required: true,
+    default: false,
+  },
+  added_to_problem: {
+    type: Boolean,
+    required: true,
+    default: false,
+  },
 });
 
 const Deposit_request = mongoose.model(
   "deposit_request",
-  deposit_request_Schema
+  deposit_request_Schema,
 );
 module.exports = Deposit_request;
