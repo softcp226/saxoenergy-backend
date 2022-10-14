@@ -49,9 +49,9 @@ const userSchema = mongoose.Schema({
     type: Number,
     default: 0,
   },
-  total_earning:{
-     type: Number,
-     required:true,
+  total_earning: {
+    type: Number,
+    required: true,
     default: 0,
   },
   referral_bonus: {
@@ -70,19 +70,37 @@ const userSchema = mongoose.Schema({
     required: true,
     default: datetime,
   },
-  is_suspended: {
+  // is_suspended: {
+  //   type: Boolean,
+  //   required: true,
+  //   default: false,
+  // },
+  // is_disabled: {
+  //   type: Boolean,
+  //   required: true,
+  //   default: false,
+  // },
+  status: {
+    type: String,
+    enum:["active","suspended","disabled"],
+    default:"active"
+  },
+  auto_withdrawal: {
+    type: Boolean,
+    required: true,
+    default: true,
+  },
+  auto_pay_earning: {
     type: Boolean,
     required: true,
     default: false,
   },
-  is_disabled: {
+  demo_account:{
     type: Boolean,
     required: true,
-    default:false,
+    default: false,
   },
-  status: {
-    type: String,
-  },
+
 });
 
 const User = mongoose.model("user", userSchema);

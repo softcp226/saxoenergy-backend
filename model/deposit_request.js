@@ -25,6 +25,14 @@ const deposit_request_Schema = mongoose.Schema({
     type: String,
     required: true,
   },
+  // scheduled_expiring_date: {
+  //   type: String,
+  //   required: true,
+  // },
+  // expiring_date: {
+  //   type: String,
+  //   required: true,
+  // },
   transaction: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "transaction",

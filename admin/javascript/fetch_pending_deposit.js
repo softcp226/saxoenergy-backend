@@ -1,20 +1,20 @@
-const get_adminInfo = (cname) => {
-  let name = cname + "=";
-  let decodedCookie = decodeURIComponent(document.cookie);
-  let ca = decodedCookie.split(";");
-  for (let i = 0; i < ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) == " ") {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
+// const get_adminInfo = (cname) => {
+//   let name = cname + "=";
+//   let decodedCookie = decodeURIComponent(document.cookie);
+//   let ca = decodedCookie.split(";");
+//   for (let i = 0; i < ca.length; i++) {
+//     let c = ca[i];
+//     while (c.charAt(0) == " ") {
+//       c = c.substring(1);
+//     }
+//     if (c.indexOf(name) == 0) {
+//       return c.substring(name.length, c.length);
+//     }
+//   }
 
-  // return "";
-  window.location.href = "/admin";
-};
+//   // return "";
+//   window.location.href = "/admin";
+// };
 let row_number=1
 construct_row_number=()=>row_number ==1 ?++row_number : --row_number
 
@@ -79,11 +79,11 @@ container_tr.append(date_td)
     const result = await response.json();
     console.log(result);
     if (result.error) {
-      alert(error.message);
+      document.querySelector("#errMessage").innerHTML=result.errMessage
     } else {
       create_element(result.message);
     }
   } catch (error) {
-    alert(error.message);
+   document.querySelector("#errMessage").innerHTML = result.errMessage;
   }
 })();

@@ -35,8 +35,8 @@ Router.post("/", async (req, res) => {
       return res
         .status(400)
         .json({ error: true, errMessage: "invalid Email or password " });
-
-    if (user.is_disabled)
+console.log("user status",user.status)
+    if (user.status =="disabled")
       return res
         .status(403)
         .json({

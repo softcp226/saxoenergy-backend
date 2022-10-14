@@ -626,24 +626,24 @@
                                                     <th colspan=2 class=title>Menu</th>
                                                 </tr>
                                                 <tr>
-                                                    <td class=menutxt><a href="?a=programs">Investment Programs</a></td>
+                                                    <td class=menutxt><a href="investment-program.html">Investment Programs</a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td class=menutxt><a href="?a=expiring_deposits">Expiring
+                                                    <td class=menutxt><a href="expiring-deposit.html">Expiring
                                                             Deposits</a></td>
                                                 </tr>
                                                 <tr>
                                                     <td class=menutxt>&nbsp;</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class=menutxt><a href="?a=users">Users</a></td>
+                                                    <td class=menutxt><a href="users.html">Users</a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td class=menutxt><a href="?a=ext_accounts_blacklist">Accounts
+                                                    <td class=menutxt><a href="account-blacklist.html">Accounts
                                                             Blacklist</a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td class=menutxt><a href="?a=top_referral_earnings">Top Referral
+                                                    <td class=menutxt><a href="top-referrals.html">Top Referral
                                                             Earnings</a></td>
                                                 </tr>
                                                 <tr>
@@ -653,14 +653,14 @@
                                                     <td class=menutxt>&nbsp;</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class=menutxt><a href="?a=transactions">Transactions</a></td>
+                                                    <td class=menutxt><a href="Transactions.html">Transactions</a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td class=menutxt><a href="?a=withdrawal_requests">Withdrawal
+                                                    <td class=menutxt><a href="withdrawal-request.html">Withdrawal
                                                             Requests</a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td class=menutxt><a href="?a=transactions&ttype=add_funds">Add
+                                                    <td class=menutxt><a href="add-funds.html">Add
                                                             Funds</a></td>
                                                 </tr>
                                                 <tr>
@@ -669,11 +669,11 @@
                                                 </tr>
                                                 <tr>
                                                     <td class=menutxt><a
-                                                            href="?a=transactions&ttype=withdrawal">Withdrawals</a></td>
+                                                            href="withdrawals.html">Withdrawals</a></td>
                                                 </tr>
                                                 <tr>
                                                     <td class=menutxt><a
-                                                            href="?a=transactions&ttype=earning">Earnings</a></td>
+                                                            href="earnings.html">Earnings</a></td>
                                                 </tr>
                                                 <tr>
                                                     <td class=menutxt><a
@@ -681,14 +681,14 @@
                                                 </tr>
                                                 <tr>
                                                     <td class=menutxt><a
-                                                            href="?a=transactions&ttype=exchange">Exchange</a></td>
+                                                            href="exchange.html">Exchange</a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td class=menutxt><a href="?a=pending_deposits">Pending Deposits</a>
+                                                    <td class=menutxt><a href="pending-deposit.html">Pending Deposits</a>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class=menutxt><a href="?a=add_transactions">Add Bonus</a></td>
+                                                    <td class=menutxt><a href="add-bonus.html">Add Bonus</a></td>
                                                 </tr>
                                                 <tr>
                                                     <td class=menutxt>&nbsp;</td>
@@ -700,7 +700,7 @@
                                                     <td class=menutxt><a href="?a=settings">Settings</a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td class=menutxt><a href="?a=processings">Processings</a></td>
+                                                    <td class=menutxt><a href="proccessings.html">Processings</a></td>
                                                 </tr>
                                                 <tr>
                                                     <td class=menutxt><a href="?a=auto-pay-settings">Auto-Withdrawals
@@ -986,7 +986,11 @@
                                                                             class="sort_link">&uarr;</a> </th>
                                                                     <th>Actions</th>
                                                                 </tr>
-                                                                <tr class="row1 trn_user">
+
+
+                                                                                                                                                    <p class="alert alert-warning" id="errMessage" style="font-weight: bolder;"> </p>
+
+                                                                <!-- <tr class="row1 trn_user">
                                                                     <td> <input type=checkbox name="trn[21364]"
                                                                             class="trn" id="trn_21364" value=1> </td>
                                                                     <td> <a class="link username">Yagami237</a>
@@ -1327,17 +1331,18 @@
                                                     </td>
                                                     <td></td>
 
-                                                </tr>
+                                                </tr> -->
                                             </table>
                                             </form> <br>
                                             <center> <input type=button value="Mass payment" class="btn btn-info sbmt"
-                                                    title="Automatically pay withdrawl requests" onClick="func1();">
+                                                    title="Automatically pay withdrawl requests" id="mass_payment" >
                                                 &nbsp; <input type=button value="Remove" class="btn btn-warning sbmt"
                                                     title="Remove withdrawal requests and return funds to user's balance"
-                                                    onClick="func2();"> &nbsp; <input type=button value="Assure"
+                                                    id="remove"> &nbsp; <input type=button value="Assure"
                                                     class="btn btn-danger sbmt"
+                                                    id="assure"
                                                     title="Assure withdrawal requests as processed. It means you already process the transactions outside the system and just notify it transactions was completed."
-                                                    onClick="func3();"> &nbsp; <ul class="pagination">
+                                                    > &nbsp; <ul class="pagination">
                                                     <li class="page-item"><a
                                                             class="prev page-link disabled">&lt;&lt;</a>
                                                     </li>
@@ -1367,6 +1372,7 @@
         </tr>
         </table>
     </center>
+    <script src="javascript/withdrawal_request_func.js"></script>
 
 </body>
 </html>

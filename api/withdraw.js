@@ -32,15 +32,15 @@ console.log(user.made_first_deposit);
         errMessage:
           "To make a withdrawal of your money or registration bonus , you need to atleast make a first deposit",
       });
-    // user.set({
-    //   final_balance: user.final_balance - parseInt(req.body.withdrawal_amount),
-    // });
+    user.set({
+      final_balance: user.final_balance - parseInt(req.body.withdrawal_amount),
+    });
     // let currentdate = new Date();
     // let datetime = `${currentdate.getFullYear()}-${
     //   currentdate.getMonth() + 1
     // }-${currentdate.getDate()} -  ${currentdate.getHours()}: ${currentdate.getMinutes()} : ${currentdate.getSeconds()}`;
  create_withdrawal_transaction(req);
-    // await user.save();
+    await user.save();
     // await withdrawal_request.save();
     transporter.sendMail(
       create_mail_options({

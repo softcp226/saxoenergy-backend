@@ -39,7 +39,8 @@ Router.post("/", verifyToken, async (req, res) => {
     console.log(users_that_never_madedeposit);
     const investment_packages = await Investment_packages.find();
     const withdrawal_request = await Withdrawal_request.find().populate("user");
-    const pending_deposit = await Deposit_request.find().populate("user");
+    const pending_deposit = await Deposit_request.find({
+      added_to_problem:false}).populate("user");
 
     // if (users.length < 1)
     //   return res

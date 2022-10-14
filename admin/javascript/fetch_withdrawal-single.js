@@ -51,7 +51,7 @@ const confirm_payment = async () => {
     document.querySelector("#confirm_payment").value = "Try Again";
 
     if (result.error) {
-      console.log(error.message);
+      alert(result.errMessage);
       document.querySelector("#confirm_payment").value = "Try Again";
     } else {
       document.querySelector("#confirm_payment").value = "Success";

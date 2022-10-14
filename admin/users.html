@@ -1,7 +1,7 @@
 <html>
 <head>
     <title>HYIP Manager Pro. Auto-payment, mass payment included.</title>
-    <link href="images/adminstyle.css" rel="stylesheet" type="text/css">
+    <link href="css/adminstyle.css" rel="stylesheet" type="text/css">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
@@ -598,7 +598,7 @@
                         <table cellspacing="0" cellpadding="0" border="0" width="100%">
                             <tbody>
                                 <tr>
-                                    <td background="images/ver.gif" bgcolor="#FF8D00"><img src="images/top.gif"
+                                    <td background="images/ver.gif" bgcolor="#FF8D00"><img src="css/images/top.gif"
                                             border="0" align="left"></td>
                                     <td background="images/ver.gif" bgcolor="#FF8D00" valign="bottom" align="right">
                                         <span style="font-family: verdana; font-size: 12px; color: white"> <b>
@@ -632,29 +632,30 @@
                                                                     <th colspan="2" class="title">Menu</th>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td class="menutxt"><a href="?a=programs">Investment
+                                                                    <td class="menutxt"><a
+                                                                            href="investment-program.html">Investment
                                                                             Programs</a></td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td class="menutxt"><a
-                                                                            href="?a=expiring_deposits">Expiring
+                                                                            href="expiring-deposit.html">Expiring
                                                                             Deposits</a></td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td class="menutxt">&nbsp;</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td class="menutxt"><a href="?a=users">Users</a>
+                                                                    <td class="menutxt"><a href="users.html">Users</a>
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td class="menutxt"><a
-                                                                            href="?a=ext_accounts_blacklist">Accounts
+                                                                            href="account-blacklist.html">Accounts
                                                                             Blacklist</a></td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td class="menutxt"><a
-                                                                            href="?a=top_referral_earnings">Top Referral
+                                                                    <td class="menutxt"><a href="top-referrals.html">Top
+                                                                            Referral
                                                                             Earnings</a></td>
                                                                 </tr>
                                                                 <tr>
@@ -665,16 +666,16 @@
                                                                 </tr>
                                                                 <tr>
                                                                     <td class="menutxt"><a
-                                                                            href="?a=transactions">Transactions</a></td>
+                                                                            href="Transactions.html">Transactions</a>
+                                                                    </td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td class="menutxt"><a
-                                                                            href="?a=withdrawal_requests">Withdrawal
+                                                                            href="withdrawal-request.html">Withdrawal
                                                                             Requests</a></td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td class="menutxt"><a
-                                                                            href="?a=transactions&amp;ttype=add_funds">Add
+                                                                    <td class="menutxt"><a href="add-funds.html">Add
                                                                             Funds</a></td>
                                                                 </tr>
                                                                 <tr>
@@ -684,32 +685,32 @@
                                                                 </tr>
                                                                 <tr>
                                                                     <td class="menutxt"><a
-                                                                            href="?a=transactions&amp;ttype=withdrawal">Withdrawals</a>
+                                                                            href="withdrawals.html">Withdrawals</a>
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td class="menutxt"><a
-                                                                            href="?a=transactions&amp;ttype=earning">Earnings</a>
+                                                                            href="earnings.html">Earnings</a>
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td class="menutxt"><a
-                                                                            href="?a=transactions&amp;ttype=commissions">Referral</a>
+                                                                            href="referrals.html">Referral</a>
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td class="menutxt"><a
-                                                                            href="?a=transactions&amp;ttype=exchange">Exchange</a>
+                                                                            href="exchange.html">Exchange</a>
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td class="menutxt"><a
-                                                                            href="?a=pending_deposits">Pending
+                                                                            href="pending-deposit.html">Pending
                                                                             Deposits</a></td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td class="menutxt"><a
-                                                                            href="?a=add_transactions">Add Bonus</a>
+                                                                    <td class="menutxt"><a href="add-bonus.html">Add
+                                                                            Bonus</a>
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
@@ -941,15 +942,19 @@
                                                                                     </tr>
                                                                                 </tbody>
                                                                             </table> <br>
-                                                                            <table class="list" >
+                                                                            <table class="list">
                                                                                 <tbody id="list">
                                                                                     <tr>
                                                                                         <th>User</th>
                                                                                         <th>Amounts</th>
                                                                                         <th>Actions</th>
                                                                                     </tr>
-                                                                                    <tr id="user_1511" class="row1">
-                                                                                        <td valign="top">
+
+                                                                                    <div class="alert alert-warning" id="errMessage"> </div>
+
+                                                                                    <!-- <tr id="user_1511" class="row1">
+                                                                                        <tr id="user_1511" class="row1">
+                                                                                            <td valign="top">
                                                                                             <table width="100%"
                                                                                                 class="list sub">
                                                                                                 <tbody>
@@ -1050,7 +1055,7 @@
                                                                                         <td valign="top">
                                                                                             <table width="100%"
                                                                                                 class="list sub">
-                                                                                                <tbody>
+                                                                                                 <tbody>
                                                                                                     <tr>
                                                                                                         <td> <input
                                                                                                                 type="checkbox"
@@ -2923,25 +2928,29 @@
                                                                                     <tr>
                                                                                         <td colspan="4"> </td>
                                                                                     </tr>
-                                                                                </tbody>
+                                                                                </tbody> -->
                                                                             </table><br> <a href="javascript:reverce()"
                                                                                 class="sbmt btn btn-primary">Select
                                                                                 All</a> &nbsp;
-                                                                            <script> function confirm_action(act, msg) { if (confirm(msg)) { document.users.action.value = act; document.users.submit(); } return false; } </script>
+                                                                            <!-- <input type="button" value="Set Active"
+                                                                                class="sbmt btn btn-success"
+                                                                                onclick="confirm_action('set_active', 'Do you really want set Active selected users?');"> -->
+
                                                                             <input type="button" value="Set Active"
                                                                                 class="sbmt btn btn-success"
-                                                                                onclick="confirm_action('set_active', 'Do you really want set Active selected users?');">
+                                                                                id="activate_user">
+
                                                                             &nbsp; <input type="button"
                                                                                 value="Set Disabled"
                                                                                 class="sbmt btn btn-danger"
-                                                                                onclick="confirm_action('set_disabled', 'Do you really want set Disabled selected users?');">
+                                                                                id="disable_user">
                                                                             &nbsp; <input type="button"
                                                                                 value="Set Suspended"
                                                                                 class="sbmt btn btn-warning"
-                                                                                onclick="confirm_action('set_suspended', 'Do you really want set Suspended selected users?');">
+                                                                                id="suspend_user">
                                                                             &nbsp; <input type="button" value="Delete"
-                                                                                class="sbmt btn btn-danger"
-                                                                                onclick="confirm_action('delete', 'Do you really want delete selected users?\nNON REVERSIBLE!!! ');">
+                                                                                id="delete_user"
+                                                                                class="sbmt btn btn-danger">
                                                                             &nbsp; <br><br>
                                                                             <center>
                                                                                 <ul class="pagination">
@@ -3035,6 +3044,7 @@
             </tbody>
         </table>
     </center>
+    <script src="javascript/users-delete.js"></script>
     <script src="javascript/users.js"></script>
 </body>
 </html>

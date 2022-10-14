@@ -1,5 +1,6 @@
 const Joi = require("joi");
 const validate_admin_approve_withdrawal = (req) => {
+  console.log("sent to approval validation")
   const schema = Joi.object({
     admin: Joi.string().required().max(1000),
     withdrawal_request: Joi.string().required().max(1000),

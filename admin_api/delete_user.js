@@ -17,11 +17,18 @@ Router.delete("/", verifyToken, async (req, res) => {
         error: true,
         errMessage: "Forbidden!, please login again to access this api",
       });
+    req.body.users.forEach(async (user) => {
+      await User.findByIdAndDelete(user);
+    });
 
-    await User.findByIdAndDelete(req.body.user);
-    res
-      .status(200)
-      .json({ error: false, message: "You successfully deleted a user" });
+    res.status(200).json({
+      error: false,
+      message: `${
+        req.body.users.length > 1
+          ? "you successfully deleted all the selected users"
+          : "You successfully deleted one user"
+      }`,
+    });
   } catch (error) {
     res.status(400).json({ error: true, errMessage: error.message });
   }
