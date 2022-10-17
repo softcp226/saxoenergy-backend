@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>HYIP Manager Pro. Auto-payment, mass payment included.</title>
-    <link href="css/adminstyle.css" rel="stylesheet" type="text/css">
+    <link href="images/adminstyle.css" rel="stylesheet" type="text/css">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <style>
@@ -597,7 +597,7 @@
                 <td valign=top>
                     <table cellspacing=0 cellpadding=0 border=0 width=100%>
                         <tr>
-                            <td background="images/ver.gif" bgcolor=#FF8D00><img src="css/images/top.gif" border="0"
+                            <td background="images/ver.gif" bgcolor=#FF8D00><img src="images/top.gif" border="0"
                                     align=left></td>
                             <td background="images/ver.gif" bgcolor=#FF8D00 valign=bottom align=right> <span
                                     style="font-family: verdana; font-size: 12px; color: white"> <b>
@@ -779,162 +779,183 @@
                                                 cellspacing="0" class="forTexts">
                                                 <tr>
                                                     <td width=100% height=100% valign=top>
-                                                        <h3>Top Referral Earnings:</h3>
-                                                        <form method=post name=trans><input type="hidden" name="form_id"
-                                                                value="16659915466068"><input type="hidden"
-                                                                name="form_token"
-                                                                value="10058dc3418a14683c6e5b40426b4008"> <input
-                                                                type=hidden name=a value=top_referral_earnings>
-                                                            <table class="form nosize">
+                                                        <h3>Edit Processing &quot;Bitcoin&quot;</h3>
+                                                        <script> var use_transaction = 0;   function check_asettings() { if (use_transaction && document.formsettings.alternative_passphrase.value == "") { alert("Please enter Alternative Passphrase"); document.formsettings.alternative_passphrase.focus(); return false; } return true; } function setnew_pass(id) { document.getElementById(id+"_div_pass").style.display = "block"; document.getElementById(id+"_hide_link").style.display = "none"; } function setnew_pass_cancel(id) { document.getElementById(id+"_div_pass").style.display = "none"; document.getElementById(id+"_div_pass_reset").checked = false; document.getElementById(id+"_hide_link").style.display = "block"; } function test_autopayment(id, subform, subid) { var frm = document.getElementById("withdraw_settings"+"_"+id+(subid ? "_"+subid : "")); var inpts = frm.getElementsByTagName("input"); var params = ""; if (subform) params = "processing="+subid+"&"; for (i in inpts) { var inpt = inpts[i]; if (inpt.type && (inpt.type.toLowerCase() == "text" || inpt.type.toLowerCase() == "password")) { var name = inpt.name.replace(/^ps_withdraw\[\d+\](\[\d+\])?\[/, "").replace(/\]$/, ""); var val = inpt.value; if (val != "") { params += encodeURIComponent(name)+"="+encodeURIComponent(val)+"&"; } else { alert(inpt.title + " is required"); inpt.focus(); return false; } } } win = window.open("", "test_"+id+subid, "width=400, height=200, status=0"); document.testsettings.target = "test_"+id+subid; document.testsettings.a.value = "processings"; document.testsettings.action.value = "withdraw_test"; document.testsettings.processing.value = id; document.testsettings.params.value = params; document.testsettings.submit(); win.focus(); } function fieldAdd(t) { var tpl1 = document.getElementById(t+"field_tpl"); tpl = tpl1.cloneNode(true); var lst = document.getElementById(t+"field_last"); var prt = lst.parentNode; tpl.style.display = "table-row"; prt.insertBefore(tpl, lst); } function fieldRemove(o) { var tr = o.parentNode.parentNode; var bd = tr.parentNode; bd.removeChild(tr); } function checkFiat() { var d = document.formsettings.fiat; if (!d) return; var s = d.value; s = s.replace(/[^a-zA-Z0-9]/, ""); s = s.toUpperCase(); d.value = s; } function checkFiatPow() { var d = document.formsettings.fiat_pow; if (!d) return; var s = d.value; s = parseInt(s); if (isNaN(s)) s = ""; if (s != "" && s < 0) s = 0; if (s != "" && s > 8) s = 8; d.value = s; } </script>
+                                                        <form name=testsettings method=post><input type="hidden"
+                                                                name="form_id" value="16659913396842"><input
+                                                                type="hidden" name="form_token"
+                                                                value="7a3ba5f7767c79b2968a0f8991f8d131"> <input
+                                                                type=hidden name=a> <input type=hidden name=action>
+                                                            <input type=hidden name=acc> <input type=hidden name=pass>
+                                                            <input type=hidden name=code> <input type=hidden name=email>
+                                                            <input type=hidden name=processing> <input type=hidden
+                                                                name=params> </form>
+                                                        <script> function check_form() { var max_auto = parseFloat(document.formsettings.out_amount_max_auto.value); if (isNaN(max_auto)) max_auto = 0; if (document.formsettings.autowithdraw_status.selectedIndex == 1 && max_auto <= 0) { alert("Max auto withdraw value is required"); document.formsettings.out_amount_max_auto.focus(); return false; } return true; } </script>
+                                                        <form method=post name=formsettings
+                                                            onsubmit="return check_form()"><input type="hidden"
+                                                                name="form_id" value="16659913396842"><input
+                                                                type="hidden" name="form_token"
+                                                                value="7a3ba5f7767c79b2968a0f8991f8d131"> <input
+                                                                type=hidden name=a value=processings> <input type=hidden
+                                                                name=action value=edit> <input type=hidden name=save
+                                                                value=1> <input type=hidden name=id value="1006"> <input
+                                                                type=hidden name=say value="">
+                                                            <table class=form>
                                                                 <tr>
-                                                                    <td> <select name=ec class=inpts>
-                                                                            <option value=-1>All eCurrencies</option>
-                                                                            <option value=1006>Bitcoin</option>
-                                                                            <option value=1007>Ethereum</option>
-                                                                            <option value=1008>Perfect Money</option>
-                                                                            <option value=1009>Payeer</option>
-                                                                            <option value=1010>USDT (TRC20)</option>
-                                                                        </select> <br> <input type=text name=onpage
-                                                                            value="20" class="inpts nosize" size=4
-                                                                            style="text-align: right"> top members </td>
-                                                                    <td style="text-align:right"> From: <select
-                                                                            name="from_Day" class="inpts nosize">
-                                                                            <option value="1">01</option>
-                                                                            <option value="2">02</option>
-                                                                            <option value="3">03</option>
-                                                                            <option value="4">04</option>
-                                                                            <option value="5">05</option>
-                                                                            <option value="6">06</option>
-                                                                            <option value="7">07</option>
-                                                                            <option value="8">08</option>
-                                                                            <option value="9">09</option>
-                                                                            <option value="10" selected="selected">10
-                                                                            </option>
-                                                                            <option value="11">11</option>
-                                                                            <option value="12">12</option>
-                                                                            <option value="13">13</option>
-                                                                            <option value="14">14</option>
-                                                                            <option value="15">15</option>
-                                                                            <option value="16">16</option>
-                                                                            <option value="17">17</option>
-                                                                            <option value="18">18</option>
-                                                                            <option value="19">19</option>
-                                                                            <option value="20">20</option>
-                                                                            <option value="21">21</option>
-                                                                            <option value="22">22</option>
-                                                                            <option value="23">23</option>
-                                                                            <option value="24">24</option>
-                                                                            <option value="25">25</option>
-                                                                            <option value="26">26</option>
-                                                                            <option value="27">27</option>
-                                                                            <option value="28">28</option>
-                                                                            <option value="29">29</option>
-                                                                            <option value="30">30</option>
-                                                                            <option value="31">31</option>
-                                                                        </select>
-                                                                        <select name="from_Month" class="inpts nosize">
-                                                                            <option value="01">01</option>
-                                                                            <option value="02">02</option>
-                                                                            <option value="03">03</option>
-                                                                            <option value="04">04</option>
-                                                                            <option value="05">05</option>
-                                                                            <option value="06">06</option>
-                                                                            <option value="07">07</option>
-                                                                            <option value="08">08</option>
-                                                                            <option value="09">09</option>
-                                                                            <option value="10" selected="selected">10
-                                                                            </option>
-                                                                            <option value="11">11</option>
-                                                                            <option value="12">12</option>
-                                                                        </select>
-                                                                        <select name="from_Year" class="inpts nosize">
-                                                                            <option value="2014">2014</option>
-                                                                            <option value="2015">2015</option>
-                                                                            <option value="2016">2016</option>
-                                                                            <option value="2017">2017</option>
-                                                                            <option value="2018">2018</option>
-                                                                            <option value="2019">2019</option>
-                                                                            <option value="2020">2020</option>
-                                                                            <option value="2021">2021</option>
-                                                                            <option value="2022" selected="selected">
-                                                                                2022</option>
-                                                                        </select> <br> To: <select name="to_Day"
-                                                                            class="inpts nosize">
-                                                                            <option value="1">01</option>
-                                                                            <option value="2">02</option>
-                                                                            <option value="3">03</option>
-                                                                            <option value="4">04</option>
-                                                                            <option value="5">05</option>
-                                                                            <option value="6">06</option>
-                                                                            <option value="7">07</option>
-                                                                            <option value="8">08</option>
-                                                                            <option value="9">09</option>
-                                                                            <option value="10">10</option>
-                                                                            <option value="11">11</option>
-                                                                            <option value="12">12</option>
-                                                                            <option value="13">13</option>
-                                                                            <option value="14">14</option>
-                                                                            <option value="15">15</option>
-                                                                            <option value="16" selected="selected">16
-                                                                            </option>
-                                                                            <option value="17">17</option>
-                                                                            <option value="18">18</option>
-                                                                            <option value="19">19</option>
-                                                                            <option value="20">20</option>
-                                                                            <option value="21">21</option>
-                                                                            <option value="22">22</option>
-                                                                            <option value="23">23</option>
-                                                                            <option value="24">24</option>
-                                                                            <option value="25">25</option>
-                                                                            <option value="26">26</option>
-                                                                            <option value="27">27</option>
-                                                                            <option value="28">28</option>
-                                                                            <option value="29">29</option>
-                                                                            <option value="30">30</option>
-                                                                            <option value="31">31</option>
-                                                                        </select>
-                                                                        <select name="to_Month" class="inpts nosize">
-                                                                            <option value="01">01</option>
-                                                                            <option value="02">02</option>
-                                                                            <option value="03">03</option>
-                                                                            <option value="04">04</option>
-                                                                            <option value="05">05</option>
-                                                                            <option value="06">06</option>
-                                                                            <option value="07">07</option>
-                                                                            <option value="08">08</option>
-                                                                            <option value="09">09</option>
-                                                                            <option value="10" selected="selected">10
-                                                                            </option>
-                                                                            <option value="11">11</option>
-                                                                            <option value="12">12</option>
-                                                                        </select>
-                                                                        <select name="to_Year" class="inpts nosize">
-                                                                            <option value="2014">2014</option>
-                                                                            <option value="2015">2015</option>
-                                                                            <option value="2016">2016</option>
-                                                                            <option value="2017">2017</option>
-                                                                            <option value="2018">2018</option>
-                                                                            <option value="2019">2019</option>
-                                                                            <option value="2020">2020</option>
-                                                                            <option value="2021">2021</option>
-                                                                            <option value="2022" selected="selected">
-                                                                                2022</option>
-                                                                        </select>
-                                                                    </td>
-                                                                    <td> <input type=submit value="Go" class=sbmt> </td>
+                                                                    <th> <img src="images/1006.gif"
+                                                                            alt="Upload image &quot;1006.gif&quot; to &quot;images&quot; folder"
+                                                                            align=absmiddle> Processing: </th>
+                                                                    <td> <input type="text" name="name" value="Bitcoin"
+                                                                            class=inpts> <i>ID: 1006</i> </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Status:</th>
+                                                                    <td> <select name="status" class=inpts>
+                                                                            <option value=0>Off</option>
+                                                                            <option value=1 selected>On</option>
+                                                                        </select> </td>
                                                                 </tr>
                                                             </table>
+                                                            <h3>Deposit:</h3>
+                                                            <table class="form">
+                                                                <tr>
+                                                                    <th>Payment Instructions for Users:</th>
+                                                                    <td><textarea name="description" rows=10
+                                                                            class=inpts>bc1quu5khkk6zwrmnz2cral564x50483lq2qd4tjh8</textarea>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th class="title" colspan=2>User Transaction Fields:
+                                                                    </th>
+                                                                <tr>
+                                                                <tr>
+                                                                    <th><input type=button value="-"
+                                                                            onclick="fieldRemove(this)"
+                                                                            class="btn-sm sbmt"></th>
+                                                                    <td><input type="text" name="dfields[]"
+                                                                            value="Transaction ID" class=inpts></td>
+                                                                </tr>
+                                                                <tr id="dfield_last">
+                                                                    <th></th>
+                                                                    <td><input type=button value="+"
+                                                                            onclick="fieldAdd('d')" class="btn-sm sbmt">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr id="dfield_tpl" style="display:none">
+                                                                    <th><input type=button value="-"
+                                                                            onclick="fieldRemove(this)"
+                                                                            class="btn-sm sbmt"></th>
+                                                                    <td><input type="text" name="dfields[]" value=""
+                                                                            class=inpts></td>
+                                                                </tr>
+                                                            </table>
+                                                            <table class="form nosize">
+                                                                <tr>
+                                                                    <th class="title" colspan=4>Deposit Limits:</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Min ($)</th>
+                                                                    <td><input type=text name="in_amount_min"
+                                                                            class="inpts nosize" value=""></td>
+                                                                    <th>Max ($)</th>
+                                                                    <td><input type=text name="in_amount_max"
+                                                                            class="inpts nosize" value=""></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th class="title" colspan=4>Deposit Fees:</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Fee (%)</th>
+                                                                    <td><input type=text name="in_percent"
+                                                                            class="inpts nosize" value="0"></td>
+                                                                    <th>Additional Fee ($)</th>
+                                                                    <td><input type=text name="in_add_amount"
+                                                                            class="inpts nosize" value=""></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Min ($)</th>
+                                                                    <td><input type=text name="in_fee_min"
+                                                                            class="inpts nosize" value=""></td>
+                                                                    <th>Max ($)</th>
+                                                                    <td><input type=text name="in_fee_max"
+                                                                            class="inpts nosize" value=""></td>
+                                                                </tr>
+                                                            </table> <br><br> <br>
+                                                            <h3>Withdraw:</h3>
+                                                            <table class="form nosize">
+                                                                <tr>
+                                                                    <th class="title" colspan=4>Withdraw Limits:</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Min ($)</th>
+                                                                    <td><input type=text name="out_amount_min"
+                                                                            class="inpts nosize" value=""></td>
+                                                                    <th>Max ($)</th>
+                                                                    <td><input type=text name="out_amount_max"
+                                                                            class="inpts nosize" value=""></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th class="title" colspan=4>Withdraw Fees:</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Fee (%)</th>
+                                                                    <td><input type=text name="out_percent"
+                                                                            class="inpts nosize" value="0"></td>
+                                                                    <th>Additional Fee ($)</th>
+                                                                    <td><input type=text name="out_add_amount"
+                                                                            class="inpts nosize" value=""></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Min ($)</th>
+                                                                    <td><input type=text name="out_fee_min"
+                                                                            class="inpts nosize" value=""></td>
+                                                                    <th>Max ($)</th>
+                                                                    <td><input type=text name="out_fee_max"
+                                                                            class="inpts nosize" value=""></td>
+                                                                </tr>
+                                                            </table>
+                                                            <table class="form">
+                                                                <tr>
+                                                                    <th class="title" colspan=2>User Account Fields:
+                                                                    </th>
+                                                                <tr>
+                                                                <tr>
+                                                                    <th><input type=button value="-"
+                                                                            onclick="fieldRemove(this)"
+                                                                            class="btn-sm sbmt"></th>
+                                                                    <td><input type="text" name="wfields[]"
+                                                                            value="Wallet Address" class=inpts></td>
+                                                                </tr>
+                                                                <tr id="wfield_last">
+                                                                    <th></th>
+                                                                    <td><input type=button value="+"
+                                                                            onclick="fieldAdd('w')" class="btn-sm sbmt">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr id="wfield_tpl" style="display:none">
+                                                                    <th><input type=button value="-"
+                                                                            onclick="fieldRemove(this)"
+                                                                            class="btn-sm sbmt"></th>
+                                                                    <td><input type="text" name="wfields[]" value=""
+                                                                            class=inpts></td>
+                                                                </tr>
+                                                            </table> <br><br>
+                                                            <center> <input type=submit value="Update"
+                                                                    class="btn btn-success sbmt"> <input type=button
+                                                                    value="Return" class="btn btn-warning sbmt"
+                                                                    onclick="document.location='?a=processings'">
+                                                            </center>
                                                         </form> <br><br>
-                                                        <table class=list id="list">
-                                                            <p class="alert alert-warning" id="errMessage"
-                                                                style="font-weight: bolder;"></p>
-                                                                   <!-- <tbody>          -->
-                                                            <tr>
-                                                                <th>Username</th>
-                                                                <th>Amount</th>
-                                                            </tr>
-                                                            
-                                                        </table>
+                                                        <div class="alert alert-warning"> Enter all the user
+                                                            instructions, your account number in this payment system and
+                                                            all the needed information here. You'll see all new user
+                                                            transactions in the "Pending deposits" section.<br> You can
+                                                            also choose the fields a user has to fill after he has
+                                                            transferred the funds to your account. You can ask the user
+                                                            to give you the batch ID or his account number in the
+                                                            corresponding payment system. This information will help you
+                                                            to easily find the transfer or define whether it was really
+                                                            sent. </div>
                                                     </td>
                                                 </tr>
                                             </table> <!-- Main: END -->
@@ -947,7 +968,6 @@
                 </td>
             </tr>
             <tr>
-                <script src="javascript/fetch_top_referral.js"></script>
                 <td height="19" bgcolor="ff8d00">
                     <div align="center" class="forCopyright">Powered with HYIP Manager Pro. <a
                             href=http://www.goldcoders.com class="forCopyright">GoldCoders.com</a></div>

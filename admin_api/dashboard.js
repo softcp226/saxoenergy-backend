@@ -27,9 +27,9 @@ Router.post("/", verifyToken, async (req, res) => {
         errMessage: "Forbidden!, please login again to access this api",
       });
     const users = await Users.find();
-    const suspended_users = await Users.find({ is_suspended: true });
-    const disabled_users = await Users.find({ is_disabled:true });
-    const active_users = await Users.find({ is_suspended: false,is_disabled:false });
+    const suspended_users = await Users.find({ status:"suspended" });
+    const disabled_users = await Users.find({ status:"disabled" });
+    const active_users = await Users.find({status:"active"});
     const users_ever_madedeposit = await Users.find({
       made_first_deposit: true,
     });

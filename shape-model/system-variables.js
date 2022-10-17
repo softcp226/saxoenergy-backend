@@ -18,5 +18,13 @@ let datetime = `${
   monthNames[currentdate.getMonth()]
 } ${currentdate.getDate()} ${currentdate.getFullYear()} - ${currentdate.getHours()}: ${currentdate.getMinutes()} : ${currentdate.getSeconds()}`;
 
+  let date = new Date();
 
-module.exports={datetime}
+  date.setDate(date.getDate() + 7);
+
+   let expiring_date_string = `${
+     monthNames[date.getMonth()]
+   } ${date.getDate()} ${date.getFullYear()} - ${date.getHours()}: ${currentdate.getMinutes()} : ${currentdate.getSeconds()}`;
+
+
+module.exports={datetime,expiring_date_string}

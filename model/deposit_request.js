@@ -25,14 +25,18 @@ const deposit_request_Schema = mongoose.Schema({
     type: String,
     required: true,
   },
-  // scheduled_expiring_date: {
-  //   type: String,
-  //   required: true,
-  // },
-  // expiring_date: {
-  //   type: String,
-  //   required: true,
-  // },
+  scheduled_expiring_date: {
+    type: String,
+    required: true,
+  },
+  expiring_date: {
+    type: String,
+    required: true,
+  },
+   expiring_date_string: {
+    type: String,
+    required: true,
+  },
   transaction: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "transaction",
@@ -41,6 +45,11 @@ const deposit_request_Schema = mongoose.Schema({
   proof: String,
 
   is_approved: {
+    type: Boolean,
+    required: true,
+    default: false,
+  },
+  expiring_deposit: {
     type: Boolean,
     required: true,
     default: false,

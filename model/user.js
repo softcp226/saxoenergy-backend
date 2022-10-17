@@ -64,7 +64,7 @@ const userSchema = mongoose.Schema({
     required: true,
     default: false,
   },
-  referral: String,
+  referral: String, //the user that referd this user
   registration_date: {
     type: String,
     required: true,

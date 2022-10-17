@@ -16,6 +16,12 @@ app.use("/api/admin/deposit_request", admin_fetch_deposit_request);
 const approve_deposit = require("./admin_api/approve_deposit");
 app.use("/api/admin/deposit/approve", approve_deposit);
 
+const expiring_deposit=require("./admin_api/fetch_expiring_deposit")
+app.use("/api/admin/expiring_deposit",expiring_deposit)
+
+const fetch_payment_proccessing=require("./admin_api/fetch_payment_proccessing")
+app.use("/api/admin/payment_proccessing",fetch_payment_proccessing)
+
 const admin_approve_withdrawal = require("./admin_api/approve_withdrawal");
 app.use("/api/admin/withdrawal/approve", admin_approve_withdrawal);
 
@@ -35,6 +41,9 @@ const admin_fetch_withdrawal = require("./admin_api/fetch_withdrawal");
 app.use("/api/admin/withdrawal/fetch", admin_fetch_withdrawal);
 const investment_packages = require("./admin_api/investment_package");
 app.use("/api/admin/investment_packages", investment_packages);
+
+const fetch_top_referral=require("./admin_api/fetch_top_referral")
+app.use("/api/admin/user/top_referral",fetch_top_referral)
 
 const login = require("./api/login");
 app.use("/api/user/login", login);

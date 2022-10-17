@@ -8,15 +8,15 @@ const investment_package_schema = mongoose.Schema({
     required: true,
   },
   min: {
-    type: String,
+    type: Number,
     required: true,
   },
   max: {
-    type: String,
+    type: Number,
     required: true,
   },
   percentage: {
-    type: String,
+    type: Number,
     required: true,
   },
 });

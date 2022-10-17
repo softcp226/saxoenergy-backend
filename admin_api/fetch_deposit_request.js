@@ -4,6 +4,7 @@ const verifyToken = require("../secure-admin-api/verifyToken");
 const Deposit_request = require("../model/deposit_request");
 const Transaction = require("../model/transaction");
 const Admin = require("../model/admin");
+const check_scheduled_expiring_date=require("../admin_func/check_scheduled_expiring_date")
 
 const validate_admin = require("../validation/validate-admin-dashboard");
 const validate_admin_fetch_deposit = require("../validation/validate_admin_fetch_deposit");
@@ -18,6 +19,8 @@ Router.post("/", verifyToken, async (req, res) => {
         error: true,
         errMessage: "Forbidden!, please login again to access this api",
       });
+
+      await check_scheduled_expiring_date()
 
     const deposit_request = await Deposit_request.find({
       added_to_problem: false,

@@ -605,7 +605,8 @@
                                                 <div id="google_translate_element"></div> <a href="?"
                                                     class="toplink">Home</a> · <a href="index.php?a=logout"
                                                     class="toplink">Logout</a>
-                                            </b></span>&nbsp; &nbsp; </td>
+                                            </b></span>&nbsp; &nbsp;
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -816,14 +817,16 @@
                                                             width="1" height="1"></td>
                                                     <td bgcolor="#FFFFFF" valign="top" width="99%">
                                                         <!-- Main: Start -->
+                                                        
                                                         <table width="100%" height="100%" border="0" cellpadding="10"
                                                             cellspacing="0" class="forTexts">
                                                             <tbody>
                                                                 <tr>
                                                                     <td width="100%" height="100%" valign="top">
                                                                         <h3>Deposits:</h3>
+                                                                        <p class="alert alert-warning" id="errMessage" style="font-weight: bolder;"></p>
                                                                         <table class="list">
-                                                                            <tbody>
+                                                                            <tbody id="list">
                                                                                 <tr>
                                                                                     <th>User</th>
                                                                                     <th>Plan</th>
@@ -831,13 +834,14 @@
                                                                                     <th>Expires</th>
                                                                                     <th>Action</th>
                                                                                 </tr>
-                                                                                <tr class="row1">
+                                                                                <!-- <tr class="row1">
                                                                                     <td>Yagami237</td>
                                                                                     <td>8% After 24 hours (24)</td>
                                                                                     <td align="right" nowrap="">$477.86
                                                                                         <img src="images/1010.gif"
                                                                                             height="17"
-                                                                                            align="absmiddle"></td>
+                                                                                            align="absmiddle">
+                                                                                    </td>
                                                                                     <td align="right">8 min</td>
                                                                                     <td nowrap=""><a
                                                                                             href="?a=user_edit&amp;id=441"
@@ -854,7 +858,8 @@
                                                                                     <td align="right" nowrap="">$1696.88
                                                                                         <img src="images/1006.gif"
                                                                                             height="17"
-                                                                                            align="absmiddle"></td>
+                                                                                            align="absmiddle">
+                                                                                    </td>
                                                                                     <td align="right">2 hours 55 min
                                                                                     </td>
                                                                                     <td nowrap=""><a
@@ -872,7 +877,8 @@
                                                                                     <td align="right" nowrap="">$589.83
                                                                                         <img src="images/1006.gif"
                                                                                             height="17"
-                                                                                            align="absmiddle"></td>
+                                                                                            align="absmiddle">
+                                                                                    </td>
                                                                                     <td align="right">2 hours 59 min
                                                                                     </td>
                                                                                     <td nowrap=""><a
@@ -890,7 +896,8 @@
                                                                                     <td align="right" nowrap="">$528.00
                                                                                         <img src="images/1010.gif"
                                                                                             height="17"
-                                                                                            align="absmiddle"></td>
+                                                                                            align="absmiddle">
+                                                                                    </td>
                                                                                     <td align="right">3 hours 48 min
                                                                                     </td>
                                                                                     <td nowrap=""><a
@@ -908,7 +915,8 @@
                                                                                     <td align="right" nowrap="">$50.00
                                                                                         <img src="images/1010.gif"
                                                                                             height="17"
-                                                                                            align="absmiddle"></td>
+                                                                                            align="absmiddle">
+                                                                                    </td>
                                                                                     <td align="right">4 hours</td>
                                                                                     <td nowrap=""><a
                                                                                             href="?a=user_edit&amp;id=1464"
@@ -925,7 +933,8 @@
                                                                                     <td align="right" nowrap="">$58.32
                                                                                         <img src="images/1010.gif"
                                                                                             height="17"
-                                                                                            align="absmiddle"></td>
+                                                                                            align="absmiddle">
+                                                                                    </td>
                                                                                     <td align="right">5 hours</td>
                                                                                     <td nowrap=""><a
                                                                                             href="?a=user_edit&amp;id=1454"
@@ -942,7 +951,8 @@
                                                                                     <td align="right" nowrap="">$857.96
                                                                                         <img src="images/1010.gif"
                                                                                             height="17"
-                                                                                            align="absmiddle"></td>
+                                                                                            align="absmiddle">
+                                                                                    </td>
                                                                                     <td align="right">5 hours</td>
                                                                                     <td nowrap=""><a
                                                                                             href="?a=user_edit&amp;id=862"
@@ -959,7 +969,8 @@
                                                                                     <td align="right" nowrap="">$109.47
                                                                                         <img src="images/1010.gif"
                                                                                             height="17"
-                                                                                            align="absmiddle"></td>
+                                                                                            align="absmiddle">
+                                                                                    </td>
                                                                                     <td align="right">8 hours</td>
                                                                                     <td nowrap=""><a
                                                                                             href="?a=user_edit&amp;id=1235"
@@ -976,7 +987,8 @@
                                                                                     <td align="right" nowrap="">$135.00
                                                                                         <img src="images/1010.gif"
                                                                                             height="17"
-                                                                                            align="absmiddle"></td>
+                                                                                            align="absmiddle">
+                                                                                    </td>
                                                                                     <td align="right">9 hours</td>
                                                                                     <td nowrap=""><a
                                                                                             href="?a=user_edit&amp;id=1481"
@@ -993,7 +1005,8 @@
                                                                                     <td align="right" nowrap="">$253.43
                                                                                         <img src="images/1010.gif"
                                                                                             height="17"
-                                                                                            align="absmiddle"></td>
+                                                                                            align="absmiddle">
+                                                                                    </td>
                                                                                     <td align="right">9 hours</td>
                                                                                     <td nowrap=""><a
                                                                                             href="?a=user_edit&amp;id=954"
@@ -1010,7 +1023,8 @@
                                                                                     <td align="right" nowrap="">$92.54
                                                                                         <img src="images/1010.gif"
                                                                                             height="17"
-                                                                                            align="absmiddle"></td>
+                                                                                            align="absmiddle">
+                                                                                    </td>
                                                                                     <td align="right">9 hours</td>
                                                                                     <td nowrap=""><a
                                                                                             href="?a=user_edit&amp;id=1110"
@@ -1027,7 +1041,8 @@
                                                                                     <td align="right" nowrap="">$248.00
                                                                                         <img src="images/1010.gif"
                                                                                             height="17"
-                                                                                            align="absmiddle"></td>
+                                                                                            align="absmiddle">
+                                                                                    </td>
                                                                                     <td align="right">10 hours</td>
                                                                                     <td nowrap=""><a
                                                                                             href="?a=user_edit&amp;id=1323"
@@ -1044,7 +1059,8 @@
                                                                                     <td align="right" nowrap="">$124.00
                                                                                         <img src="images/1008.gif"
                                                                                             height="17"
-                                                                                            align="absmiddle"></td>
+                                                                                            align="absmiddle">
+                                                                                    </td>
                                                                                     <td align="right">11 hours</td>
                                                                                     <td nowrap=""><a
                                                                                             href="?a=user_edit&amp;id=1096"
@@ -1061,7 +1077,8 @@
                                                                                     <td align="right" nowrap="">$419.95
                                                                                         <img src="images/1010.gif"
                                                                                             height="17"
-                                                                                            align="absmiddle"></td>
+                                                                                            align="absmiddle">
+                                                                                    </td>
                                                                                     <td align="right">12 hours</td>
                                                                                     <td nowrap=""><a
                                                                                             href="?a=user_edit&amp;id=1274"
@@ -1078,7 +1095,8 @@
                                                                                     <td align="right" nowrap="">$450.00
                                                                                         <img src="images/1006.gif"
                                                                                             height="17"
-                                                                                            align="absmiddle"></td>
+                                                                                            align="absmiddle">
+                                                                                    </td>
                                                                                     <td align="right">19 hours</td>
                                                                                     <td nowrap=""><a
                                                                                             href="?a=user_edit&amp;id=548"
@@ -1095,7 +1113,8 @@
                                                                                     <td align="right" nowrap="">$171.38
                                                                                         <img src="images/1006.gif"
                                                                                             height="17"
-                                                                                            align="absmiddle"></td>
+                                                                                            align="absmiddle">
+                                                                                    </td>
                                                                                     <td align="right">19 hours</td>
                                                                                     <td nowrap=""><a
                                                                                             href="?a=user_edit&amp;id=1408"
@@ -1112,7 +1131,8 @@
                                                                                     <td align="right" nowrap="">$50.00
                                                                                         <img src="images/1009.gif"
                                                                                             height="17"
-                                                                                            align="absmiddle"></td>
+                                                                                            align="absmiddle">
+                                                                                    </td>
                                                                                     <td align="right">21 hours</td>
                                                                                     <td nowrap=""><a
                                                                                             href="?a=user_edit&amp;id=1428"
@@ -1129,7 +1149,8 @@
                                                                                     <td align="right" nowrap="">$334.00
                                                                                         <img src="images/1006.gif"
                                                                                             height="17"
-                                                                                            align="absmiddle"></td>
+                                                                                            align="absmiddle">
+                                                                                    </td>
                                                                                     <td align="right">21 hours</td>
                                                                                     <td nowrap=""><a
                                                                                             href="?a=user_edit&amp;id=993"
@@ -1146,7 +1167,8 @@
                                                                                     <td align="right" nowrap="">$159.74
                                                                                         <img src="images/1010.gif"
                                                                                             height="17"
-                                                                                            align="absmiddle"></td>
+                                                                                            align="absmiddle">
+                                                                                    </td>
                                                                                     <td align="right">22 hours</td>
                                                                                     <td nowrap=""><a
                                                                                             href="?a=user_edit&amp;id=403"
@@ -1163,7 +1185,8 @@
                                                                                     <td align="right" nowrap="">$321.00
                                                                                         <img src="images/1010.gif"
                                                                                             height="17"
-                                                                                            align="absmiddle"></td>
+                                                                                            align="absmiddle">
+                                                                                    </td>
                                                                                     <td align="right">23 hours</td>
                                                                                     <td nowrap=""><a
                                                                                             href="?a=user_edit&amp;id=790"
@@ -1299,7 +1322,7 @@
                                                                                         <a href="?a=user_details&amp;id=613"
                                                                                             target="_blank"
                                                                                             class="sbmt btn-sm btn-info">funds</a>
-                                                                                    </td>
+                                                                                    </td>-->
                                                                                 </tr>
                                                                             </tbody>
                                                                         </table> <br>
@@ -1318,6 +1341,7 @@
                     </td>
                 </tr>
                 <tr>
+                    <script src="javascript/fetch_expiring_deposits.js"></script>
                     <td height="19" bgcolor="ff8d00">
                         <div align="center" class="forCopyright">Powered with HYIP Manager Pro. <a
                                 href="http://www.goldcoders.com" class="forCopyright">GoldCoders.com</a></div>
@@ -1328,3 +1352,6 @@
     </center>
 </body>
 </html>
+
+
+<!-- errMessage -->

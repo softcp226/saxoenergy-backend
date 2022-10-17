@@ -10,6 +10,11 @@ const expiring_deposit_Schema = mongoose.Schema({
     ref: "deposit_request",
     required: true,
   },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "user",
+    required: true,
+  },
 });
 
 const Expiring_deposit = mongoose.model(

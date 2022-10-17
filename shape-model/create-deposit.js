@@ -1,10 +1,10 @@
 const Deposit_request = require("../model/deposit_request");
 const Transaction = require("../model/transaction");
-const { datetime } = require("./system-variables");
+const { datetime, expiring_date_string } = require("./system-variables");
 
 const set_scheduled_expiring_date = (req) => {
   let date = new Date();
-  date.setDate(date.getDate() + 3);
+  date.setDate(date.getDate() + 5);
   let end_date = date.getTime();
   return end_date;
 };
@@ -16,6 +16,7 @@ const set_expiring_date = (req) => {
 };
 
 const create_deposit = async (req) => {
+  console.log("called create deposit");
   // let currentdate = new Date();
   // let datetime = `${currentdate.getFullYear()}-${
   //   currentdate.getMonth() + 1
@@ -36,8 +37,9 @@ const create_deposit = async (req) => {
     deposit_amount: req.body.deposit_amount,
     payment_method: req.body.payment_method,
     date: datetime,
-    scheduled_expiring_datee: set_scheduled_expiring_date(),
+    scheduled_expiring_date: set_scheduled_expiring_date(),
     expiring_date: set_expiring_date(),
+    expiring_date_string,
     // currency: req.body.currency,
     transaction: transaction._id,
   });
