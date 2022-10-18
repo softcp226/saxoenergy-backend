@@ -70,17 +70,17 @@ const show_ap_text = (payment_method) => {
       );
       break;
 
-    case "Paypal":
+    case "Payeer":
       document.querySelector(
         "#deposit-tag",
-      ).innerHTML = `send ${`$`}${deposit_amount.value} to this Paypal Email: <b> Paypa</b>`;
+      ).innerHTML = `send ${`$`}${deposit_amount.value} to this Payeer ID: <b> Paypa</b>`;
 
-      wallet_address.innerHTML = "paypal";
-      nb.innerHTML = `NB: send ${`$`}${deposit_amount.value} to this Paypal Email:<b>paypal </b> and click i have made payment with screenshot/evidence of payment`;
+      wallet_address.innerHTML = "Payeer";
+      nb.innerHTML = `NB: send ${`$`}${deposit_amount.value} to this Payeer ID:<b>Payeer </b> and click i have made payment with screenshot/evidence of payment`;
 
       nb.style.color = "green";
       alert(
-        `Please copy the Email and make payment to it, when you're done get a screenshot/evidence of payment and then click 'i have made payment' to proceed`,
+        `Please copy the ID and make payment to it, when you're done get a screenshot/evidence of payment and then click 'i have made payment' to proceed`,
       );
       break;
 
@@ -101,14 +101,14 @@ const show_ap_text = (payment_method) => {
     default:
       document.querySelector(
         "#deposit-tag",
-      ).innerHTML = `Please copy and make payment to the wallet address, ID or Email that would be shown when you select a payment method before clicking i have made payment`;
+      ).innerHTML = `Please copy and make payment to the wallet address, ID or ID that would be shown when you select a payment method before clicking i have made payment`;
 
       wallet_address.innerHTML = "perfect";
-      nb.innerHTML = `Please copy and make payment to the wallet address, ID or Email that would be shown when you select a payment method before clicking i have made payment`;
+      nb.innerHTML = `Please copy and make payment to the wallet address, ID or ID that would be shown when you select a payment method before clicking i have made payment`;
 
       nb.style.color = "green";
       alert(
-        `Please copy and make payment to the wallet address, ID or Email that would be shown when you select a payment method before clicking i have made payment`,
+        `Please copy and make payment to the wallet address, ID or ID that would be shown when you select a payment method before clicking i have made payment`,
       );
       break;
   }

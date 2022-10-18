@@ -3,10 +3,25 @@ const connect = require("./dbConnector");
 connect("connected to transaction database");
 
 const investment_package_schema = mongoose.Schema({
-  name: {
+  package_name: {
     type: String,
     required: true,
   },
+  package_door: {
+    type: String,
+    required: true,
+    enum: ["Public", "Inactive"],
+  },
+  package_status: {
+    type: String,
+    required: true,
+    enum: ["Active", "Inactive"],
+  },
+  payment_period: {
+    type: String,
+    required: true,
+  },
+
   min: {
     type: Number,
     required: true,
