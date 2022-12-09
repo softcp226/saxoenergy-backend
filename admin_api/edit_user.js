@@ -32,7 +32,7 @@ Router.post("/", verifyToken, async (req, res) => {
 
     await user.set({
       full_name: req.body.full_name || user.full_name,
-      username: req.body.username || user.username,
+      username: req.body.user_name || user.username,
       email: req.body.email || user.email,
       //  country:req.body.country||user.country,
       password,

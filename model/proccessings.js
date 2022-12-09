@@ -6,29 +6,32 @@ const payment_proccessing_Schema = mongoose.Schema({
     type: String,
     required: true,
   },
+
+  icon: {
+    type: String,
+    required: true,
+  },
+  status: {
+    type: String,
+    required: true,
+    enum: ["active", "inactive"],
+  },
   wallet_address: {
     type: String,
     required: true,
   },
   wallet_note: String,
-  icon: {
-    type: String,
-    required: true,
-  },
-  deposit_enabled: {
-    type: Boolean,
-    required: true,
-    default: false,
-  },
-  withdrawal_enabled: {
-    type: Boolean,
-    required: true,
-    default: false,
-  },
-  total_system_earnings: {
-    type: String,
-    required: true,
-  },
+  // deposit_enabled: {
+  //   type: Boolean,
+  //   required: true,
+  //   default: true,
+  // },
+  // withdrawal_enabled: {
+  //   type: Boolean,
+  //   required: true,
+  //   default: true,
+  // },
+  total_system_earnings: String,
   total_funds_added: Number,
   total_users_balance: Number,
   total_referral_commision: Number,

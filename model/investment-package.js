@@ -10,7 +10,7 @@ const investment_package_schema = mongoose.Schema({
   package_door: {
     type: String,
     required: true,
-    enum: ["Public", "Inactive"],
+    enum: ["Public", "Closed"],
   },
   package_status: {
     type: String,

@@ -13,6 +13,13 @@ const adminSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  admin_area_charset: String,
+  show_google_translator: String,
 });
 
 const Admin = mongoose.model("admin", adminSchema);

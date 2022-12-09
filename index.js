@@ -2,9 +2,14 @@ const express = require("express");
 const app = express();
 app.use(express.json());
 require("dotenv").config();
-app.use("/", express.static("html"));
+const cors=require("cors")
+app.use(cors())
+// app.use("/", express.static("html"));
 
-app.use("/admin", express.static("admin"));
+const fetch_investment_packages = require("./api/fetch_investment_program");
+app.use("/api/investment_packages/fetch", fetch_investment_packages);
+
+// app.use("/admin", express.static("admin"));
 const admin_login = require("./admin_api/login");
 app.use("/api/admin/login", admin_login);
 const admin_fetchuser = require("./admin_api/fetch_user");
@@ -16,11 +21,11 @@ app.use("/api/admin/deposit_request", admin_fetch_deposit_request);
 const approve_deposit = require("./admin_api/approve_deposit");
 app.use("/api/admin/deposit/approve", approve_deposit);
 
-const expiring_deposit=require("./admin_api/fetch_expiring_deposit")
-app.use("/api/admin/expiring_deposit",expiring_deposit)
+const expiring_deposit = require("./admin_api/fetch_expiring_deposit");
+app.use("/api/admin/expiring_deposit", expiring_deposit);
 
-const fetch_payment_proccessing=require("./admin_api/fetch_payment_proccessing")
-app.use("/api/admin/payment_proccessing",fetch_payment_proccessing)
+const fetch_payment_proccessing = require("./admin_api/fetch_payment_proccessing");
+app.use("/api/admin/payment_proccessing", fetch_payment_proccessing);
 
 const admin_approve_withdrawal = require("./admin_api/approve_withdrawal");
 app.use("/api/admin/withdrawal/approve", admin_approve_withdrawal);
@@ -41,9 +46,17 @@ const admin_fetch_withdrawal = require("./admin_api/fetch_withdrawal");
 app.use("/api/admin/withdrawal/fetch", admin_fetch_withdrawal);
 const investment_packages = require("./admin_api/investment_package");
 app.use("/api/admin/investment_packages", investment_packages);
+const payment_proccessing = require("./admin_api/payment_proccessing");
+app.use("/api/admin/payment/proccessing", payment_proccessing);
 
-const fetch_top_referral=require("./admin_api/fetch_top_referral")
-app.use("/api/admin/user/top_referral",fetch_top_referral)
+const admin_fetch_transactions = require("./admin_api/fetch_transction");
+app.use("/api/admin/transactions/fetch", admin_fetch_transactions);
+
+const admin_setting = require("./admin_api/settings");
+app.use("/api/admin/setting", admin_setting);
+
+const fetch_top_referral = require("./admin_api/fetch_top_referral");
+app.use("/api/admin/user/top_referral", fetch_top_referral);
 
 const login = require("./api/login");
 app.use("/api/user/login", login);
@@ -54,6 +67,12 @@ app.use("/api/newuser/register", register);
 // /api/admin/deposit_request
 const find_user = require("./api/find_user");
 app.use("/api/user/find", find_user);
+
+const fetch_user = require("./api/fetch-user");
+app.use("/api/user/fetch", fetch_user);
+const update_user = require("./api/update-user");
+app.use("/api/user/update", update_user);
+
 const create_new_deposit = require("./api/deposit_request");
 app.use("/api/user/create_deposit", create_new_deposit);
 const complete_deposit = require("./api/complete_deposit");
@@ -72,9 +91,13 @@ app.use("/api/user/investments/fetch", fetch_investment);
 const withdrawal = require("./api/withdraw");
 app.use("/api/user/withdraw", withdrawal);
 
+const user_fetch_payment_proccessing = require("./api/fetch_payment_proccessing");
+app.use("/api/user/fetch_payment_proccessing", user_fetch_payment_proccessing);
+
 const forgotten_password = require("./api/forgotten-password");
 app.use("/api/password/forgotten", forgotten_password);
 const reset_password = require("./api/reset-password");
 app.use("/api/user/password/reset", reset_password);
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`running on port ${port}`));
+// /api/user/transactions/fetch

@@ -33,7 +33,7 @@ const deposit_request_Schema = mongoose.Schema({
     type: String,
     required: true,
   },
-   expiring_date_string: {
+  expiring_date_string: {
     type: String,
     required: true,
   },
@@ -58,6 +58,12 @@ const deposit_request_Schema = mongoose.Schema({
     type: Boolean,
     required: true,
     default: false,
+  },
+  status: {
+    type: String,
+    required: true,
+    enum: ["pending", "success", "failed"],
+    default: "pending",
   },
 });
 

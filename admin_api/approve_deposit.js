@@ -92,8 +92,9 @@ Router.post("/", verifyToken, async (req, res) => {
     });
     transaction.set({ status: "success" });
 
-    await Deposit_request.findByIdAndDelete(req.body.deposit_request);
-
+    // await Deposit_request.findByIdAndDelete(req.body.deposit_request);
+ deposit_request.set({status:"success"})
+ await deposit_request.save()
     await transaction.save();
     await user.save();
 

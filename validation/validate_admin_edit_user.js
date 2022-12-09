@@ -7,7 +7,8 @@ const validate_admin_edit_user = (req) => {
     user_status: Joi.string(),
     user_name: Joi.string(),
     email: Joi.string().email(),
-    password:Joi.string().allow(""),
+    password: Joi.string().allow(""),
+    demo_account:Joi.boolean(),
   });
   const result = schema.validate({
     admin: req.admin,
@@ -17,6 +18,7 @@ const validate_admin_edit_user = (req) => {
     user_name: req.user_name,
     email: req.email,
     password: req.password,
+    demo_account: req.demo_account,
   });
   if (result.error) return result.error.message;
   return true;

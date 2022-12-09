@@ -3,7 +3,6 @@ const connect = require("./dbConnector");
 connect("connected to user database");
 const { datetime } = require("../shape-model/system-variables");
 
-
 const userSchema = mongoose.Schema({
   full_name: {
     type: String,
@@ -37,7 +36,16 @@ const userSchema = mongoose.Schema({
     type: Number,
     default: 0,
   },
+  active_deposit: {
+    type: Number,
+    default: 0,
+  },
   total_withdrawal: {
+    type: Number,
+    default: 0,
+  },
+
+  pending_withdrawal: {
     type: Number,
     default: 0,
   },
@@ -50,6 +58,11 @@ const userSchema = mongoose.Schema({
     default: 0,
   },
   total_earning: {
+    type: Number,
+    required: true,
+    default: 0,
+  },
+  total_penalty: {
     type: Number,
     required: true,
     default: 0,
@@ -82,8 +95,8 @@ const userSchema = mongoose.Schema({
   // },
   status: {
     type: String,
-    enum:["active","suspended","disabled"],
-    default:"active"
+    enum: ["active", "suspended", "disabled"],
+    default: "active",
   },
   auto_withdrawal: {
     type: Boolean,
@@ -95,12 +108,11 @@ const userSchema = mongoose.Schema({
     required: true,
     default: false,
   },
-  demo_account:{
+  demo_account: {
     type: Boolean,
     required: true,
     default: false,
   },
-
 });
 
 const User = mongoose.model("user", userSchema);

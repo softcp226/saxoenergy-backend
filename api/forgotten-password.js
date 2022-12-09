@@ -24,8 +24,8 @@ Router.post("/", async (req, res) => {
         .json({ error: false, message: "Recovery Email successfully sent" });
 
     let token = genToken(user._id);
-    let user_name = req.body.email;
-    let reset_link = `https://www.panteramining.com?${token}?${user_name}`;
+    let user_name = user.username;
+    let reset_link = `https://bristolenergy.ltd?${token}?${user_name}`;
 
     const recover_password = await new Recover_password({
       user: user._id,
