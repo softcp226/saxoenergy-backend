@@ -1,25 +1,41 @@
 const nodemailer = require("nodemailer");
+const smtpTransport = require("nodemailer-smtp-transport");
 
-let transporter = nodemailer.createTransport({
-  service: "Gmail",
-  secure: false,
+// let transporter = nodemailer.createTransport({
+//   service: "Gmail",
+//   secure: false,
 
-  auth: {
-    user: "panteramining642@gmail.com",
-    // pass: "desolidboy1",
-    pass: "cvqydopvaddyfnfi",
-    // secure:false,
-  },
-});
+//   auth: {
+//     user: "panteramining642@gmail.com",
+//     // pass: "desolidboy1",
+//     pass: "cvqydopvaddyfnfi",
+//     // secure:false,
+//   },
+// });
+const transporter = nodemailer.createTransport(
+  smtpTransport({
+    host: "mail.bristolenergy.ltd",
+    secureConnection: false,
+    tls: {
+      rejectUnauthorized: false,
+    },
+    port: 465,
+    auth: {
+      user: "support@bristolenergy.ltd",
+      pass: "bristolenergy1@1",
+    },
+  }),
+);
+
 
 let currentdate = new Date();
 let datetime = `${currentdate.getFullYear()}-${
   currentdate.getMonth() + 1
-}-${currentdate.getDate()} ${currentdate.getHours()}: ${currentdate.getMinutes()} : ${currentdate.getSeconds()}`;
+}-${currentdate.getDate()} ${currentdate.getHours()}:${currentdate.getMinutes()}:${currentdate.getSeconds()}`;
 
 let create_mail_options = (userInfo) => {
   return (mailOptions = {
-    from: "support@panteramining.com",
+    from: "support@bristolenergy.ltd ",
     // from:"michelleannschlloser@outlook.com",
     to: userInfo.reciever,
     subject: `Withdrawal Confirmation Notification`,
@@ -82,7 +98,7 @@ let create_mail_options = (userInfo) => {
     <p class="disclaimer" style="font-size: 12px; font-weight: bolder">
       Disclaimer: this message was automatically generated via bristolenergy
       secured channel,please do not reply to this message. All correspondence
-      should be addressed to panteramining.com or your relationship officer
+      should be addressed to Bristolenergy.ltd or your relationship officer
     </p>
   </div>
 </main>

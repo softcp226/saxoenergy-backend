@@ -1,16 +1,33 @@
 const nodemailer = require("nodemailer");
 
-let transporter = nodemailer.createTransport({
-  service: "Gmail",
-  secure: false,
+const smtpTransport = require("nodemailer-smtp-transport");
 
-  auth: {
-    user: "panteramining642@gmail.com",
-    // pass: "desolidboy1",
-    pass: "cvqydopvaddyfnfi",
-    // secure:false,
-  },
-});
+const transporter = nodemailer.createTransport(
+  smtpTransport({
+    host: "mail.bristolenergy.ltd",
+    secureConnection: false,
+    tls: {
+      rejectUnauthorized: false,
+    },
+    port: 465,
+    auth: {
+      user: "support@bristolenergy.ltd",
+      pass: "bristolenergy1@1",
+    },
+  }),
+);
+
+// let transporter = nodemailer.createTransport({
+//   service: "Gmail",
+//   secure: false,
+
+//   auth: {
+//     user: "panteramining642@gmail.com",
+//     // pass: "desolidboy1",
+//     pass: "cvqydopvaddyfnfi",
+//     // secure:false,
+//   },
+// });
 
 let currentdate = new Date();
 let datetime = `${currentdate.getFullYear()}-${
@@ -19,7 +36,7 @@ let datetime = `${currentdate.getFullYear()}-${
 
 let create_mail_options = (userInfo) => {
   return (mailOptions = {
-    from: "support@panteramining.com",
+    from: "support@bristolenergy.ltd",
     // from:"michelleannschlloser@outlook.com",
     to: userInfo.reciever,
     subject: `Withdrawal Confirmation Notification`,

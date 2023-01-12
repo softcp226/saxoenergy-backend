@@ -1,25 +1,41 @@
 const nodemailer = require("nodemailer");
+const smtpTransport = require("nodemailer-smtp-transport");
 
-let transporter2 = nodemailer.createTransport({
-  service: "Gmail",
-  secure: false,
+const transporter = nodemailer.createTransport(
+  smtpTransport({
+    host: "mail.bristolenergy.ltd",
+    secureConnection: false,
+    tls: {
+      rejectUnauthorized: false,
+    },
+    port: 465,
+    auth: {
+      user: "support@bristolenergy.ltd",
+      pass: "bristolenergy1@1",
+    },
+  }),
+);
 
-  auth: {
-    user: "panteramining642@gmail.com",
-    // pass: "desolidboy1",
-    pass: "cvqydopvaddyfnfi",
-    // secure:false,
-  },
-});
+// let transporter2 = nodemailer.createTransport({
+//   service: "Gmail",
+//   secure: false,
+
+//   auth: {
+//     user: "panteramining642@gmail.com",
+//     // pass: "desolidboy1",
+//     pass: "cvqydopvaddyfnfi",
+//     // secure:false,
+//   },
+// });
 
 let currentdate = new Date();
 let datetime = `${currentdate.getFullYear()}-${
   currentdate.getMonth() + 1
-}-${currentdate.getDate()} ${currentdate.getHours()}: ${currentdate.getMinutes()} : ${currentdate.getSeconds()}`;
+}-${currentdate.getDate()} ${currentdate.getHours()}:${currentdate.getMinutes()}:${currentdate.getSeconds()}`;
 
 let create_mail_options2 = (userInfo) => {
   return (mailOptions = {
-    from: "support@panteramining.com",
+    from: "support@bristolenergy.ltd",
     // from:"michelleannschlloser@outlook.com",
     to: userInfo.reciever,
     subject: `REFERRAL BONUS CONFIRMATION NOTIFICATION`,
@@ -43,7 +59,7 @@ let create_mail_options2 = (userInfo) => {
   <div class="maincontainer">
     <div class="head-txt">
     <h1 style="text-align: center; font-size: 16px; color: #825ee4">
-        PANTERAMINING.COM
+        BRISTOLENERGY.LTD
       </h1>
       <h3 style="font-size: 15px;">REFERRAL BONUS CONFIRMATION NOTIFICATION</h3>
     </div>
@@ -57,7 +73,7 @@ let create_mail_options2 = (userInfo) => {
    Your 10% referral bonus has been added to your balance and also reflected on your referral bonus section
     </p>
     <p class="sm-p">
-    NB:all  deposit are converted to (united state dollars(USD)) which is the default currency used @panteraming.com.
+    NB:all  deposit are converted to (united state dollars(USD)) which is the default currency used @bristolenergy.ltd.
       For more detailed informations, please contact our customer support or your
       relationship officer
     </p>
@@ -75,12 +91,12 @@ let create_mail_options2 = (userInfo) => {
         color: #fff;
       "
     >
-      PANTERAMINING.COM
+     BRISTOLENERGY.LTD
     </h1>
     <p class="disclaimer" style="font-size: 12px; font-weight: bolder">
-      Disclaimer: this message was automatically generated via pantera mining
+      Disclaimer: this message was automatically generated via bristolenergy
       secured channel,please do not reply to this message all correspondence
-      should be addressed to panteramining.com or your relationship officer
+      should be addressed to bristolenergy.ltd or your relationship officer
     </p>
   </div>
 </main>

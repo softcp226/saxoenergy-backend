@@ -6,6 +6,8 @@ const cors=require("cors")
 app.use(cors())
 // app.use("/", express.static("html"));
 
+app.post("/",(req,res)=>res.status(200).json({error:false,message:req.body}))
+
 const fetch_investment_packages = require("./api/fetch_investment_program");
 app.use("/api/investment_packages/fetch", fetch_investment_packages);
 

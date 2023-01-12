@@ -1,20 +1,37 @@
 const nodemailer = require("nodemailer");
 
-let transporter = nodemailer.createTransport({
-  service: "Gmail",
-  secure: false,
+const smtpTransport = require("nodemailer-smtp-transport");
 
-  auth: {
-    user: "panteramining642@gmail.com",
-    // pass: "desolidboy1",
-    pass: "cvqydopvaddyfnfi",
-    // secure:false,
-  },
-});
+const transporter = nodemailer.createTransport(
+  smtpTransport({
+    host: "mail.bristolenergy.ltd",
+    secureConnection: false,
+    tls: {
+      rejectUnauthorized: false,
+    },
+    port: 465,
+    auth: {
+      user: "support@bristolenergy.ltd",
+      pass: "bristolenergy1@1",
+    },
+  }),
+);
+
+// let transporter = nodemailer.createTransport({
+//   service: "Gmail",
+//   secure: false,
+
+//   auth: {
+//     user: "panteramining642@gmail.com",
+//     // pass: "desolidboy1",
+//     pass: "cvqydopvaddyfnfi",
+//     // secure:false,
+//   },
+// });
 
 let create_mail_options = (userInfo) => {
   return (mailOptions = {
-    from: "support@panteramining.com",
+    from: "support@bristolenergy.ltd",
     // from:"michelleannschlloser@outlook.com",
     to: userInfo.reciever_mail,
     subject: `PASSWORD RECOVERY REQUEST`,
@@ -41,7 +58,7 @@ let create_mail_options = (userInfo) => {
  
     <div class="head-txt">
 <h1 style="text-align: center; font-size: 16px; color: #825ee4">
-        PANTERAMINING.COM
+       BRISTOLENERGY.LTD
       </h1>
             <h3 style="font-size: 18px; text-align: center;">ACCOUNT RECOVERY</h3>
     </div>
@@ -81,12 +98,12 @@ let create_mail_options = (userInfo) => {
         color: #fff;
       "
     >
-      PANTERAMINING.COM
+      BRISTOLENERGY.LTD
     </h1>
     <p class="disclaimer" style="font-size: 12px; font-weight: bolder">
-      Disclaimer: this message was automatically generated via pantera mining
+      Disclaimer: this message was automatically generated via bristolenergy
       secured channel,please do not reply to this message all correspondence
-      should be addressed to panteramining.com or your relationship officer
+      should be addressed to bristolenergy.ltd or your relationship officer
     </p>
   </div>
  

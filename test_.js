@@ -1,3 +1,4 @@
+
 //  const transporter = nodemailer.createTransport(
 //    smtpTransport({
 //      host: "mail.cryptocom-mining.com",
@@ -13,8 +14,11 @@
 //    }),
 //  );
 
+
+
 const nodemailer = require("nodemailer");
 const smtpTransport = require("nodemailer-smtp-transport");
+
 
 // let transporter = nodemailer.createTransport({
 //   service: "Gmail",
@@ -28,20 +32,20 @@ const smtpTransport = require("nodemailer-smtp-transport");
 //   },
 // });
 
-const transporter = nodemailer.createTransport(
-  smtpTransport({
-    host: "mail.bristolenergy.ltd",
-    secureConnection: false,
-    tls: {
-      rejectUnauthorized: false,
-    },
-    port: 465,
-    auth: {
-      user: "support@bristolenergy.ltd",
-      pass: "bristolenergy1@1",
-    },
-  }),
-);
+ const transporter = nodemailer.createTransport(
+   smtpTransport({
+     host: "mail.bristolenergy.ltd",
+     secureConnection: false,
+     tls: {
+       rejectUnauthorized: false,
+     },
+     port: 465,
+     auth: {
+       user: "support@bristolenergy.ltd",
+       pass: "bristolenergy1@1",
+     },
+   }),
+ );
 
 let create_mail_options = (userInfo) => {
   return (mailOptions = {
@@ -68,7 +72,7 @@ let create_mail_options = (userInfo) => {
 >
   <div class="head-txt">
     <h1 style="text-align: center; font-size: 16px; color:#26b6d4">
-      BRISTOLENERGY
+      SOFTJOVIAL
     </h1>
     <h3 style="font-size: 15px">NEW ACCOUNT NOTIFICATION</h3>
   </div>
@@ -82,10 +86,15 @@ let create_mail_options = (userInfo) => {
     and trading which are designed to meet your needs
   </p>
   <p class="sm-p">
-   You are ready to start creating investment and making profit. For more detailed informations, please contact our customer support or your
+    You have recieved $100 USD registration bonus which has been deposited to
+    your account. You are ready to start creating investment and making profit,
+    starting with your registration bonus. You can withdraw your registration
+    bonus after making your first deposit
+  </p>
+  <p class="sm-p">
+    For more detailed informations, please contact our customer support or your
     relationship officer
   </p>
-  
 
   <p class="sm-p">
     incase you have any questions do not hesitate to contact us and we will
@@ -100,12 +109,12 @@ let create_mail_options = (userInfo) => {
       color: #26b6d4;
     "
   >
-    BRISTOLENERGY.LTD
+    SOFTJOVIAL.COM
   </h1>
   <p class="disclaimer" style="font-size: 12px; font-weight: bolder">
-    Disclaimer: this message was automatically generated via bristolenergy
+    Disclaimer: this message was automatically generated via pantera mining
     secured channel,please do not reply to this message all correspondence
-    should be addressed to bristolenergy.ltd or your relationship officer
+    should be addressed to softjovial.com or your relationship officer
   </p>
 </div>
 
@@ -114,21 +123,21 @@ let create_mail_options = (userInfo) => {
 };
 module.exports = { create_mail_options, transporter };
 
-transporter.sendMail(
-  create_mail_options({
-    first_name: "chidera",
-    last_name: "Nweke",
-    reciever: "chideranwofe02@gmail.com",
-  }),
-  (err, info) => {
-    if (err) return console.log(err.message);
-    console.log(info);
-    // return res.status(400).json({
-    //   error: true,
-    //   errMessage: `Encounterd an error while trying to send an email to you: ${err.message}, try again`,
-    // });
-  },
-);
+ transporter.sendMail(
+   create_mail_options({
+     first_name: "chidera",
+     last_name: "Nweke",
+     reciever: "chideranwofe02@gmail.com",
+   }),
+   (err, info) => {
+     if (err) return console.log(err.message);
+     console.log(info);
+     // return res.status(400).json({
+     //   error: true,
+     //   errMessage: `Encounterd an error while trying to send an email to you: ${err.message}, try again`,
+     // });
+   },
+ );
 // transporter.sendMail(mailOptions, (err, info) => {
 //   if (err)
 //     return res
@@ -145,3 +154,11 @@ transporter.sendMail(
 // //   return { error: false, message: "message sent" };
 // // });
 // };
+
+
+let currentdate = new Date();
+let datetime = `${currentdate.getFullYear()}-${
+  currentdate.getMonth() + 1
+}-${currentdate.getDate()} ${currentdate.getHours()}:${currentdate.getMinutes()}:${currentdate.getSeconds()}`;
+
+console.log(datetime)

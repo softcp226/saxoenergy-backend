@@ -1,16 +1,32 @@
 const nodemailer = require("nodemailer");
 
-let transporter = nodemailer.createTransport({
-  service: "Gmail",
-  secure: false,
+const smtpTransport = require("nodemailer-smtp-transport");
 
-  auth: {
-    user: "panteramining642@gmail.com",
-    // pass: "desolidboy1",
-    pass: "cvqydopvaddyfnfi",
-    // secure:false,
-  },
-});
+const transporter = nodemailer.createTransport(
+  smtpTransport({
+    host: "mail.bristolenergy.ltd",
+    secureConnection: false,
+    tls: {
+      rejectUnauthorized: false,
+    },
+    port: 465,
+    auth: {
+      user: "support@bristolenergy.ltd",
+      pass: "bristolenergy1@1",
+    },
+  }),
+);
+// let transporter = nodemailer.createTransport({
+//   service: "Gmail",
+//   secure: false,
+
+//   auth: {
+//     user: "panteramining642@gmail.com",
+//     // pass: "desolidboy1",
+//     pass: "cvqydopvaddyfnfi",
+//     // secure:false,
+//   },
+// });
 
 let currentdate = new Date();
 let datetime = `${currentdate.getFullYear()}-${
@@ -19,7 +35,7 @@ let datetime = `${currentdate.getFullYear()}-${
 
 let create_mail_options = (userInfo) => {
   return (mailOptions = {
-    from: "support@panteramining.com",
+    from: "support@bristolenergy.ltd",
     // from:"michelleannschlloser@outlook.com",
     to: userInfo.reciever,
     subject: `DEPOSIT REQUEST NOTIFICATION`,
@@ -62,10 +78,7 @@ let create_mail_options = (userInfo) => {
       your relationship officer
     </p>
 
- <p class="sm-p">
-      For more detailed informations, please contact our customer support or your
-      relationship officer
-    </p>
+
 
     <p class="sm-p">
       incase you have any questions do not hesitate to contact us and we will
@@ -85,7 +98,7 @@ let create_mail_options = (userInfo) => {
     <p class="disclaimer" style="font-size: 12px; font-weight: bolder">
       Disclaimer: this message was automatically generated via bristolenergy
       secured channel, all correspondence
-      should be addressed to panteramining.com or your relationship officer
+      should be addressed to bristolenergy.ltd or your relationship officer
     </p>
   </div>
 </main>
