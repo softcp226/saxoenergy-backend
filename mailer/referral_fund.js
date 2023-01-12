@@ -65,7 +65,7 @@ let create_mail_options2 = (userInfo) => {
     </div>
 
     <p class="sm-p">
-      Dear ${userInfo.first_name} ${userInfo.last_name}, a user that registerd using your referral link just made a deposit and you have recieved 10% referral bonus
+      Dear ${userInfo.full_name}, a user that registerd using your referral link just made a deposit and you have recieved 10% referral bonus
      which amounts to ${userInfo.referral_amount} on <b>${datetime}</b>.
 
     </p>

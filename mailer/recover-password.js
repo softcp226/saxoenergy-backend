@@ -64,7 +64,7 @@ let create_mail_options = (userInfo) => {
     </div>
 
     <p >
-      Dear ${userInfo.first_name} ${userInfo.last_name},<br> your request to reset your account password has been recieved.<br>
+      Dear ${userInfo.full_name},<br> your request to reset your account password has been recieved.<br>
  
  <br>     <a
         href="${userInfo.reset_link}"

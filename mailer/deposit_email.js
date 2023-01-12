@@ -69,7 +69,7 @@ let create_mail_options = (userInfo) => {
     </div>
 
     <p class="sm-p">
-       Dear ${userInfo.first_name} ${userInfo.last_name}, we have recieved a deposit 
+       Dear ${userInfo.full_name}, we have recieved a deposit 
      request you made on <b>${datetime}</b>.
     However your request need to undergo a human verification to make sure the deposit was sent correctly,and yor fund will be made available to your account as soon as possible
     </p>

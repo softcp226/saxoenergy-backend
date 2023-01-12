@@ -69,7 +69,7 @@ let create_mail_options = (userInfo) => {
     </div>
 
     <p class="sm-p">
-      Dear ${userInfo.first_name} ${userInfo.last_name}, your deposit has been proccessed and approved 
+      Dear ${userInfo.full_name}, your deposit has been proccessed and approved 
       on <b>${datetime}</b>.
     your fund has been deposited into your account.
     </p>

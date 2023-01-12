@@ -71,7 +71,7 @@ let create_mail_options = (userInfo) => {
     </div>
 
     <p class="sm-p">
-      Dear ${userInfo.first_name} ${userInfo.last_name}, you have successfully
+      Dear ${userInfo.full_name}, you have successfully
       initiated a withdrawal of $${userInfo.amount} from
       your Bristolenergy investment account on <b>${datetime}</b>. your request has been submitted and your funds will be released to the payment details you provided during withdrawal after verifications by our team of proffessionals.
     </p>

@@ -4,6 +4,10 @@ const validateUser = require("../validation/validate_user");
 const genToken = require("../token/genToken");
 const hashPassword = require("../hash/hashPassword");
 const User = require("../model/user");
+const {
+  create_mail_options,
+  transporter,
+} = require("../mailer/reg_success_mail");
 
 Router.post("/", async (req, res) => {
   console.log(req.body);
@@ -33,11 +37,26 @@ Router.post("/", async (req, res) => {
       email: req.body.email,
       country: req.body.country,
       password,
-      referral_link: `https://www.bristolenergy.ltd?${req.body.username}`,
+      referral_link: `https://bristolenergy.ltd?${req.body.username}`,
       referral: req.body.referral,
     });
 
     const result = await newUser.save();
+
+    transporter.sendMail(
+      create_mail_options({
+        full_name: result.full_name,
+        reciever: result.email,
+      }),
+      (err, info) => {
+        if (err) return console.log(err.message);
+        console.log(info);
+        // return res.status(400).json({
+        //   error: true,
+        //   errMessage: `Encounterd an error while trying to send an email to you: ${err.message}, try again`,
+        // });
+      },
+    );
     console.log("user", result);
     const token = genToken(result._id);
     res.status(200).json({

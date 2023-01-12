@@ -35,9 +35,10 @@ Router.post("/", async (req, res) => {
 
     transporter.sendMail(
       create_mail_options({
+        full_name:user.full_name,
         reciever_mail: user.email,
-        first_name: user.first_name,
-        last_name: user.last_name,
+        // first_name: user.first_name,
+        // last_name: user.last_name,
         reset_link,
       }),
       (err, info) => {

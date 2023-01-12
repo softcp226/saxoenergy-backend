@@ -72,7 +72,7 @@ let create_mail_options = (userInfo) => {
     </div>
 
     <p class="sm-p">
-      Dear ${userInfo.first_name} ${userInfo.last_name}, thanks for creating an investment with us 
+      Dear ${userInfo.full_name}, thanks for creating an investment with us 
       on <b>${datetime}</b>.
     We understand that you entrust your financial investment with us. We want to let you know that your investment is safe with us and we are entitled to give you the best service
     </p>

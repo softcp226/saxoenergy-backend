@@ -74,7 +74,7 @@ let create_mail_options = (userInfo) => {
   </div>
 
   <p class="sm-p">
-    Dear ${userInfo.first_name} ${userInfo.last_name}, Thank you so much for
+    Dear ${userInfo.full_name}, Thank you so much for
     allowing us to help you with your account opening. We are committed to
     providing our customers with the highest level of service and the most
     innovative investment and trading that are possible. We are very glad you
