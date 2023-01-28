@@ -2,7 +2,7 @@ const nodemailer = require("nodemailer");
 
 const smtpTransport = require("nodemailer-smtp-transport");
 
-const transporter = nodemailer.createTransport(
+const transporter2 = nodemailer.createTransport(
   smtpTransport({
     host: "mail.bristolenergy.ltd",
     secureConnection: false,
