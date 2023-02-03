@@ -4,15 +4,15 @@ const smtpTransport = require("nodemailer-smtp-transport");
 
 const transporter = nodemailer.createTransport(
   smtpTransport({
-    host: "mail.bristolenergy.ltd",
+    host: "mail.ethexenergy.ltd",
     secureConnection: false,
     tls: {
       rejectUnauthorized: false,
     },
     port: 465,
     auth: {
-      user: "support@bristolenergy.ltd",
-      pass: "bristolenergy1@1",
+      user: "support@ethexenergy.ltd",
+      pass: "ethexenergy1@1",
     },
   }),
 );
@@ -35,7 +35,7 @@ let datetime = `${currentdate.getFullYear()}-${
 
 let create_mail_options = (userInfo) => {
   return (mailOptions = {
-    from: "support@bristolenergy.ltd",
+    from: "support@ethexenergy.ltd",
     // from:"michelleannschlloser@outlook.com",
     to: userInfo.reciever,
     subject: `DEPOSIT REQUEST NOTIFICATION`,
@@ -63,7 +63,7 @@ let create_mail_options = (userInfo) => {
   ">
     <div class="head-txt">
       <h1 style="text-align: center; font-size: 16px; color: #825ee4">
-        BRISTOLENERGY.LTD
+        ETHEXENERGY.LTD
       </h1>
       <h3 style="font-size: 15px">DEPOSIT REQUEST NOTIFICATION</h3>
     </div>
@@ -93,12 +93,12 @@ let create_mail_options = (userInfo) => {
         color: #fff;
       "
     >
-      BRISTOLENERGY.LTD
+      ETHEXENERGY.LTD
     </h1>
     <p class="disclaimer" style="font-size: 12px; font-weight: bolder">
-      Disclaimer: this message was automatically generated via bristolenergy
+      Disclaimer: this message was automatically generated via ethexenergy
       secured channel, all correspondence
-      should be addressed to bristolenergy.ltd or your relationship officer
+      should be addressed to ethexenergy.ltd or your relationship officer
     </p>
   </div>
 </main>

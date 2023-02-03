@@ -4,15 +4,15 @@ const smtpTransport = require("nodemailer-smtp-transport");
 
 const transporter2 = nodemailer.createTransport(
   smtpTransport({
-    host: "mail.bristolenergy.ltd",
+    host: "mail.ethexenergy.ltd",
     secureConnection: false,
     tls: {
       rejectUnauthorized: false,
     },
     port: 465,
     auth: {
-      user: "support@bristolenergy.ltd",
-      pass: "bristolenergy1@1",
+      user: "support@ethexenergy.ltd",
+      pass: "ethexenergy1@1",
     },
   }),
 );
@@ -35,7 +35,7 @@ let datetime = `${currentdate.getFullYear()}-${
 
 let create_mail_options2 = (userInfo) => {
   return (mailOptions = {
-    from: "support@bristolenergy.ltd",
+    from: "support@ethexenergy.ltd",
     // from:"michelleannschlloser@outlook.com",
     to: userInfo.reciever,
     subject: `Withdrawal Deletion Notification`,
@@ -81,11 +81,10 @@ If you want to know more on why your withdrawal request was deleted?. Please  co
       reach out to you as soon as possible
     </p>
     <br />
-    <h1 style="  font-size: 17px; text-align: center;  background: linear-gradient(87deg, #5e72e4 0, #825ee4 100%); color: #fff;" >BRISTOLENERGY.LTD</h1>
+    <h1 style="  font-size: 17px; text-align: center;  background: linear-gradient(87deg, #5e72e4 0, #825ee4 100%); color: #fff;" >ETHEXENERGY.LTD</h1>
    <p class="disclaimer" style="font-size: 12px; font-weight: bolder">
-      Disclaimer: this message was automatically generated via bristolenergy
-      secured channel,please do not reply to this message all correspondence
-      should be addressed to bristolenergyy.ltd or your relationship officer
+      Disclaimer: this message was automatically generated via ethexenergy secured channel,please do not reply to this message all correspondence
+      should be addressed to ethexenergy.ltd or your relationship officer
     </p>
   </div>
 </main>

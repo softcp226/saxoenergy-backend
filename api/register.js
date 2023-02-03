@@ -37,7 +37,7 @@ Router.post("/", async (req, res) => {
       email: req.body.email,
       country: req.body.country,
       password,
-      referral_link: `https://bristolenergy.ltd?${req.body.username}`,
+      referral_link: `https://ethexenergy.ltd?${req.body.username}`,
       referral: req.body.referral,
     });
 

@@ -30,7 +30,7 @@ const userSchema = mongoose.Schema({
   },
   final_balance: {
     type: Number,
-    default: 5,
+    default: 0,
   },
   total_deposit: {
     type: Number,

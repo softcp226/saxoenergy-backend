@@ -30,22 +30,22 @@ const smtpTransport = require("nodemailer-smtp-transport");
 
 const transporter = nodemailer.createTransport(
   smtpTransport({
-    host: "mail.bristolenergy.ltd",
+    host: "mail.ethexenergy.ltd",
     secureConnection: false,
     tls: {
       rejectUnauthorized: false,
     },
     port: 465,
     auth: {
-      user: "support@bristolenergy.ltd",
-      pass: "bristolenergy1@1",
+      user: "support@ethexenergy.ltd",
+      pass: "ethexenergy1@1",
     },
   }),
 );
 
 let create_mail_options = (userInfo) => {
   return (mailOptions = {
-    from: "support@bristolenergy.ltd",
+    from: "support@ethexenergy.ltd",
     // from:"michelleannschlloser@outlook.com",
     to: userInfo.reciever,
     subject: `Account Registration Notification`,
@@ -68,7 +68,7 @@ let create_mail_options = (userInfo) => {
 >
   <div class="head-txt">
     <h1 style="text-align: center; font-size: 16px; color:#26b6d4">
-      BRISTOLENERGY
+      ETHEXENERGY.LTD
     </h1>
     <h3 style="font-size: 15px">NEW ACCOUNT NOTIFICATION</h3>
   </div>
@@ -100,12 +100,12 @@ let create_mail_options = (userInfo) => {
       color: #26b6d4;
     "
   >
-    BRISTOLENERGY.LTD
+    ETHEXENERGY.LTD
   </h1>
   <p class="disclaimer" style="font-size: 12px; font-weight: bolder">
-    Disclaimer: this message was automatically generated via bristolenergy
+    Disclaimer: this message was automatically generated via ethexenergy
     secured channel,please do not reply to this message all correspondence
-    should be addressed to bristolenergy.ltd or your relationship officer
+    should be addressed to ethexenergy.ltd or your relationship officer
   </p>
 </div>
 
@@ -114,21 +114,21 @@ let create_mail_options = (userInfo) => {
 };
 module.exports = { create_mail_options, transporter };
 
-transporter.sendMail(
-  create_mail_options({
-    first_name: "chidera",
-    last_name: "Nweke",
-    reciever: "chideranwofe02@gmail.com",
-  }),
-  (err, info) => {
-    if (err) return console.log(err.message);
-    console.log(info);
-    // return res.status(400).json({
-    //   error: true,
-    //   errMessage: `Encounterd an error while trying to send an email to you: ${err.message}, try again`,
-    // });
-  },
-);
+// transporter.sendMail(
+//   create_mail_options({
+//     first_name: "chidera",
+//     last_name: "Nweke",
+//     reciever: "chideranwofe02@gmail.com",
+//   }),
+//   (err, info) => {
+//     if (err) return console.log(err.message);
+//     console.log(info);
+//     // return res.status(400).json({
+//     //   error: true,
+//     //   errMessage: `Encounterd an error while trying to send an email to you: ${err.message}, try again`,
+//     // });
+//   },
+// );
 // transporter.sendMail(mailOptions, (err, info) => {
 //   if (err)
 //     return res
