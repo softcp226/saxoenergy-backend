@@ -38,6 +38,8 @@ Router.post("/", async (req, res) => {
       country: req.body.country,
       password,
       referral_link: `https://ethexenergy.ltd?${req.body.username}`,
+      //  referral_link: `http://localhost:3000?${req.body.username}`,
+
       referral: req.body.referral,
     });
 

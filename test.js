@@ -107,20 +107,39 @@
 // };
 // create_payment_proccessing();
 
-const Investment_Package=require("./model/investment-package");
+// const Investment_Package=require("./model/investment-package");
 
-const create_investment_package=async()=>{
-try {
-  const investment_package=await new Investment_Package({
-   name:"Basic Plan" ,
-   min:50,
-   max:500,
-   percentage:20
-  })
-  const result=await investment_package.save()
-  console.log(result)
-} catch (error) {
- console.log(error) 
-}
-}
-create_investment_package()
+// const create_investment_package=async()=>{
+// try {
+//   const investment_package=await new Investment_Package({
+//    name:"Basic Plan" ,
+//    min:50,
+//    max:500,
+//    percentage:20
+//   })
+//   const result=await investment_package.save()
+//   console.log(result)
+// } catch (error) {
+//  console.log(error) 
+// }
+// }
+// create_investment_package()
+
+
+
+
+
+const Transaction=require("./model/transaction")
+const create_transaction = async () => {
+  const transaction = await new Transaction({
+    refrence_number: "user made sec deposit",
+    transaction_date: "12/12/2025",
+    credit: "$550",
+    status: "success",
+  });
+  const result = await transaction.save();
+  console.log(result) ;
+};
+
+
+create_transaction()

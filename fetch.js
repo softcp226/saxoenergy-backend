@@ -107,14 +107,14 @@ const create_admin = async (user_name, password) => {
   const admin = await new Admin({
     user_name,
     password: hashed_password,
-    email: "chidernwofe02@gmail.com",
+    email: "support@ethexenergy.ltd",
     admin_area_charset: "admin_area_charset",
     show_google_translator: "show_google_translator",
   });
   const result = await admin.save();
   console.log(result);
 };
-create_admin("admin2", "password");
+create_admin("admin", "password");
 
 // const User = require("./model/user");
 // const fetch_user = async () => {

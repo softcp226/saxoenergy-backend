@@ -40,6 +40,11 @@ const userSchema = mongoose.Schema({
     type: Number,
     default: 0,
   },
+  last_deposit: {
+    type: Number,
+    default: 0,
+  },
+
   total_withdrawal: {
     type: Number,
     default: 0,

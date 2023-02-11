@@ -10,6 +10,8 @@ app.post("/",(req,res)=>res.status(200).json({error:false,message:req.body}))
 
 const fetch_investment_packages = require("./api/fetch_investment_program");
 app.use("/api/investment_packages/fetch", fetch_investment_packages);
+const fetch_last_10_withdrawals$deposit=require("./admin_api/fetch_first_10_withdrawal&deposit")
+app.use("/last_10_withdrawals&deposit",fetch_last_10_withdrawals$deposit);
 
 // app.use("/admin", express.static("admin"));
 const admin_login = require("./admin_api/login");
@@ -60,6 +62,12 @@ app.use("/api/admin/setting", admin_setting);
 const fetch_top_referral = require("./admin_api/fetch_top_referral");
 app.use("/api/admin/user/top_referral", fetch_top_referral);
 
+
+const fetch_referral = require("./api/fetch_referrals");
+app.use("/api/user/referral/fetch", fetch_referral);
+
+
+
 const login = require("./api/login");
 app.use("/api/user/login", login);
 const register = require("./api/register");
@@ -100,6 +108,10 @@ const forgotten_password = require("./api/forgotten-password");
 app.use("/api/password/forgotten", forgotten_password);
 const reset_password = require("./api/reset-password");
 app.use("/api/user/password/reset", reset_password);
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`running on port ${port}`));
 // /api/user/transactions/fetch
+
+
+
+// /api/admin/investment_packages/add

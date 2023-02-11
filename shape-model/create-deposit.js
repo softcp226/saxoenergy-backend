@@ -24,7 +24,7 @@ const create_deposit = async (req) => {
   let ref = Math.floor(Math.random() * 100);
   const transaction = await new Transaction({
     user: req.body.user,
-    refrence_number: `Ref#${++ref} `,
+    refrence_number: `Deposit#${++ref} `,
     transaction_date: datetime,
     credit: `$${req.body.deposit_amount
       .toString()
@@ -43,6 +43,8 @@ const create_deposit = async (req) => {
     // currency: req.body.currency,
     transaction: transaction._id,
   });
+
+  transaction.set({ deposit_request: deposit_request ._id});
 
   await deposit_request.save();
   await transaction.save();

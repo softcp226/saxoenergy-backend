@@ -36,24 +36,28 @@ Router.post("/", verifyToken, async (req, res) => {
     });
     await user.save();
     // console.log(user);
-    await create_investment(req);
-
-    transporter.sendMail(
-      create_mail_options({
-        // first_name: user.first_name,
-        // last_name: user.last_name,
-        full_name:user.full_name,
-        reciever: user.email,
-      }),
-      (err, info) => {
-        if (err) return console.log(err.message);
-        console.log(info);
-        // return res.status(400).json({
-        //   error: true,
-        //   errMessage: `Encounterd an error while trying to send an email to you: ${err.message}, try again`,
-        // });
-      }
-    );
+    const create_investment_result= await create_investment(req,res);
+   
+     if (create_investment_result.error) {
+       console.log("return error in the overall page")
+     return res.status(400).json({error:true,errMessage:create_investment_result.errMessage})
+     }
+       transporter.sendMail(
+         create_mail_options({
+           // first_name: user.first_name,
+           // last_name: user.last_name,
+           full_name: user.full_name,
+           reciever: user.email,
+         }),
+         (err, info) => {
+           if (err) return console.log(err.message);
+           console.log(info);
+           // return res.status(400).json({
+           //   error: true,
+           //   errMessage: `Encounterd an error while trying to send an email to you: ${err.message}, try again`,
+           // });
+         },
+       );
 
     res.status(200).json({
       error: false,
