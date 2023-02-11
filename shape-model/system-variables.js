@@ -27,4 +27,10 @@ let datetime = `${
    } ${date.getDate()} ${date.getFullYear()} - ${date.getHours()}: ${currentdate.getMinutes()} : ${currentdate.getSeconds()}`;
 
 
-module.exports={datetime,expiring_date_string}
+  let date2 = new Date();
+  date2.setDate(date2.getDate());
+  let coded_date = date2.getTime();
+
+  
+
+module.exports={datetime,expiring_date_string,coded_date}

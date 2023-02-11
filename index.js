@@ -10,7 +10,7 @@ app.post("/",(req,res)=>res.status(200).json({error:false,message:req.body}))
 
 const fetch_investment_packages = require("./api/fetch_investment_program");
 app.use("/api/investment_packages/fetch", fetch_investment_packages);
-const fetch_last_10_withdrawals$deposit=require("./admin_api/fetch_first_10_withdrawal&deposit")
+const fetch_last_10_withdrawals$deposit=require("./admin_api/fetch_last_10_withdrawal&deposit")
 app.use("/last_10_withdrawals&deposit",fetch_last_10_withdrawals$deposit);
 
 // app.use("/admin", express.static("admin"));

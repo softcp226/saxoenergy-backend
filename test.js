@@ -127,14 +127,18 @@
 
 
 
-
+// const user = "63e5cb78af06919b02f5fdb3";
+const {coded_date,datetime} = require("./shape-model/system-variables")
+const user="63e5d958716de7b71cf4182d"
 
 const Transaction=require("./model/transaction")
 const create_transaction = async () => {
   const transaction = await new Transaction({
+    user,
+    coded_date,
     refrence_number: "user made sec deposit",
-    transaction_date: "12/12/2025",
-    credit: "$550",
+    transaction_date:datetime,
+    debit: "$956",
     status: "success",
   });
   const result = await transaction.save();

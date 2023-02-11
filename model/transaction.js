@@ -29,6 +29,7 @@ const transaction_Schema = mongoose.Schema({
     required: true,
     // default: Date.now(),
   },
+  coded_date: String,
   debit: String,
   credit: String,
   status: {

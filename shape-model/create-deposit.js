@@ -1,6 +1,10 @@
 const Deposit_request = require("../model/deposit_request");
 const Transaction = require("../model/transaction");
-const { datetime, expiring_date_string } = require("./system-variables");
+const {
+  datetime,
+  expiring_date_string,
+  coded_date,
+} = require("./system-variables");
 
 const set_scheduled_expiring_date = (req) => {
   let date = new Date();
@@ -26,6 +30,7 @@ const create_deposit = async (req) => {
     user: req.body.user,
     refrence_number: `Deposit#${++ref} `,
     transaction_date: datetime,
+    coded_date,
     credit: `$${req.body.deposit_amount
       .toString()
       .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`,
@@ -44,7 +49,7 @@ const create_deposit = async (req) => {
     transaction: transaction._id,
   });
 
-  transaction.set({ deposit_request: deposit_request ._id});
+  transaction.set({ deposit_request: deposit_request._id });
 
   await deposit_request.save();
   await transaction.save();
