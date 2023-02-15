@@ -9,6 +9,11 @@ const {
   transporter,
 } = require("../mailer/reg_success_mail");
 
+const {
+  create_referral_mail_options,
+  referral_transporter,
+} = require("../mailer/referral_mail");
+
 Router.post("/", async (req, res) => {
   console.log(req.body);
   const isvalid = validateUser(req.body);
@@ -44,6 +49,16 @@ Router.post("/", async (req, res) => {
     });
 
     const result = await newUser.save();
+
+    const referral = await User.findOne({ referral: req.body.referral });
+    if (referral) {
+      referral_transporter.sendMail(
+        create_referral_mail_options({
+          reciever: referral.email,
+          referred_user: req.body.full_name.toUpperCase(),
+        }),
+      );
+    }
 
     transporter.sendMail(
       create_mail_options({

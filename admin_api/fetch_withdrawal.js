@@ -19,10 +19,11 @@ Router.post("/", verifyToken, async (req, res) => {
         error: true,
         errMessage: "Forbidden!, please login again to access this api",
       });
-    const withdrawal = await Withdrawal_request.find()
-      .populate("user")
-      .skip(req.body.skip_count)
-      .limit(req.body.display_count);
+    const withdrawal = await Withdrawal_request.find({
+      is_approved: false,
+    }).populate("user");
+    // .skip(req.body.skip_count)
+    // .limit(req.body.display_count);
     if (withdrawal.length < 1)
       return res.status(400).json({
         error: true,
@@ -46,9 +47,10 @@ Router.post("/single", verifyToken, async (req, res) => {
         error: true,
         errMessage: "Forbidden!, please login again to access this api",
       });
-    const withdrawal = await Withdrawal_request.findById(
-      req.body.withdrawal_request,
-    ).populate("user");
+    const withdrawal = await Withdrawal_request.find({
+      _id: req.body.withdrawal_request,
+      is_approved: false,
+    }).populate("user");
 
     if (!withdrawal)
       return res.status(400).json({

@@ -17,7 +17,7 @@ const transaction_Schema = mongoose.Schema({
 
   withdrawal_request: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: " withdrawal_request",
+    ref: "withdrawal_request",
   },
 
   refrence_number: {

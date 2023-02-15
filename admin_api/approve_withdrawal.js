@@ -4,6 +4,7 @@ const verifyToken = require("../secure-admin-api/verifyToken");
 const Withdrawal_request = require("../model/withdrawal_request");
 const Transaction = require("../model/transaction");
 const Admin = require("../model/admin");
+const { coded_date } = require("../shape-model/system-variables");
 
 // const validate_admin = require("../validation/validate-admin-fetchuser");
 const validate_admin_approve_withdrawal = require("../validation/validate_admin_approve_withdrawal");
@@ -99,9 +100,11 @@ Router.post("/", verifyToken, async (req, res) => {
 
       //   made_first_deposit: true,
     });
-    transaction.set({ status: "success" });
+    transaction.set({ status: "success", coded_date });
 
-    await Withdrawal_request.findByIdAndDelete(req.body.withdrawal_request);
+    // await Withdrawal_request.findByIdAndDelete(req.body.withdrawal_request);
+
+    withdrawal_request.set({ is_approved: true });
 
     await transaction.save();
     await user.save();
@@ -201,7 +204,7 @@ Router.post("/mass_payment", verifyToken, async (req, res) => {
         create_mail_options({
           // first_name: user.first_name,
           // last_name: user.last_name,
-          full_name:user.full_name,
+          full_name: user.full_name,
           reciever: user.email,
           withdrawal_amount: withdrawal_request.withdrawal_amount,
         }),
@@ -244,12 +247,12 @@ Router.delete("/delete", async (req, res) => {
       const withdrawal_request = await Withdrawal_request.findById(
         withdrawal_requestID,
       );
-      console.log("withdrawal request",withdrawal_request)
+      console.log("withdrawal request", withdrawal_request);
       if (!withdrawal_request)
         return console.log(
           "the withdrawal you requested to delete does not exist.",
         );
-     
+
       const transaction = await Transaction.findById(
         withdrawal_request.transaction,
       );
@@ -283,14 +286,14 @@ Router.delete("/delete", async (req, res) => {
 
         //   made_first_deposit: true,
       });
-      await user.save()
+      await user.save();
       await Withdrawal_request.findByIdAndDelete(withdrawal_requestID);
 
       transporter2.sendMail(
         create_mail_options2({
           // first_name: user.first_name,
           // last_name: user.last_name,
-          full_name:user.full_name,
+          full_name: user.full_name,
           reciever: user.email,
           withdrawal_amount: withdrawal_request.withdrawal_amount,
         }),

@@ -31,10 +31,14 @@ const withdrawal_request_Schema = mongoose.Schema({
     type: String,
     required: true,
   },
+  is_approved: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const Withdrawal_request = mongoose.model(
   "withdrawal_request",
-  withdrawal_request_Schema
+  withdrawal_request_Schema,
 );
 module.exports = Withdrawal_request;

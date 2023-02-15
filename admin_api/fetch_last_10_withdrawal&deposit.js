@@ -11,7 +11,8 @@ Router.get("/last_10_withdrawals", async (req, res) => {
     })
       .sort({ coded_date: -1 })
       .limit(10)
-      .populate("user");
+      .populate("user")
+      .populate("withdrawal_request");
 
     // let first_10_withdrawals0 = first_10_withdrawals.filter(
     //   (first_10_withdrawal) => first_10_withdrawal.debit !== undefined,
@@ -37,7 +38,9 @@ Router.get("/last_10_deposits", async (req, res) => {
     })
       .sort({ coded_date: -1 })
       .limit(10)
-      .populate("user");
+      .populate("user")
+      .populate("deposit_request");
+      
     // let first_10_deposit0 = first_10_deposit.filter(
     //   (first_10_deposit) => first_10_deposit.credit !== undefined,
     // );
