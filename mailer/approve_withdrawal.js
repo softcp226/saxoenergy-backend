@@ -77,9 +77,9 @@ let create_mail_options = (userInfo) => {
 
 
     <p class="sm-p">
-    <b>Withdrawal Method:</b>  ${userInfo.withdrawal_method}.
-    <b> Withdrawal Address:</b> ${userInfo.wallet}
-    <b> Transaction ID:</b>${userInfo.withdrawal_hash}
+    <p><b>Withdrawal Method:</b>  ${userInfo.withdrawal_method}</p>
+      <p>  <b> Withdrawal Address:</b> ${userInfo.wallet}</p>
+     <p> <b> Transaction ID:</b>${userInfo.withdrawal_hash}</p>
     </p>
 
     <p class="sm-p">
