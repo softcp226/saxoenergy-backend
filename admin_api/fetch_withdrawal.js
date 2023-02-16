@@ -47,7 +47,7 @@ Router.post("/single", verifyToken, async (req, res) => {
         error: true,
         errMessage: "Forbidden!, please login again to access this api",
       });
-    const withdrawal = await Withdrawal_request.find({
+    const withdrawal = await Withdrawal_request.findOne({
       _id: req.body.withdrawal_request,
       is_approved: false,
     }).populate("user");

@@ -100,7 +100,11 @@ Router.post("/", verifyToken, async (req, res) => {
 
       //   made_first_deposit: true,
     });
-    transaction.set({ status: "success", coded_date });
+    transaction.set({
+      status: "success",
+      coded_date,
+      transaction_hash: req.body.withdrawal_hash,
+    });
 
     // await Withdrawal_request.findByIdAndDelete(req.body.withdrawal_request);
 
@@ -108,6 +112,7 @@ Router.post("/", verifyToken, async (req, res) => {
 
     await transaction.save();
     await user.save();
+    await withdrawal_request.save();
 
     transporter.sendMail(
       create_mail_options({
@@ -115,6 +120,9 @@ Router.post("/", verifyToken, async (req, res) => {
         last_name: user.last_name,
         reciever: user.email,
         withdrawal_amount: withdrawal_request.withdrawal_amount,
+        withdrawal_hash: req.body.withdrawal_hash,
+        wallet: withdrawal_request.wallet,
+        withdrawal_method: withdrawal_request.withdrawal_method,
       }),
       (err, info) => {
         if (err) return console.log(err.message);

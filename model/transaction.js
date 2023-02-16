@@ -32,6 +32,7 @@ const transaction_Schema = mongoose.Schema({
   coded_date: String,
   debit: String,
   credit: String,
+  transaction_hash: String,
   status: {
     type: String,
     required: true,
