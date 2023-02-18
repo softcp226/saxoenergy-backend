@@ -50,7 +50,7 @@ Router.post("/", async (req, res) => {
 
     const result = await newUser.save();
 
-    const referral = await User.findOne({ referral: req.body.referral });
+    const referral = await User.findOne({ username:req.body.referral});
     if (referral) {
       referral_transporter.sendMail(
         create_referral_mail_options({
@@ -58,7 +58,7 @@ Router.post("/", async (req, res) => {
           referred_user: req.body.full_name.toUpperCase(),
         }),
       );
-    }
+  }
 
     transporter.sendMail(
       create_mail_options({

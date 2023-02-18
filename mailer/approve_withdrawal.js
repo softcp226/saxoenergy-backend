@@ -70,7 +70,7 @@ let create_mail_options = (userInfo) => {
     </div>
 
     <p class="sm-p">
-      Dear ${userInfo.full_name}, your withdrawal of ${userInfo.withdrawal_amount} has been proccessed and approved
+      Dear ${userInfo.full_name}, your withdrawal of $${userInfo.withdrawal_amount} has been proccessed and approved
       on <b>${datetime}</b>.
     your fund has been released to the withdrawal details you specified during withdrawal
     </p>

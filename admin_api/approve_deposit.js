@@ -4,7 +4,7 @@ const verifyToken = require("../secure-admin-api/verifyToken");
 const Deposit_request = require("../model/deposit_request");
 const Transaction = require("../model/transaction");
 const Admin = require("../model/admin");
-const {coded_date} = require("../shape-model/system-variables");
+const { coded_date } = require("../shape-model/system-variables");
 
 // const validate_admin = require("../validation/validate-admin-fetchuser");
 const validate_admin_approve_deposit = require("../validation/validate_admin_approve_deposit");
@@ -56,7 +56,7 @@ Router.post("/", verifyToken, async (req, res) => {
           "the user that made the deposit you are trying to approve no longer exist",
       });
 
-    const referral = await User.findOne({ email: user.referral });
+    const referral = await User.findOne({username:user.referral});
     if (referral) {
       const mypercentage = (parseInt(req.body.deposit_amount) / 100) * 5;
       referral.set({
@@ -93,7 +93,7 @@ Router.post("/", verifyToken, async (req, res) => {
       made_first_deposit: true,
       last_deposit: parseInt(req.body.deposit_amount),
     });
-    transaction.set({ status: "success" ,coded_date });
+    transaction.set({ status: "success", coded_date });
 
     // await Deposit_request.findByIdAndDelete(req.body.deposit_request);
     deposit_request.set({ status: "success" });
