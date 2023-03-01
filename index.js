@@ -114,4 +114,4 @@ app.listen(port, () => console.log(`running on port ${port}`));
 
 
 
-// /api/user/referral/fetch
+// /api/admin/investment_packages/add

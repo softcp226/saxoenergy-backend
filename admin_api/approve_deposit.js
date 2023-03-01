@@ -107,6 +107,7 @@ Router.post("/", verifyToken, async (req, res) => {
         // last_name: user.last_name,
         full_name: user.full_name,
         reciever: user.email,
+        deposit_amount:req.body.deposit_amount
       }),
       (err, info) => {
         if (err) return console.log(err.message);
