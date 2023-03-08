@@ -42,7 +42,10 @@ const investment_schema = mongoose.Schema({
     type: String,
     required: true,
   },
-
+  completion_time: {
+    type: String,
+    required: true,
+  },
   loss: {
     type: Number,
     default: 0,

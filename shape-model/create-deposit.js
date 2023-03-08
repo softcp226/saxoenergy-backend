@@ -1,5 +1,6 @@
 const Deposit_request = require("../model/deposit_request");
 const Transaction = require("../model/transaction");
+const Proccessing = require("../model/proccessings");
 const {
   datetime,
   expiring_date_string,
@@ -28,7 +29,7 @@ const create_deposit = async (req) => {
   let ref = Math.floor(Math.random() * 100);
   const transaction = await new Transaction({
     user: req.body.user,
-    refrence_number: `Deposit#${++ref} `,
+    refrence_number: `#Deposit `,
     transaction_date: datetime,
     coded_date,
     credit: `$${req.body.deposit_amount
@@ -36,11 +37,17 @@ const create_deposit = async (req) => {
       .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`,
     status: "pending",
   });
+
+  const proccessing = await Proccessing.findOne({
+    name: req.body.payment_method,
+  });
+  if (!proccessing) console.log("proccessing not found", proccessing);
   // console.log("transaction", transaction._id);
   const deposit_request = await new Deposit_request({
     user: req.body.user,
     deposit_amount: req.body.deposit_amount,
     payment_method: req.body.payment_method,
+    payment_wallet:proccessing.wallet_address,
     date: datetime,
     scheduled_expiring_date: set_scheduled_expiring_date(),
     expiring_date: set_expiring_date(),

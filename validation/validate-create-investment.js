@@ -4,6 +4,7 @@ const validate_create_investment = (req) => {
     user: Joi.string().required().max(1000),
     amount: Joi.number().required().min(0),
     investment_plan: Joi.string().required().max(1000),
+    completion_time: Joi.string().required().max(1000),
     // return_time: Joi.string().required().max(1000),
     profit: Joi.number().required().min(0),
   });
@@ -11,6 +12,7 @@ const validate_create_investment = (req) => {
     user: req.user,
     amount: req.investment_amount,
     investment_plan: req.investment_plan,
+    completion_time: req.completion_time,
     // return_time: req.return_time,
     profit: req.profit,
   });

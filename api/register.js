@@ -40,9 +40,9 @@ Router.post("/", async (req, res) => {
       full_name: req.body.full_name.toUpperCase(),
       username: req.body.username,
       email: req.body.email,
-      country: req.body.country,
+      // country: req.body.country,
       password,
-      referral_link: `https://ethexenergy.ltd?${req.body.username}`,
+      referral_link: `http://localhost:5000?${req.body.username}`,
       //  referral_link: `http://localhost:3000?${req.body.username}`,
 
       referral: req.body.referral,

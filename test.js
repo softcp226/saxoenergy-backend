@@ -89,6 +89,7 @@
 //     const payment_processing = await new Payment_proccessing({
 //       name: "Bitcoin",
 //       wallet_address: "btc-wallet-me",
+//       status:"active",
 //       // wallet_note:`send ${"am"}`
 //       icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpTuyc5UTf_-kvmj_bwOPbFvZvoq-LhlkO7OV6B5ZAb_Qgx9iwYQlah17gnnlrn1r-RW8&usqp=CAU",
 //       deposit_enabled: true,
@@ -107,43 +108,52 @@
 // };
 // create_payment_proccessing();
 
-// const Investment_Package=require("./model/investment-package");
+const Investment_Package=require("./model/investment-package");
 
-// const create_investment_package=async()=>{
-// try {
-//   const investment_package=await new Investment_Package({
-//    name:"Basic Plan" ,
-//    min:50,
-//    max:500,
-//    percentage:20
-//   })
-//   const result=await investment_package.save()
-//   console.log(result)
-// } catch (error) {
-//  console.log(error) 
-// }
-// }
-// create_investment_package()
+const create_investment_package=async()=>{
+try {
+  const investment_package = await new Investment_Package({
+    package_name: "Ultimate",
+    package_door: "Public",
+    package_status: "Active",
+    payment_period: "48 Hours",
+    min: 5000,
+    max: 50000,
+    percentage: 10,
+  });
+  const result=await investment_package.save()
+  console.log(result)
+} catch (error) {
+ console.log(error) 
+}
+}
+create_investment_package()
 
 
 
 // const user = "63e5cb78af06919b02f5fdb3";
-const {coded_date,datetime} = require("./shape-model/system-variables")
-const user="63e5d958716de7b71cf4182d"
+// const {coded_date,datetime} = require("./shape-model/system-variables")
+// const user="63e5d958716de7b71cf4182d"
 
-const Transaction=require("./model/transaction")
-const create_transaction = async () => {
-  const transaction = await new Transaction({
-    user,
-    coded_date,
-    refrence_number: "user made sec deposit",
-    transaction_date:datetime,
-    debit: "$956",
-    status: "success",
-  });
-  const result = await transaction.save();
-  console.log(result) ;
-};
+// const Transaction=require("./model/transaction")
+// const create_transaction = async () => {
+//   const transaction = await new Transaction({
+//     user,
+//     coded_date,
+//     refrence_number: "user made sec deposit",
+//     transaction_date:datetime,
+//     debit: "$956",
+//     status: "success",
+//   });
+//   const result = await transaction.save();
+//   console.log(result) ;
+// };
 
 
-create_transaction()
+// create_transaction()
+
+
+
+// const Investment_Package=require("./model/investment-package")
+
+// const create_investment_package

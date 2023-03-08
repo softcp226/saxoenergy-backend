@@ -1,12 +1,12 @@
 const Transaction = require("../model/transaction");
-const { datetime,coded_date } = require("../shape-model/system-variables");
+const { datetime, coded_date } = require("../shape-model/system-variables");
 const Withdrawal_request = require("../model/withdrawal_request");
 const create_withdrawal_transaction = async (req) => {
   let ref = Math.floor(Math.random() * 100);
 
   const transaction = await new Transaction({
     user: req.body.user,
-    refrence_number: `Withdrawal#${++ref} `,
+    refrence_number: `#Withdrawal `,
     transaction_date: datetime,
     coded_date,
 

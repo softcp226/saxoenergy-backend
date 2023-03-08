@@ -17,6 +17,10 @@ const deposit_request_Schema = mongoose.Schema({
     type: String,
     required: true,
   },
+  payment_wallet:{
+     type: String,
+    required: true,
+  },
   // currency: {
   //   type: String,
   //   required: true,
@@ -65,6 +69,7 @@ const deposit_request_Schema = mongoose.Schema({
     enum: ["pending", "success", "failed"],
     default: "pending",
   },
+  transaction_hash: String,
 });
 
 const Deposit_request = mongoose.model(
