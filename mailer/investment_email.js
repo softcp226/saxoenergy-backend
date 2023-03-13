@@ -1,17 +1,18 @@
+require("dotenv").config();
 const nodemailer = require("nodemailer");
 const smtpTransport = require("nodemailer-smtp-transport");
 
 const transporter = nodemailer.createTransport(
   smtpTransport({
-    host: "mail.ethexenergy.ltd",
+    host: "mail.saxoenergy.ltd",
     secureConnection: false,
     tls: {
       rejectUnauthorized: false,
     },
     port: 465,
     auth: {
-      user: "support@ethexenergy.ltd",
-      pass: "ethexenergy1@1",
+      user: process.env.company_mail,
+      pass: process.env.mail_password,
     },
   }),
 );
@@ -35,7 +36,7 @@ let datetime = `${currentdate.getFullYear()}-${
 
 let create_mail_options = (userInfo) => {
   return (mailOptions = {
-    from: "support@ethexenergy.ltd",
+    from: process.env.company_mail,
     // from:"michelleannschlloser@outlook.com",
     to: userInfo.reciever,
     subject: `Investment Confirmation Notification`,
@@ -66,7 +67,7 @@ let create_mail_options = (userInfo) => {
     <div class="head-txt">
 <div class="head-txt">
       <h1 style="text-align: center; font-size: 16px; color: #825ee4">
-        ETHEXENERGY.LTD
+        SAXOENERGY.LTD
       </h1>
       <h3 style="font-size: 15px;">DEPOSIT CONFIRMATION NOTIFICATION</h3>
     </div>
@@ -94,12 +95,12 @@ let create_mail_options = (userInfo) => {
         color: #fff;
       "
     >
-      ETHEXENERGY.LTD
+      SAXOENERGY.LTD
     </h1>
     <p class="disclaimer" style="font-size: 12px; font-weight: bolder">
-      Disclaimer: this message was automatically generated via ethexenergy
+      Disclaimer: this message was automatically generated via saxoenergy
       secured channel,please do not reply to this message all correspondence
-      should be addressed to ethexenergy.ltd or your relationship officer
+      should be addressed to saxoenergy.ltd or your relationship officer
     </p>
   </div>
 </main>

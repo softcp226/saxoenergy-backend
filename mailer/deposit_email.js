@@ -1,18 +1,18 @@
+require("dotenv").config();
 const nodemailer = require("nodemailer");
-
 const smtpTransport = require("nodemailer-smtp-transport");
 
 const transporter = nodemailer.createTransport(
   smtpTransport({
-    host: "mail.ethexenergy.ltd",
+    host: "mail.saxoenergy.ltd",
     secureConnection: false,
     tls: {
       rejectUnauthorized: false,
     },
     port: 465,
     auth: {
-      user: "support@ethexenergy.ltd",
-      pass: "ethexenergy1@1",
+      user: process.env.company_mail,
+      pass: process.env.mail_password,
     },
   }),
 );
@@ -35,7 +35,7 @@ let datetime = `${currentdate.getFullYear()}-${
 
 let create_mail_options = (userInfo) => {
   return (mailOptions = {
-    from: "support@ethexenergy.ltd",
+    from: process.env.company_mail,
     // from:"michelleannschlloser@outlook.com",
     to: userInfo.reciever,
     subject: `DEPOSIT REQUEST NOTIFICATION`,
@@ -63,7 +63,7 @@ let create_mail_options = (userInfo) => {
   ">
     <div class="head-txt">
       <h1 style="text-align: center; font-size: 16px; color: #825ee4">
-        ETHEXENERGY.LTD
+        SAXOENERGY.LTD
       </h1>
       <h3 style="font-size: 15px">DEPOSIT REQUEST NOTIFICATION</h3>
     </div>
@@ -71,7 +71,7 @@ let create_mail_options = (userInfo) => {
     <p class="sm-p">
        Dear ${userInfo.full_name}, we have recieved a deposit 
      request you made on <b>${datetime}</b>.
-    However your request need to undergo a human verification to make sure the deposit was sent correctly,and yor fund will be made available to your account as soon as possible
+    However your request need to undergo a human verification to make sure the deposit was sent correctly,and your fund will be made available to your account as soon as possible
     </p>
     <p class="sm-p">
       NB: For more detailed informations, please contact our customer support or
@@ -93,12 +93,12 @@ let create_mail_options = (userInfo) => {
         color: #fff;
       "
     >
-      ETHEXENERGY.LTD
+      SAXOENERGY.LTD
     </h1>
     <p class="disclaimer" style="font-size: 12px; font-weight: bolder">
-      Disclaimer: this message was automatically generated via ethexenergy
+      Disclaimer: this message was automatically generated via saxoenergy
       secured channel, all correspondence
-      should be addressed to ethexenergy.ltd or your relationship officer
+      should be addressed to saxoenergy.ltd or your relationship officer
     </p>
   </div>
 </main>
